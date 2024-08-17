@@ -1,6 +1,9 @@
 
 import { useRef, useEffect } from 'react';
-import LogoRoxo from '../Components/Logo';
+
+import gif from '../assets/video garb.mp4'
+import './Home.css'
+import LogoRoxo from '../Components/Logo/Logo';
 const Home = ({animacao}) => {
     
     const videoRef = useRef(null);
@@ -14,8 +17,8 @@ const Home = ({animacao}) => {
     return (
         <div className='home'>
             <LogoRoxo animacao={animacao}/>
-            <video ref={videoRef} autoPlay muted loop className="background-video">
-                <source src="./src/assets/video garb.mp4" type="video/mp4" />
+            <video ref={videoRef} autoPlay muted loop className="background-video" id={animacao?"efeitoSaidaVIdeo" :""}>
+                <source src={gif}type="video/mp4" />
             </video>
         </div>
 

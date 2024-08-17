@@ -3,7 +3,7 @@
     top: 0%;
     left: 50%; /* Alinhado ao início */
     transform: translate(-50%,-50%);
-    height: 350px;
+    max-height: 100%;
     z-index: 1;
     animation: animaLogo 1000ms ease-in forwards;
 }

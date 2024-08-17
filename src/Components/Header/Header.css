@@ -1,5 +1,8 @@
 .header-heroPage{
     display: flex;
-    padding: 35px;
+    padding: 15px;
     background-color: #261738;
+}
+#main-logoGarb{
+    width:  150px;
 }

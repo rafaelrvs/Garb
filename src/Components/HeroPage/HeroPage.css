@@ -1,0 +1,10 @@
+.container-heropage{
+    opacity: 0;
+    animation: heropageOpacity 1200ms ease forwards;
+}
+
+@keyframes heropageOpacity {
+    to{
+        opacity: 100%;
+    }
+}

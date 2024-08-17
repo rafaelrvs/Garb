@@ -9,21 +9,16 @@ function App() {
   
   const [homeActive, setHomeActive] = useState(true);
 
-
-  const handleActive = () => {
-    setTimeout(() => {
-      setAnimacao(true)
-      setHomeActive(true);
-      
-    }, "500");
-    setAnimacao(false)
-    
-    
-    setHomeActive(true);
-  }
+const handleClick =()=>{
+  setAnimacao(true)
+  setTimeout(() => {
+    setHomeActive(false)
+  }, 500);
+  
+}
 
   return (
-    <div className="app"  onClick={handleActive}>
+    <div className="app"  onClick={handleClick}>
       {homeActive ? <Home animacao={animacao} /> :<HeroPage/>}
     </div>
   );
