@@ -1,8 +1,8 @@
 
 import "./Logo.css"
-const LogoRoxo =()=>{
+const LogoRoxo =({animacao})=>{
     return(
-    <img className="logoRoxo" src="src\assets\GARB SOLUTION - LOGOTIPO DEFINITIVO 1.svg" />
+    <img className="logoRoxo" id={animacao?"animacaoAtiva":""} src="src\assets\GARB SOLUTION - LOGOTIPO DEFINITIVO 1.svg" />
     )
 }
 export default LogoRoxo
