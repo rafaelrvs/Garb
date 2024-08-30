@@ -1,0 +1,47 @@
+.Main{
+display: flex;
+justify-content: center;
+height: 100VH;
+}
+.menuModal{
+    display: flex;
+    width: 1500px;
+    padding-top: 50px;
+ 
+    justify-content: space-around;
+}
+.iconMainsvg {
+    width: 100px; /* Ajuste a largura do SVG */
+    height: 100px; /* Ajuste a altura do SVG */
+    fill: white;
+    transition: fill 0.3s ease;
+
+}
+.iconMainsvg2 {
+    width: 100px; /* Ajuste a largura do SVG */
+    height: 100px; /* Ajuste a altura do SVG */
+    background-color: var(--background);
+    transition: fill 0.3s ease;
+    border-radius: 15px 15px 0 0;
+    
+    
+}
+.menuModal div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+    width: 170px;
+
+    
+
+}
+.iconActive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+    
+    width: 150px;
+
+}

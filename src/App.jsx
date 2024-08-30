@@ -1,26 +1,28 @@
 import { useState, useEffect, useCallback } from 'react';
 import './App.css';
-import Home from './Home/Home';
-import HeroPage from './Components/HeroPage/HeroPage';
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home } from './Components/Home';
+import { GlobalProvider } from './GlobalContext';
+import { HeroPage } from './Components/HeroPage';
 function App() {
   
-  const [animacao, setAnimacao] = useState(false);
   
-  const [homeActive, setHomeActive] = useState(true);
-
-const handleClick =()=>{
-  setAnimacao(true)
-  setTimeout(() => {
-    setHomeActive(false)
-  }, 500);
-  
-}
-
   return (
-    <div className="app"  onClick={handleClick}>
-      {homeActive ? <Home animacao={animacao} /> :<HeroPage/>}
+    <div>
+      <BrowserRouter>
+      <GlobalProvider>
+
+      <Routes>
+        <Route  path='/' element={<Home/>} />
+        <Route  path='HeroPage' element={<HeroPage/>} />
+      </Routes>
+      </GlobalProvider>
+
+    </BrowserRouter>
     </div>
+   
+   
   );
 }
 
