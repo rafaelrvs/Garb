@@ -1,0 +1,13 @@
+.Modal{
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 80vw;
+    margin: 0 auto;
+    border-radius: 15px;
+  background-color: var(--background);
+  }
+
+  .closePage{
+    align-self: flex-end;
+  }

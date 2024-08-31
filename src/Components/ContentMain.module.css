@@ -1,14 +1,15 @@
 .Main{
 display: flex;
-justify-content: center;
+justify-content: start;    
+flex-direction: column;
 height: 100VH;
 }
 .menuModal{
     display: flex;
     width: 1500px;
     padding-top: 50px;
- 
     justify-content: space-around;
+    margin: 0 auto;
 }
 .iconMainsvg {
     width: 100px; /* Ajuste a largura do SVG */
@@ -30,9 +31,11 @@ height: 100VH;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 170px;
+    z-index: 2;
+    height: 190px;
     width: 170px;
-
+    border: none;   
+    
     
 
 }
