@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import styles from './Modal.module.css'
-import ClosePage  from '../assets/closePage.svg?react'
-import PedirPorCargo from './PedirPorCargo'
-import { GlobalContext } from '../GlobalContext'
+import ClosePage  from '../../assets/closePage.svg?react'
+import PedirPorCargo from '../PedirPorCargo/PedirPorCargo'
+import { GlobalContext } from '../../GlobalContext'
 
 const Modal = ({content ,setActiveIcon}) => {
 
@@ -18,8 +18,10 @@ const Modal = ({content ,setActiveIcon}) => {
 
   return (
     <div className={styles.Modal}>
-   
+      <div className={styles.containerClosePage}>
+
        <ClosePage className={styles.closePage} onClick={handleClosePage}/>
+      </div>
 
       {content ==="cartao"?  <PedirPorCargo/> :"" }
    

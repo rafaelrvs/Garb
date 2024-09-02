@@ -2,9 +2,10 @@ import { useState, useEffect, useCallback } from 'react';
 import './App.css';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home } from './Components/Home';
+import { Home } from './Components/Home/Home';
 import { GlobalProvider } from './GlobalContext';
-import { HeroPage } from './Components/HeroPage';
+import { HeroPage } from './Components/HeroPage/HeroPage';
+
 function App() {
   
   

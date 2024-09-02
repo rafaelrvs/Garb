@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useRef, useEffect } from 'react';
-import gif from '../assets/video garb.mp4'
+import gif from '../../assets/video garb.mp4'
 import styles from './Home.module.css'
-import LogoSVG from "../assets/GARB SOLUTION - LOGOTIPO DEFINITIVO 1.svg?react"
-import { GlobalContext } from '../GlobalContext'; 
+import LogoSVG from "../../assets/GARB SOLUTION - LOGOTIPO DEFINITIVO 1.svg?react"
+import { GlobalContext } from '../../GlobalContext'; 
 import { useContext } from 'react';
 export const Home = () => {
     

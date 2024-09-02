@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from "./PedirPorCargo.module.css";
-import FiltroSVG from "../assets/filtro.svg?react";
-import TrianguloSVG from "../assets/triangulo.svg?react";
+import FiltroSVG from "../../assets/filtro.svg?react";
+import TrianguloSVG from "../../assets/triangulo.svg?react";
 
 const empresas = [
     {
@@ -79,7 +79,8 @@ const empresas = [
 const PedirPorCargo = () => {
     const [escolhaPedirPorCargo, setCargoSelecionado] = useState("");
     const [animacaoTriangulo, setAnimacaoTriangulo] = useState("");
-
+    console.log(escolhaPedirPorCargo);
+    
     return (
         <div className={styles.PedirPorCargo}>
             <h1>Pedir por cargo</h1>
@@ -109,12 +110,14 @@ const PedirPorCargo = () => {
             ) : (
                 <div>
                     <h2>Empresa Selecionada: {escolhaPedirPorCargo}</h2>
-                    <div className={styles.containerBTNCargos} onClick={()=>setAnimacaoTriangulo(true)}> 
+                    <div className={styles.containerBTNCargos} > 
                         {empresas
                             .find(emp => emp.nome === escolhaPedirPorCargo)
                             .cargos.map((cargo) => (
-                                <div key={cargo.id} className={styles.cargoBtn}>
-                                    <div className={styles.cargo}> <TrianguloSVG className={ styles.animacaoTriangulo  }/>{cargo.nome}</div>
+                                <div key={cargo.id} className={styles.cargoBtn} 
+                                >
+                                    <div onClick={(e)=>{setAnimacaoTriangulo(e.target.innerText);
+                                    }}  className={styles.cargo}> <TrianguloSVG  className={animacaoTriangulo === cargo.nome? styles.animacaoTriangulo:""}/>{cargo.nome}</div>
                                 </div>
                             ))}
                     </div>

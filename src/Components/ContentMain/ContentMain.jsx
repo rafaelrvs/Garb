@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import CartaoSVG from '../assets/card.svg?react';
-import CardBrancoSVG from '../assets/cardBranco.svg?react';
-import SetaSVG from '../assets/seta2.svg?react';
-import SetaBrancaSVG from '../assets/setabranca.svg?react';
-import HeadBranco from '../assets/headBranco.svg?react';
-import HeadphoneSVG from '../assets/headphone.svg?react';
-import Inventario from '../assets/inventario.svg?react';
-import InventarioBranco from '../assets/inventarioBranco.svg?react';
+import CartaoSVG from '../../assets/card.svg?react';
+import CardBrancoSVG from '../../assets/cardBranco.svg?react';
+import SetaSVG from '../../assets/seta2.svg?react';
+import SetaBrancaSVG from '../../assets/setabranca.svg?react';
+import HeadBranco from '../../assets/headBranco.svg?react';
+import HeadphoneSVG from '../../assets/headphone.svg?react';
+import Inventario from '../../assets/inventario.svg?react';
+import InventarioBranco from '../../assets/inventarioBranco.svg?react';
 import styles from "./ContentMain.module.css";
-import Modal from './Modal';
+import Modal from '../Modal/Modal';
+
 
 export const ContentMain = () => {
   const [activeIcon, setActiveIcon] = useState(null);
