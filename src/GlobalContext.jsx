@@ -8,6 +8,9 @@ export const GlobalProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [animacao, setAnimacao] = useState(false);
     const [downtime, setDownTime] = useState(false);
+
+
+    
     const navigate = useNavigate();
 
 

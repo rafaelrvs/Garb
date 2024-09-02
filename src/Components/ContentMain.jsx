@@ -33,7 +33,7 @@ export const ContentMain = () => {
           {activeIcon === 'inventario' ? <InventarioBranco className={styles.iconMainsvg2} /> : <Inventario className={styles.iconMainsvg} />}
         </div>
       </div>
-        {activeIcon?<Modal content={activeIcon} />:""}
+        {activeIcon?<Modal content={activeIcon} setActiveIcon={setActiveIcon} />:""}
     </main>
   );
 };
