@@ -20,12 +20,12 @@ export const GlobalProvider = ({ children }) => {
     },[])
 
     useEffect(()=>{
-        // setTimeout(()=>{
-        //     console.log("teste");
+        setTimeout(()=>{
+            console.log("teste");
             
-        //     navigate("/")
-        //     setAnimacao(false)
-        // },15000)
+            navigate("/")
+            setAnimacao(false)
+        },15000)
    
      
        

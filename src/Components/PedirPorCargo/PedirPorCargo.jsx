@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from "./PedirPorCargo.module.css";
 import FiltroSVG from "../../assets/filtro.svg?react";
 import TrianguloSVG from "../../assets/triangulo.svg?react";
@@ -116,8 +116,9 @@ const PedirPorCargo = () => {
                             .cargos.map((cargo) => (
                                 <div key={cargo.id} className={styles.cargoBtn} 
                                 >
-                                    <div onClick={(e)=>{setAnimacaoTriangulo(e.target.innerText);
-                                    }}  className={styles.cargo}> <TrianguloSVG  className={animacaoTriangulo === cargo.nome? styles.animacaoTriangulo:""}/>{cargo.nome}</div>
+                                    <div ref={cargoRef} onClick={(e)=>{setAnimacaoTriangulo(e.target.innerText)}}  className={styles.cargo}> 
+                                        <TrianguloSVG  className={animacaoTriangulo === cargo.nome? styles.animacaoTriangulo:""}/>{cargo.nome}
+                                    </div>
                                 </div>
                             ))}
                     </div>
