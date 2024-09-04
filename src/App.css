@@ -1,6 +1,11 @@
-
-.app {
-  position: relative;
-  height: 100vh;
+*{
+  margin: 0;
+  padding: 0;
+  color: white;
 }
 
+:root{
+  --background: #261738;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}

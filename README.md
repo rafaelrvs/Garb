@@ -1,15 +1,8 @@
-# Garb
+# React + Vite
 
-# Escopo
-### O projeto tem como finalidade expor as principais funcionalidades da plataforma no Stand da feira FISP (Feira Internacional de Segurança e Proteção: Fisp 2024)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-#Ferraementas:
-  • React - Vite
-  • Visual studio code
-  • Git
-  • GitHub
-# Bibliotecas:
-  • react-router-dom
-# Metodologia de implantação será o Scrum
+Currently, two official plugins are available:
 
-
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

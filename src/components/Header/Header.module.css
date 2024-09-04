@@ -1,0 +1,47 @@
+.containerLogos{
+    justify-content: center;
+    background-color: var(--background);
+}
+
+.logos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.logoImg{
+    height: 100%;
+    width: 12rem;
+}
+
+.nav{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.imgBtn{
+    width: 3rem;
+}
+
+.btn{
+    display: flex;
+    height: 4rem;
+    width: 5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnAtivo{
+    display: flex;
+    height: 4rem;
+    width: 5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 5px 0 0;
+    background-color: var(--background);
+    transition: 0.3s;
+}

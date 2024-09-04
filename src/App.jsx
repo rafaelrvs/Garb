@@ -1,30 +1,26 @@
-import { useState, useEffect, useCallback } from 'react';
-import './App.css';
-
+import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home } from './Components/Home/Home';
-import { GlobalProvider } from './GlobalContext';
-import { HeroPage } from './Components/HeroPage/HeroPage';
+import Home from './components/Pages/Home/Home';
+import Header from './components/Header/Header';
+import Pedidos from './components/Pages/Pedidos/Pedidos';
+import Trocas from './components/Pages/Trocas/Trocas';
+import Chamados from './components/Pages/Chamados/Chamados';
+import Relatorios from './components/Pages/Relatorios/Relatorios';
 
 function App() {
-  
-  
+
   return (
-    <div>
-      <BrowserRouter>
-      <GlobalProvider>
-
+    <BrowserRouter>
+      <Header/>
       <Routes>
-        <Route  path='/' element={<Home/>} />
-        <Route  path='HeroPage' element={<HeroPage/>} />
+        <Route path='/' element={<Home/>}/>
+        <Route path='/pedidos/*' element={<Pedidos/>}/>
+        <Route path='/trocas' element={<Trocas/>}/>
+        <Route path='/chamados' element={<Chamados/>}/>
+        <Route path='/relatorios' element={<Relatorios/>}/>
       </Routes>
-      </GlobalProvider>
-
     </BrowserRouter>
-    </div>
-   
-   
-  );
+  )
 }
 
-export default App;
+export default App
