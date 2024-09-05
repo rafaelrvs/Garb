@@ -1,0 +1,44 @@
+.lista{
+    display: grid;
+    margin: 10px 0;
+    gap: 10px;
+    
+}
+
+.linha{
+    display: grid;
+    grid-template-columns: 5rem 200px 1fr;
+    gap: 20px;
+    height: 4rem;
+    background-color: white;  
+    align-items: center; 
+    padding: 0 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.linha:hover{
+    scale: 1.01;
+}
+
+.text{
+    color: var(--background);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.qtdeCargo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+}
+
+.qtdeCargo p{
+    color: white;
+}

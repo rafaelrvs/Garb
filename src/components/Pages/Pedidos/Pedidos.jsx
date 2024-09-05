@@ -1,11 +1,23 @@
 import React from 'react'
 import styles from './Pedidos.module.css'
+import { Link, Route, Routes, useNavigate } from 'react-router-dom'
+import Empresa from './Empresa/Empresa'
+import Cargos from './Cargos/Cargos'
 const Pedidos = () => {
+
+
+
+
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <h1>Pedidos</h1>
-      <h3>Para qual empresa deseja solicitar mais uniformes?</h3>
-    </div>
+      <br />
+      <Routes>
+        <Route path='/' element={<Empresa/>}/>
+        <Route path={`/:id`} element={<Cargos/>} />
+      </Routes>
+      
+    </section>
   )
 }
 
