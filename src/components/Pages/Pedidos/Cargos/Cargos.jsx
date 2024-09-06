@@ -9,7 +9,6 @@ const Cargos = () => {
   const navigate = useNavigate();
   const { cargos, setCargos } = useContext(GlobalContext);
   const [currentCargo, setCurrentCargo] = useState([]);
-  const cargoRefs = useRef([]); // Usamos um array de referências
 
   useEffect(() => {
     const empId = window.localStorage.getItem('currentEmpresa');
@@ -35,9 +34,9 @@ const Cargos = () => {
     <div>
       <h3>Selecione o cargo disponível</h3>
       <div className={styles.lista}>
-        {cargos.map((cargo, index) => (
+        {cargos.map((cargo) => (
           <div key={cargo.id} >
-            <div className={styles.linha} ref={(el) => (cargoRefs.current[index] = el)} onClick={() => abrirProdutos(cargo.id)}>
+            <div className={styles.linha} onClick={() => abrirProdutos(cargo.id)}>
               <div className={`${styles.qtdeCargo}`}>
                 <p className={styles.text}>-</p>
               </div>

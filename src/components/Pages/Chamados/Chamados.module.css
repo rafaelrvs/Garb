@@ -4,7 +4,9 @@
     height: 75vh;
     width: 90vw;
     margin: 0 auto 30px auto;
+    padding: 20px;
     border-radius: 15px;
     background-color: var(--background);
     overflow-y: auto;
+    filter: drop-shadow(0 0 0.15rem rgb(71, 71, 71));
 }

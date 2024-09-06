@@ -1,0 +1,35 @@
+.quantidadeContainer{
+  display: flex;
+  align-items: center;
+}
+
+.quantidadeButton {
+    height: 3rem;
+    width: 3rem;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #01426A;
+    
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+.quantidadeButton:hover {
+  background-color: rgb(6,116,155);
+}
+
+.quantidadeNumber {
+  background-color: #263241;
+  font-size: 20px;
+  height: 3rem;
+  width: 4rem;
+  border: none;
+  text-align: center;
+  color: white;
+}
+.texto{
+  margin-top: 8px;
+  text-align: center;
+}

@@ -1,4 +1,72 @@
-@keyframes growDown {
+.containerProduto { 
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-height: 50vh;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 5px;
+  position: relative;
+  overflow-x: hidden;
+  top: -5px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 0 0 5px 5px;
+  opacity: 0;
+  animation: growDown 0.5s ease forwards; /* Animação de crescimento */
+  
+}
+  
+.Produto {
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  gap: 10px;
+  padding: 20px;
+  width: 80%;
+  background-color: rgb(255, 255, 255);
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  /* Adicione transição padrão */
+  animation: slideInFromRight 0.5s ease;
+}
+  
+.Produto.slide-left {
+  animation: slideInFromLeft 0.5s ease;
+}
+
+.Produto.slide-right {
+  animation: slideInFromRight 0.5s ease;
+}
+
+.Produto h1, span,button{
+  color: var(--background);
+}
+  
+.imgProduto{
+    min-height: 35vh;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+    background-color: #263241;
+    justify-self: end;
+}
+
+.buttonsProduto{
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-around;
+  align-self: flex-start; 
+}
+
+.buttonsProduto > button{
+    width: 4rem;
+    height: 3rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+  @keyframes growDown {
     0% {
       height: 0;
       opacity: 0;
@@ -8,12 +76,25 @@
       opacity: 1;
     }
   }
-  
-  .containerProduto { 
-    margin: 10px 0;
-    background-color: white;
-    border-radius: 5px;
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50%);
     opacity: 0;
-    animation: growDown 0.5s ease forwards; /* Animação de crescimento */
   }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
   
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
