@@ -9,6 +9,7 @@ export const GlobalStorage = ({ children }) => {
   const [cargos, setCargos] = useState([])
 
   const [quantidade, setQuantidade] = useState(1);
+  const [ativaImagem,setAtivaImagem] = useState(false)
 
 
 
@@ -16,7 +17,9 @@ export const GlobalStorage = ({ children }) => {
     <GlobalContext.Provider
       value={{
         cargos, setCargos,
-        quantidade, setQuantidade
+        quantidade, setQuantidade,
+        ativaImagem,
+        setAtivaImagem
       }}
     >
       {children}

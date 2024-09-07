@@ -1,6 +1,7 @@
 .quantidadeContainer{
   display: flex;
   align-items: center;
+
 }
 
 .quantidadeButton {
@@ -8,20 +9,22 @@
     width: 3rem;
     font-size: 20px;
     font-weight: bold;
-    background-color: #01426A;
-    
-    color: white;
-    border: none;
+    background-color: white;
+    border-radius:2px;
+    color:var(--background);
+    border: 1.5px solid var(--background);
     cursor: pointer;
     transition: 0.3s;
   }
 
 .quantidadeButton:hover {
-  background-color: rgb(6,116,155);
+
+  color: var(--background);
 }
 
+
 .quantidadeNumber {
-  background-color: #263241;
+  background-color: var(--background);
   font-size: 20px;
   height: 3rem;
   width: 4rem;

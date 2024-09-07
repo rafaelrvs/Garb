@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './Produto.module.css'
 import { empresas } from '../../../../DB/empresas'
 import Quantidade from '../../../Quantidade/Quantidade';
+import Grade from '../../../Grade/Grade';
+import { GlobalContext } from '../../../../Context/GlobalContext';
 
 const Produto = ({ cargoID }) => {
   const [produtos, setProdutos] = useState([]);
   const [currtenProduto, setCurrentProduto] = useState(0);
   const [direction, setDirection] = useState('slide-left'); // Estado para controlar a direção da animação
+  const { ativaImagem, setAtivaImagem } = useContext(GlobalContext);
 
   useEffect(() => {
     const empId = window.localStorage.getItem('currentEmpresa');
@@ -40,21 +43,45 @@ const Produto = ({ cargoID }) => {
   };
 
   return (
-    <div className={styles.containerProduto}>
-      <div className={`${styles.Produto} ${direction === 'right'? styles['slide-right'] : styles['slide-left']}`}>
+    <div className={ativaImagem? styles.containerProdutoAtivo:styles.containerProduto}>
+      <div className={ativaImagem?styles.imagemProdAtiva:`${styles.Produto} ${direction === 'right'? styles['slide-right'] : styles['slide-left']}`}>
         <img 
           src={`/src/images/produtos/${produtos[currtenProduto].img}`} 
           alt={produtos[currtenProduto].codigo} 
-          className={styles.imgProduto}
+          className={!ativaImagem?styles.imgProduto:styles.imgProdutoAtivo}
+
+
+        onClick={()=>setAtivaImagem(!ativaImagem)}  
         />
-        <div className={styles.sobreProduto}>
-          <h1>{produtos[currtenProduto].descricao}</h1>
-          <span>cod.: {produtos[currtenProduto].codigo}</span>
-          <div>
-            <span>R$ {produtos[currtenProduto].preco}</span>
-            <span>Cor: {produtos[currtenProduto].cor}</span>
+        <div className={ativaImagem?styles.produtoImagemAtiva:styles.sobreProduto}>
+          <h1 className={styles.descricao} >{produtos[currtenProduto].descricao}</h1>
+          <span className={styles.fiealdCod}>Cod.: {produtos[currtenProduto].codigo}</span>
+          <div className={styles.qtdCorPreco}>
+
+          <div className={styles.precoCor}>
+            <span className={styles.preco}>R$ {produtos[currtenProduto].preco}</span>
+            <span className={styles.cor}>Cor: <span>{produtos[currtenProduto].cor}</span></span>
+          </div>
             <Quantidade/>
           </div>
+            <div className={styles.footerProduto}  >
+              <div className={styles.provador}>
+                <p>Tabela de Medidas</p>
+                <p>Provador Virtual</p>
+              </div>
+              <div className={styles.carrinhGrade}>
+              
+              <Grade  produtos={{produtos}}  />
+              <button className={styles.carrinho} >Adicionar</button>
+
+              </div>
+           
+                  
+
+            </div>
+
+
+
         </div>
       </div>
       <div className={styles.buttonsProduto}>

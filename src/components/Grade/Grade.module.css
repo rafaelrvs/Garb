@@ -1,0 +1,19 @@
+.gradeContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: start;
+    
+}
+.grade {
+    width: 110px;
+    color: var(#261738);
+    padding: 7px;
+    border: 2px solid var(--background);
+    border-radius: 5px;
+    color: #261738;
+    
+}
+.grade option{
+    color: #261738;
+}

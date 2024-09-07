@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './Pedidos.module.css'
 import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 import Empresa from './Empresa/Empresa'
 import Cargos from './Cargos/Cargos'
+
+
 const Pedidos = () => {
 
 
 
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} >
       <h1>Pedidos</h1>
       <br />
       <Routes>
