@@ -9,7 +9,7 @@ const Produto = ({ cargoID }) => {
   const [produtos, setProdutos] = useState([]);
   const [currtenProduto, setCurrentProduto] = useState(0);
   const [direction, setDirection] = useState('slide-left'); // Estado para controlar a direção da animação
-  const { ativaImagem, setAtivaImagem } = useContext(GlobalContext);
+  const { ativaImagem, setAtivaImagem,carrinho,setCarrinho,quantidade} = useContext(GlobalContext);
 
   useEffect(() => {
     const empId = window.localStorage.getItem('currentEmpresa');
@@ -42,6 +42,10 @@ const Produto = ({ cargoID }) => {
     setCurrentProduto((current) => Math.min(produtos.length - 1, current + 1));
   };
 
+  const handleADDProduct= ()=>{
+    setCarrinho(carrinho + quantidade)
+  }
+
   return (
     <div className={ativaImagem? styles.containerProdutoAtivo:styles.containerProduto}>
       <div className={ativaImagem?styles.imagemProdAtiva:`${styles.Produto} ${direction === 'right'? styles['slide-right'] : styles['slide-left']}`}>
@@ -72,7 +76,7 @@ const Produto = ({ cargoID }) => {
               <div className={styles.carrinhGrade}>
               
               <Grade  produtos={{produtos}}  />
-              <button className={styles.carrinho} >Adicionar</button>
+              <button className={styles.carrinho} onClick={handleADDProduct}  >Adicionar</button>
 
               </div>
            
