@@ -42,10 +42,44 @@ const Produto = ({ cargoID }) => {
     setCurrentProduto((current) => Math.min(produtos.length - 1, current + 1));
   };
 
-  const handleADDProduct= ()=>{
-    setCarrinho(carrinho + quantidade)
-  }
-
+  const handleADDProduct = () => {
+    if (!produtos[currtenProduto]) {
+      console.error("Produto não encontrado!");
+      return;
+    }
+  
+    // Verifica se o carrinho é válido
+    const carrinhoAtual = carrinho || [];
+  
+    // Verifica se o produto já existe no carrinho
+    const produtoExistente = carrinhoAtual.find(item => item.cod === produtos[currtenProduto].codigo);
+  
+    if (produtoExistente) {
+      // Se o produto já estiver no carrinho, apenas atualiza a quantidade
+      const novoCarrinho = carrinhoAtual.map(item =>
+        item.cod === produtos[currtenProduto].codigo
+          ? { ...item, quantidade: item.quantidade + quantidade } // Atualiza a quantidade
+          : item
+      );
+      setCarrinho(novoCarrinho);
+    } else {
+      // Se for um novo produto, adiciona ao carrinho com a quantidade definida
+      const novoCarrinho = [
+        ...carrinhoAtual,
+        {
+          cod: produtos[currtenProduto].codigo,
+          descricao: produtos[currtenProduto].descricao,
+          preco: produtos[currtenProduto].preco,
+          cor: produtos[currtenProduto].cor,
+          quantidade: quantidade // Adiciona a quantidade selecionada
+        }
+      ];
+      setCarrinho(novoCarrinho);
+    }
+  
+    // Exibir uma mensagem de feedback ao usuário (opcional)
+    console.log(`${produtos[currtenProduto].descricao} adicionado ao carrinho!`);
+  };
   return (
     <div className={ativaImagem? styles.containerProdutoAtivo:styles.containerProduto}>
       <div className={ativaImagem?styles.imagemProdAtiva:`${styles.Produto} ${direction === 'right'? styles['slide-right'] : styles['slide-left']}`}>

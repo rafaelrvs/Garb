@@ -8,9 +8,11 @@ import { GlobalContext } from '../../../Context/GlobalContext'
 
 const Pedidos = () => {
   const {carrinho} = useContext(GlobalContext);
-
-
-
+  const totalQuantidade = carrinho.reduce((total, item) => {
+    return total + item.quantidade;
+  }, 0);
+  
+  
   return (
     <section className={styles.container} >
       <h1>Pedidos</h1>
@@ -19,7 +21,7 @@ const Pedidos = () => {
         <div>
 
         <NavLink to={'/AcompanharPedidos'} className={styles.btnAcompanha} >Acompanhar pedidos</NavLink>
-        <NavLink to={'/carrinho'}  className={styles.btnCarrinho}><p>{carrinho >=99? "99":carrinho }</p>Meu Carrinho </NavLink>
+        <NavLink to={'/carrinho'}  className={styles.btnCarrinho}><p>{totalQuantidade}</p>Meu Carrinho </NavLink>
         </div>
       </div>
       <br />
