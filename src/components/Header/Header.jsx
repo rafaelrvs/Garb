@@ -17,7 +17,9 @@ import RelatorioActive from '../../images/Header/nav/active/RelatorioActive.svg'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import PopUp from '../PopUp/PopUp'
 import { GlobalContext } from '../../Context/GlobalContext'
-import FullScreenDiv from '../SleepScreen/SleepScreen'
+import FullScreenDiv from '../FullScreenDiv/FullScreenDiv'
+
+
 
 const Header = () => {
     const [btnAtivo, setBtnAtivo] = useState('')
@@ -66,7 +68,7 @@ const Header = () => {
         </NavLink>
       </nav>
       <PopUp status={popUp.status} color={popUp.color}>{popUp.children}</PopUp>
-      {<FullScreenDiv/>}
+      <FullScreenDiv/>
     </header>
   )
 }
