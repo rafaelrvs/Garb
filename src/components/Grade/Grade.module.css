@@ -17,3 +17,12 @@
 .grade option{
     color: #261738;
 }
+
+.grade option{
+    cursor: pointer;
+}
+
+.grade:hover{
+    cursor: pointer;
+}
+

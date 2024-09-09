@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './Header.module.css'
 import SVGLogoGarb from '../../images/Header/Logo_Garb.svg'
 import SVGLogoCli from '../../images/Header/Logo_Cli.svg'
@@ -14,15 +14,29 @@ import ChamadoActive from '../../images/Header/nav/active/ChamadoActive.svg'
 
 import Relatorio from '../../images/Header/nav/Relatorio.svg'
 import RelatorioActive from '../../images/Header/nav/active/RelatorioActive.svg'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
+import PopUp from '../PopUp/PopUp'
+import { GlobalContext } from '../../Context/GlobalContext'
+import FullScreenDiv from '../SleepScreen/SleepScreen'
 
 const Header = () => {
     const [btnAtivo, setBtnAtivo] = useState('')
+    const {popUp,visible, setVisible} = useContext(GlobalContext);
+    const location = useLocation();
 
     useEffect(()=>{
+        
         const btn = window.localStorage.getItem('btnAtivo')
         setBtnAtivo(btn)
     },[])
+
+    useEffect(() => {
+        // Verifica se a rota atual é a raiz
+        if (location.pathname === '/') {
+            setBtnAtivo('')
+            window.localStorage.removeItem('btnAtivo')
+        }
+      }, [location]);
 
     function ativaBtn(btn){
         window.localStorage.setItem('btnAtivo',btn)
@@ -51,6 +65,8 @@ const Header = () => {
             <img src={btnAtivo==='4'?RelatorioActive : Relatorio} className={styles.imgBtn}/>
         </NavLink>
       </nav>
+      <PopUp status={popUp.status} color={popUp.color}>{popUp.children}</PopUp>
+      {<FullScreenDiv/>}
     </header>
   )
 }

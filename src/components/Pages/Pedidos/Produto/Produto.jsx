@@ -9,7 +9,7 @@ const Produto = ({ cargoID }) => {
   const [produtos, setProdutos] = useState([]);
   const [currtenProduto, setCurrentProduto] = useState(0);
   const [direction, setDirection] = useState('slide-left'); // Estado para controlar a direção da animação
-  const { ativaImagem, setAtivaImagem,carrinho,setCarrinho,quantidade} = useContext(GlobalContext);
+  const {carrinho,setCarrinho,quantidade, setPopUp,popupTimeoutRef,setQuantidade} = useContext(GlobalContext);
 
   useEffect(() => {
     const empId = window.localStorage.getItem('currentEmpresa');
@@ -24,7 +24,6 @@ const Produto = ({ cargoID }) => {
       console.error("Cargo não encontrado");
       return;
     }
-    console.log("Produtos carregados:", prod[0].produtos); // Verifique se os produtos são carregados
     setProdutos(prod[0].produtos);
   }, [cargoID]);
 
@@ -76,31 +75,43 @@ const Produto = ({ cargoID }) => {
       ];
       setCarrinho(novoCarrinho);
     }
-  
-    // Exibir uma mensagem de feedback ao usuário (opcional)
-    console.log(`${produtos[currtenProduto].descricao} adicionado ao carrinho!`);
+    setPopUp({
+      status:true,
+      color: "#46bba2",
+      children: "Produto Adicionado ao Carrinho"
+    });
+    if (popupTimeoutRef.current) {
+      clearTimeout(popupTimeoutRef.current);
+  }
+
+    popupTimeoutRef.current = setTimeout(() => {
+        setPopUp({
+            status: false,
+            color: "",
+            children: ""
+        });
+        popupTimeoutRef.current = null;
+    }, 3000);
+    setQuantidade(1)
   };
+
   return (
-    <div className={ativaImagem? styles.containerProdutoAtivo:styles.containerProduto}>
-      <div className={ativaImagem?styles.imagemProdAtiva:`${styles.Produto} ${direction === 'right'? styles['slide-right'] : styles['slide-left']}`}>
-        <img 
+    <div className={styles.containerProduto}>
+      <div className={`${styles.Produto} ${direction === 'right'? styles['slide-right'] : styles['slide-left']}`}>
+        <img
           src={`/src/images/produtos/${produtos[currtenProduto].img}`} 
           alt={produtos[currtenProduto].codigo} 
-          className={!ativaImagem?styles.imgProduto:styles.imgProdutoAtivo}
-
-
-        onClick={()=>setAtivaImagem(!ativaImagem)}  
+          className={styles.imgProduto}
         />
-        <div className={ativaImagem?styles.produtoImagemAtiva:styles.sobreProduto}>
+        <div className={styles.sobreProduto}>
           <h1 className={styles.descricao} >{produtos[currtenProduto].descricao}</h1>
           <span className={styles.fiealdCod}>Cod.: {produtos[currtenProduto].codigo}</span>
           <div className={styles.qtdCorPreco}>
-
-          <div className={styles.precoCor}>
-            <span className={styles.preco}>R$ {produtos[currtenProduto].preco}</span>
-            <span className={styles.cor}>Cor: <span>{produtos[currtenProduto].cor}</span></span>
-          </div>
-            <Quantidade/>
+            <div className={styles.precoCor}>
+              <span className={styles.preco}>R$ {produtos[currtenProduto].preco}</span>
+              <span className={styles.cor}>Cor: <span>{produtos[currtenProduto].cor}</span></span>
+            </div>
+              <Quantidade/>
           </div>
             <div className={styles.footerProduto}  >
               <div className={styles.provador}>
@@ -108,18 +119,11 @@ const Produto = ({ cargoID }) => {
                 <p>Provador Virtual</p>
               </div>
               <div className={styles.carrinhGrade}>
-              
-              <Grade  produtos={{produtos}}  />
-              <button className={styles.carrinho} onClick={handleADDProduct}  >Adicionar</button>
-
-              </div>
-           
-                  
+                <Grade  grade={produtos[currtenProduto].grade}  />
+                <button className={styles.addcarrinho} onClick={handleADDProduct} >Adicionar</button>
+              </div>                 
 
             </div>
-
-
-
         </div>
       </div>
       <div className={styles.buttonsProduto}>

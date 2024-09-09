@@ -1,31 +1,11 @@
 
-.containerProdutoAtivo { 
-  position: absolute;
-
+.containerProduto{ 
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
-  max-height: 50vh;
+  max-height: 60vh;
   gap: 15px;
   align-items: center;
-  margin-bottom: 5px;
-  position: relative;
-  overflow-x: hidden;
-  top: -5px;
-  background-color: rgba(0, 0, 0, 0.388);
-  border-radius: 0 0 5px 5px;
-  opacity: 0;
-  animation: growDown 0.5s ease forwards; /* Animação de crescimento */
-  
-}
-.containerProduto { 
- 
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  max-height: 50vh;
-  gap: 15px;
-  align-items: center;
+  justify-content: center;
   margin-bottom: 5px;
   position: relative;
   overflow-x: hidden;
@@ -39,73 +19,56 @@
   
 .Produto {
   display: grid;
-  grid-template-columns: 0.4fr 1fr;
+  grid-template-columns: 0.5fr 1fr;
   gap: 10px;
   padding: 20px;
-  width: 80%;
+  width: 75%;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  /* Adicione transição padrão */
-  animation: slideInFromRight 0.5s ease;
-  
 }
 
 
 .Produto.slide-left {
   animation: slideInFromLeft 0.5s ease;
-
-  width: 100%;
-  
-  
 }
 
 .Produto.slide-right {
   animation: slideInFromRight 0.5s ease;
 }
 
-.produtoImagemAtiva{
-  display: none;
-}
 .sobreProduto{
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
   text-align: center;
-  gap: 50px;
+  gap: 25px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
 .descricao{
-  font-size: 1rem;
-  
- 
+  font-size: 1rem; 
 }
 
 .fiealdCod{
-  background-color:var(--background);
-  color:#fff;
+  color:var(--background);
+  background-color: #f7f8f8;
   font-size: 1.2rem;
-  width: 320px;
   align-self: center;
-  padding: 15px;
-  border-radius: 5px;
+  padding: 15px 20px;
+  border-radius: 5px;  
+  border: 2px solid var(--background);
+  justify-self: center;
 
-  
-  
 }
 .qtdCorPreco{
-  display: flex;
-  justify-content: space-between;
-  width: 350px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .precoCor{
   display: flex;
   flex-direction: column;
   text-align: start;
-  width: 200px;
   flex-wrap: wrap;
   margin: 0 auto;
 }
@@ -129,28 +92,13 @@
 }
   
 .imgProduto{
-    min-height: 25vh;
+    min-height:80;
+    width: 100%;
     border-radius: 5px;
     object-fit: cover;
     object-position: center;
     background-color: #d4e0ee;
-    justify-self: end;
-    
-  }
-  
-  .imgProdutoAtivo{
-  
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,0%);
-  height: 50vh;
-  animation: animaImagem linear 3000s forwards;
-
 }
-
-
-
 
 .footerProduto{
   display: flex;
@@ -167,29 +115,27 @@
   color: var(--background);
 }
 
-
-.carrinho{
+.addcarrinho{
   background-color: #fff;
   width: 180px;
   align-self: flex-end;
   border: 2px solid var(--background);
   transition: 0.5s;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 
-.carrinho:hover{
-  background-color: var(--background);
+.addcarrinho:hover{
+  background: var(--background);
   color: #fff;
 }
 
 .carrinhGrade{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: end;
- 
-
-  
 }
 
 
@@ -209,19 +155,6 @@
     cursor: pointer;
 }
 
-  @keyframes animaImagem {
-    from{
-      top:0;
-      
-    }
-    
-    to{
-      top: 50%;
-
-    
-    }
-
-  }
   @keyframes growDown {
     0% {
       height: 0;
@@ -253,4 +186,22 @@
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+@media (max-width:1120px) {
+  .Produto{
+    margin-top: 1rem;
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+  .imgProduto{
+    height: 40vh;
+    object-fit: contain;
+    background-color: #fff;
+  }
+
+  .containerProduto{
+    max-height: 100vh;
+  }
+  
 }

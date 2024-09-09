@@ -14,23 +14,25 @@ const Pedidos = () => {
   
   
   return (
-    <section className={styles.container} >
-      <h1>Pedidos</h1>
-      <div className={styles.header}>
-        <p>Filtro</p>
-        <div>
-
-        <NavLink to={'/AcompanharPedidos'} className={styles.btnAcompanha} >Acompanhar pedidos</NavLink>
-        <NavLink to={'/carrinho'}  className={styles.btnCarrinho}><p>{totalQuantidade}</p>Meu Carrinho </NavLink>
+    <>
+    <section className={styles.container}>
+      <div className={styles.navPedidos}>
+        <h1>Pedidos</h1>
+        <div className={styles.header}>
+          <p>Filtro</p>
+          <div>
+            <NavLink to={'/AcompanharPedidos'} className={styles.btnAcompanha} >Acompanhar pedidos</NavLink>
+            <NavLink to={'/carrinho'}  className={styles.btnCarrinho}><p>{totalQuantidade}</p>Meu Carrinho </NavLink>
+          </div>
         </div>
       </div>
-      <br />
       <Routes>
         <Route path='/' element={<Empresa/>}/>
         <Route path={`/:id`} element={<Cargos/>} />
       </Routes>
       
     </section>
+    </>
   )
 }
 

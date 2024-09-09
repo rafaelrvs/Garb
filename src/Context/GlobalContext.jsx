@@ -1,17 +1,21 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 
 export const GlobalContext = createContext();
 
 export const GlobalStorage = ({ children }) => {
   
   const [cargos, setCargos] = useState([]);
-  const [ativaImagem, setAtivaImagem] = useState(false);
   const [quantidade, setQuantidade] = useState(() => {
     const savedQuantidade = window.localStorage.getItem("quantidade");
     return savedQuantidade !== null ? JSON.parse(savedQuantidade) : 1;
   });
 
-
+  const [popUp, setPopUp] =useState({
+    status:false,
+    color: "",
+    children: ""
+  })
+  const popupTimeoutRef = useRef(null);
 
   useEffect(() => {
     window.localStorage.setItem("quantidade", JSON.stringify(quantidade));
@@ -33,13 +37,18 @@ export const GlobalStorage = ({ children }) => {
 
   console.log(carrinho);
 
+  const [visible, setVisible] = useState(true);
+
+
   return (
     <GlobalContext.Provider
       value={{
         cargos, setCargos,
-        ativaImagem, setAtivaImagem,
         carrinho, setCarrinho,
-        quantidade,setQuantidade
+        quantidade,setQuantidade,
+        popUp, setPopUp,
+        popupTimeoutRef,
+        visible, setVisible,
       }}
     >
       {children}
