@@ -7,6 +7,7 @@ import Trocas from './components/Pages/Trocas/Trocas';
 import Chamados from './components/Pages/Chamados/Chamados';
 import Relatorios from './components/Pages/Relatorios/Relatorios';
 import { GlobalStorage } from './Context/GlobalContext';
+
 function App() {
 
   return (

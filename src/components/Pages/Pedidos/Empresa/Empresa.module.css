@@ -1,31 +1,6 @@
-.lista{
-    display: grid;
-    margin: 10px 0;
-    gap: 10px;
-    
-}
-
-.linha{
-    display: grid;
-    grid-template-columns: 5rem 200px 1fr;
-    gap: 20px;
-    height: 4rem;
-    background-color: white;  
-    align-items: center; 
-    padding: 0 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.1s;
-}
-
-.linha:hover{
-    scale: 1.01;
-}
-
-.text{
-    color: var(--background);
-    font-weight: bold;
-    font-size: 1.5rem;
+.descricaoPage{
+    font-size: 1.1rem;
+    padding-bottom: 20px;
 }
 
 .qtdeCargo{
@@ -41,4 +16,40 @@
 
 .qtdeCargo p{
     color: white;
+}
+
+.lista{
+    display: grid;
+    margin: 10px 0;
+    gap: 10px;
+    
+}
+
+.linha{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    min-height: 4rem;
+    background-color: white;  
+    align-items: center; 
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.linha:hover{
+    scale: 1.01;
+}
+
+.text{
+    color: var(--background);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+
+.nomeText{
+    width: 12rem;
 }

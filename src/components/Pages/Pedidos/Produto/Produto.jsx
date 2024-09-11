@@ -1,16 +1,35 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import styles from './Produto.module.css'
 import { empresas } from '../../../../DB/empresas'
 import Quantidade from '../../../Quantidade/Quantidade';
 import Grade from '../../../Grade/Grade';
 import { GlobalContext } from '../../../../Context/GlobalContext';
-
 const Produto = ({ cargoID }) => {
   const [produtos, setProdutos] = useState([]);
   const [currtenProduto, setCurrentProduto] = useState(0);
   const [direction, setDirection] = useState('slide-left'); // Estado para controlar a direção da animação
-  const {carrinho,setCarrinho,quantidade, setPopUp,popupTimeoutRef,setQuantidade} = useContext(GlobalContext);
+  const {carrinho,setCarrinho,quantidade, setPopUp,popupTimeoutRef,setQuantidade, tamanhoSelecionado} = useContext(GlobalContext);
+  
+  const sizeBay=useRef();
+  const currentProdForSizebay=useRef();
 
+  useEffect(() => {
+    if (sizeBay.current && produtos.length > 0) {
+      // Certificando de que a função SizebayInitLookbook está disponível
+      async function initSizebay(){
+        if (typeof window.SizebayInitLookbook === 'function') {
+          console.log('teste');
+          
+          SizebayInitLookbook();
+        } else {
+          console.error('Função SizebayInitLookbook não encontrada');
+        }
+      };
+      initSizebay();
+    }
+  }, [produtos,direction]);
+  
+  
   useEffect(() => {
     const empId = window.localStorage.getItem('currentEmpresa');
     const empresa = empresas.filter((empresa) => empresa.id == empId);
@@ -34,6 +53,7 @@ const Produto = ({ cargoID }) => {
   const handlePrevious = () => {
     setDirection('left'); // Define a direção da animação como da esquerda
     setCurrentProduto((current) => Math.max(0, current - 1));
+    
   };
 
   const handleNext = () => {
@@ -41,7 +61,7 @@ const Produto = ({ cargoID }) => {
     setCurrentProduto((current) => Math.min(produtos.length - 1, current + 1));
   };
 
-  const handleADDProduct = () => {
+  const handleADDProduct = (selectedSize) => {
     if (!produtos[currtenProduto]) {
       console.error("Produto não encontrado!");
       return;
@@ -50,19 +70,23 @@ const Produto = ({ cargoID }) => {
     // Verifica se o carrinho é válido
     const carrinhoAtual = carrinho || [];
   
-    // Verifica se o produto já existe no carrinho
-    const produtoExistente = carrinhoAtual.find(item => item.cod === produtos[currtenProduto].codigo);
+    // Verifica se o produto com o mesmo código e tamanho já existe no carrinho
+    const produtoExistente = carrinhoAtual.find(
+      (item) =>
+        item.cod === produtos[currtenProduto].codigo &&
+        item.tamanho === selectedSize // Verifica também o tamanho
+    );
   
     if (produtoExistente) {
-      // Se o produto já estiver no carrinho, apenas atualiza a quantidade
-      const novoCarrinho = carrinhoAtual.map(item =>
-        item.cod === produtos[currtenProduto].codigo
+      // Se o produto já estiver no carrinho com o mesmo tamanho, atualiza a quantidade
+      const novoCarrinho = carrinhoAtual.map((item) =>
+        item.cod === produtos[currtenProduto].codigo && item.tamanho === selectedSize
           ? { ...item, quantidade: item.quantidade + quantidade } // Atualiza a quantidade
           : item
       );
       setCarrinho(novoCarrinho);
     } else {
-      // Se for um novo produto, adiciona ao carrinho com a quantidade definida
+      // Se for um novo produto ou um tamanho diferente, adiciona ao carrinho
       const novoCarrinho = [
         ...carrinhoAtual,
         {
@@ -70,34 +94,39 @@ const Produto = ({ cargoID }) => {
           descricao: produtos[currtenProduto].descricao,
           preco: produtos[currtenProduto].preco,
           cor: produtos[currtenProduto].cor,
-          quantidade: quantidade // Adiciona a quantidade selecionada
-        }
+          tamanho: selectedSize, // Adiciona o tamanho selecionado
+          quantidade: quantidade, // Adiciona a quantidade selecionada
+        },
       ];
       setCarrinho(novoCarrinho);
     }
+  
     setPopUp({
-      status:true,
+      status: true,
       color: "#46bba2",
-      children: "Produto Adicionado ao Carrinho"
+      children: "Produto Adicionado ao Carrinho",
     });
+  
     if (popupTimeoutRef.current) {
       clearTimeout(popupTimeoutRef.current);
-  }
-
+    }
+  
     popupTimeoutRef.current = setTimeout(() => {
-        setPopUp({
-            status: false,
-            color: "",
-            children: ""
-        });
-        popupTimeoutRef.current = null;
+      setPopUp({
+        status: false,
+        color: "",
+        children: "",
+      });
+      popupTimeoutRef.current = null;
     }, 3000);
-    setQuantidade(1)
+  
+    setQuantidade(1);
   };
+  
 
   return (
     <div className={styles.containerProduto}>
-      <div className={`${styles.Produto} ${direction === 'right'? styles['slide-right'] : styles['slide-left']}`}>
+      <div id={produtos[currtenProduto].codigo} ref={currentProdForSizebay} className={`${styles.Produto} ${direction === 'right'? styles['slide-right'] : styles['slide-left']}`}>
         <img
           src={`/src/images/produtos/${produtos[currtenProduto].img}`} 
           alt={produtos[currtenProduto].codigo} 
@@ -105,25 +134,23 @@ const Produto = ({ cargoID }) => {
         />
         <div className={styles.sobreProduto}>
           <h1 className={styles.descricao} >{produtos[currtenProduto].descricao}</h1>
-          <span className={styles.fiealdCod}>Cod.: {produtos[currtenProduto].codigo}</span>
-          <div className={styles.qtdCorPreco}>
-            <div className={styles.precoCor}>
+          <div  className={styles.infoProd}>
+            <div className={styles.column1}>
+              <span className={styles.fiealdCod}>Cod.: {produtos[currtenProduto].codigo}</span>
               <span className={styles.preco}>R$ {produtos[currtenProduto].preco}</span>
               <span className={styles.cor}>Cor: <span>{produtos[currtenProduto].cor}</span></span>
             </div>
-              <Quantidade/>
-          </div>
-            <div className={styles.footerProduto}  >
-              <div className={styles.provador}>
-                <p>Tabela de Medidas</p>
-                <p>Provador Virtual</p>
+            <div className={styles.column2}>
+              {/*-------------------------------SIZEBAY-------------------------------*/}
+              <div className={styles.provador} ref={sizeBay} data-produto={produtos[currtenProduto].codigo}>              
+              
               </div>
-              <div className={styles.carrinhGrade}>
-                <Grade  grade={produtos[currtenProduto].grade}  />
-                <button className={styles.addcarrinho} onClick={handleADDProduct} >Adicionar</button>
-              </div>                 
-
+                <Grade grade={produtos[currtenProduto].grade}/>
             </div>
+
+          </div>
+            <Quantidade/>
+              <button className={styles.addcarrinho} onClick={() => handleADDProduct(tamanhoSelecionado)}>Adicionar Carrinho +</button>
         </div>
       </div>
       <div className={styles.buttonsProduto}>

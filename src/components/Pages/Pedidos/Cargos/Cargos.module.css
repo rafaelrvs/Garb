@@ -17,15 +17,16 @@
     transition: 0.1s;
 }
 
+.linha:hover{
+    scale: 1.01;
+}
+
 .text{
     color: var(--background);
     font-weight: bold;
     font-size: 1.5rem;
 }
-.text:hover{
-    scale: 1.01;
-    transition: 0.1s;
-}
+
 
 .qtdeCargo{
     display: flex;
@@ -40,4 +41,10 @@
 
 .qtdeCargo p{
     color: white;
+}
+
+@media (max-width:1120px) {
+    .linha:hover{
+        scale: 1;
+    }
 }

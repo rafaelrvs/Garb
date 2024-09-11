@@ -4,6 +4,7 @@ import { empresas } from '../../../../DB/empresas';
 import { GlobalContext } from '../../../../Context/GlobalContext';
 import { useNavigate } from 'react-router-dom';
 import Produto from '../Produto/Produto';
+import Voltar from '../../../Voltar/Voltar'
 
 const Cargos = () => {
   const navigate = useNavigate();
@@ -32,8 +33,9 @@ const Cargos = () => {
 
   return (
     <div>
+      <Voltar/>
       <h3>Selecione o cargo disponível</h3>
-      <div className={styles.lista}>
+      <div className={`${styles.lista} animeLeft`}>
         {cargos.map((cargo) => (
           <div key={cargo.id} >
             <div className={styles.linha} onClick={() => abrirProdutos(cargo.id)}>

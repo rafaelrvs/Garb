@@ -35,9 +35,11 @@ export const GlobalStorage = ({ children }) => {
     window.localStorage.setItem("carrinho", JSON.stringify(carrinho));
   }, [carrinho]);
 
-  console.log(carrinho);
+  // console.log(carrinho);
 
   const [visible, setVisible] = useState(true);
+
+  const [tamanhoSelecionado, setTamanhoSelecionado] = useState('');
 
 
   return (
@@ -49,6 +51,7 @@ export const GlobalStorage = ({ children }) => {
         popUp, setPopUp,
         popupTimeoutRef,
         visible, setVisible,
+        tamanhoSelecionado, setTamanhoSelecionado
       }}
     >
       {children}

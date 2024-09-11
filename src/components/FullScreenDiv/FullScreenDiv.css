@@ -1,47 +1,40 @@
 .sleep-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com opacidade */
-  z-index: 9999; /* Alta prioridade para estar na frente de todos os elementos */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 2rem;
-  transform: translateY(-100%); /* Começa fora da tela (em cima) */
-  opacity: 0; /* Inicialmente invisível */
-  transition: opacity 0.5s ease-in-out;
+  z-index: 9998;
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-100%);
+  transition: transform 0.9s ease-in-out;
 }
 
 .sleep-screen.visible {
-  opacity: 1; /* Torna a div visível */
+  opacity: 1;
 }
 
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%); /* Começa fora da tela (em cima) */
-  }
-  to {
-    transform: translateY(0); /* Move a div para sua posição padrão (tela cheia) */
-  }
+.video-screen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(0); /* Posição padrão */
-  }
-  to {
-    transform: translateY(-100%); /* Sobe para fora da tela (em cima) */
-  }
+.logoScreen {
+  position: absolute;
+  height: 20vh;
+  z-index: 9999;
+  transition: transform 0.1s ease-in-out;
+
 }
 
 .sleep-screen.slideDown {
-  animation: slideDown 0.5s ease-in-out forwards; /* Animação de entrada (descer) */
+  transform: translateY(0);
 }
 
 .sleep-screen.slideUp {
-  animation: slideUp 0.5s ease-in-out forwards; /* Animação de saída (subir) */
+  transform: translateY(-100%);
 }

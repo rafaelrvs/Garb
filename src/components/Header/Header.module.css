@@ -1,14 +1,16 @@
 .containerLogos{
-    justify-content: center;
+    display: flex;
+    padding: 0 20px;
+    flex-wrap: wrap;
     background-color: var(--background);
 }
 
 .logos{
     display: flex;
     flex-wrap: wrap;
+    width: 100vw;
     justify-content: space-between;
     align-items: center;
-    margin: 0 30px;
 }
 
 .logoImg{
@@ -17,7 +19,7 @@
 }
 
 .nav{
-    margin-top: 30px;
+    padding-top: 30px;
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -44,4 +46,16 @@
     border-radius: 5px 5px 0 0;
     background-color: var(--background);
     transition: 0.3s;
+}
+
+
+
+@media (max-width:1120px) {
+    .logoImg{
+        height: 100%;
+        width: 10rem;
+    }
+    .nav{
+        gap: 0;
+    }
 }

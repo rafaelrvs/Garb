@@ -2,9 +2,6 @@ import React, { useContext, useState } from 'react'
 import styles from './Quantidade.module.css'
 import { GlobalContext } from '../../Context/GlobalContext';
 
-
-
-
 const Quantidade = () => {
     const { quantidade, setQuantidade, ...props} = useContext(GlobalContext);
 
@@ -32,7 +29,7 @@ const Quantidade = () => {
         <input className={styles.quantidadeNumber} type="text" value={quantidade} onChange={handleChange}/>
         <button onClick={incrementar} className={styles.quantidadeButton}>+</button>
       </div>
-        <p className={styles.texto}>Qtde</p>
+        
       </div>
     );
 };

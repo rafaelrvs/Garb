@@ -1,15 +1,15 @@
 .container{
     display: flex;
     flex-direction: column;
-    height: 75vh;
+    min-height: 30vh; 
     width: 90vw;
     margin: 0 auto 30px auto;
     padding: 20px;
     border-radius: 15px;
     background-color: var(--background);
+    overflow-x: hidden;
     overflow-y: auto;
     filter: drop-shadow(0 0 0.15rem rgb(71, 71, 71));
-
 }
 
 .header{
@@ -18,9 +18,22 @@
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
+    padding: 20px 0;
+    gap: 20px;
 }
 
-.header div{
+.containerFiltro{
+    display: flex;
+    align-items: end;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.containerFiltro img{
+    height: 2rem;
+}
+
+.buttonsHeader{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -29,11 +42,12 @@
 }
 
 .btnAcompanha, .btnCarrinho{
-    border: 2px solid ;
+    display: flex;
+    border: 2px solid;
     width: 150px;
-    height: 40px;
-    text-align: center;
-    padding: 1px;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
     border-radius: 7px;
 }
 
@@ -42,16 +56,14 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    
 }
 
 .btnCarrinho p{
     position: absolute;
     display: flex;
     justify-content: center;
-    font-size: 1.1rem;
     top: -35%;
-    right:  -5%;
+    right: -5%;
     width: 25px;
     height: 25px;
     text-align: center;
@@ -59,5 +71,11 @@
     background-color: red;
     border: 2px solid #fff;
     text-align: center;
+}
 
+
+.LinhaStyle{
+    width: 100%;
+    height: 0.1rem;
+    background-color: white;
 }
