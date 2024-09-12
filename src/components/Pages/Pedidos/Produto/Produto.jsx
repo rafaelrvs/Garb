@@ -47,7 +47,7 @@ const Produto = ({ cargoID }) => {
   }, [cargoID]);
 
   if (!produtos.length) {
-    return <div>Carregando produtos...</div>;
+    return <div></div>;
   }
 
   const handlePrevious = () => {
@@ -94,6 +94,7 @@ const Produto = ({ cargoID }) => {
           descricao: produtos[currtenProduto].descricao,
           preco: produtos[currtenProduto].preco,
           cor: produtos[currtenProduto].cor,
+          img:produtos[currtenProduto].img,
           tamanho: selectedSize, // Adiciona o tamanho selecionado
           quantidade: quantidade, // Adiciona a quantidade selecionada
         },
@@ -123,7 +124,6 @@ const Produto = ({ cargoID }) => {
     setQuantidade(1);
   };
   
-
   return (
     <div className={styles.containerProduto}>
       <div id={produtos[currtenProduto].codigo} ref={currentProdForSizebay} className={`${styles.Produto} ${direction === 'right'? styles['slide-right'] : styles['slide-left']}`}>
@@ -136,16 +136,16 @@ const Produto = ({ cargoID }) => {
           <h1 className={styles.descricao} >{produtos[currtenProduto].descricao}</h1>
           <div  className={styles.infoProd}>
             <div className={styles.column1}>
-              <span className={styles.fiealdCod}>Cod.: {produtos[currtenProduto].codigo}</span>
-              <span className={styles.preco}>R$ {produtos[currtenProduto].preco}</span>
+              <span className={styles.cor}>Cod.: {produtos[currtenProduto].codigo}</span>
               <span className={styles.cor}>Cor: <span>{produtos[currtenProduto].cor}</span></span>
+              <span className={styles.preco}>R$ {produtos[currtenProduto].preco}</span>
             </div>
             <div className={styles.column2}>
+                <Grade grade={produtos[currtenProduto].grade}/>
               {/*-------------------------------SIZEBAY-------------------------------*/}
               <div className={styles.provador} ref={sizeBay} data-produto={produtos[currtenProduto].codigo}>              
               
               </div>
-                <Grade grade={produtos[currtenProduto].grade}/>
             </div>
 
           </div>

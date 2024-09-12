@@ -29,11 +29,17 @@ export const GlobalStorage = ({ children }) => {
   });
 
 
-
-
   useEffect(() => {
     window.localStorage.setItem("carrinho", JSON.stringify(carrinho));
   }, [carrinho]);
+
+  const [quantidades, setQuantidades] = useState({});
+  const updateQuantidade = (id, tamanho, quantidade) => {
+    setQuantidades(prevQuantidades => ({
+      ...prevQuantidades,
+      [`${id}-${tamanho}`]: quantidade, // Usa id e tamanho como chave única
+    }));
+  };
 
   // console.log(carrinho);
 
@@ -41,17 +47,18 @@ export const GlobalStorage = ({ children }) => {
 
   const [tamanhoSelecionado, setTamanhoSelecionado] = useState('');
 
-
   return (
     <GlobalContext.Provider
       value={{
         cargos, setCargos,
         carrinho, setCarrinho,
         quantidade,setQuantidade,
+        quantidades, setQuantidades,
+        updateQuantidade,
         popUp, setPopUp,
         popupTimeoutRef,
         visible, setVisible,
-        tamanhoSelecionado, setTamanhoSelecionado
+        tamanhoSelecionado, setTamanhoSelecionado,
       }}
     >
       {children}

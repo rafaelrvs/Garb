@@ -1,22 +1,13 @@
 .container{
     display: flex;
     flex-direction: column;
-    min-height: 500px;
+    min-height: 40vh; 
     width: 90vw;
     margin: 0 auto 30px auto;
     padding: 20px;
     border-radius: 15px;
     background-color: var(--background);
-    overflow-x: none;
+    overflow-x: hidden;
     overflow-y: auto;
     filter: drop-shadow(0 0 0.15rem rgb(71, 71, 71));
-}
-
-
-@media (max-width:1120px) {
-    .container{
-        width: 100%;
-        padding: 0;
-        min-height: 550px;
-    }
 }

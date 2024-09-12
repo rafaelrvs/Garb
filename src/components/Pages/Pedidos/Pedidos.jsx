@@ -9,7 +9,8 @@ import FiltroSVG from '../../../images/Filtro.svg'
 
 const Pedidos = () => {
   const {carrinho} = useContext(GlobalContext);
-  const totalQuantidade = carrinho.reduce((total, item) => {
+  
+  const totalQuantidadeCarrinho = carrinho.reduce((total, item) => {
     return total + item.quantidade;
   }, 0);
   
@@ -26,7 +27,7 @@ const Pedidos = () => {
           </div>
           <div className={styles.buttonsHeader}>
             <NavLink to={'/pedidos/AcompanharPedidos'} className={styles.btnAcompanha} >Meus Pedidos</NavLink>
-            <NavLink to={'/pedidos/carrinho'}  className={styles.btnCarrinho}><p>{totalQuantidade}</p>Meu Carrinho </NavLink>
+            <NavLink to={'/pedidos/carrinho'}  className={styles.btnCarrinho}><p>{totalQuantidadeCarrinho}</p>Meu Carrinho </NavLink>
           </div>
           <div className={styles.LinhaStyle}></div>
         </div>
