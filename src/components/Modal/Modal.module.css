@@ -1,0 +1,102 @@
+.containerModal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    width: 90vw;
+    top:45%;
+    left: -50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    z-index: 11;
+    background-color: var(--background);
+    animation: moveModal ease 0.5s forwards;
+
+}
+@keyframes moveModal {
+    0% {
+        left: -50%;
+    }
+    100% {
+        left: 50%;
+    }
+}
+.containerModal p {
+    display: flex;
+    justify-content: end;
+    
+}
+
+.containerModal p span{
+    position: fixed;
+    top: -10px;
+    right:  -10px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    color: #fff;
+    z-index: 999;
+
+    cursor: pointer;
+    
+}
+
+.containerPedidoHeader{
+    display: flex;
+    height: 90px;
+    width: 90%;
+    padding: 5px;
+    margin-top: 25px;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 5px;
+    color: var(--background);
+}
+.containerPedidoHeader h1 ,.containerPedidoHeader p{
+    text-align: end;
+    color: var(--background);
+}
+.containerPedidoHeader p{
+    font-weight: 800;
+    color: var(--background);
+}
+.hr{
+    display: flex;
+    width: 90%;
+    margin-top: 10px;
+}
+.containerContent{
+    display: grid;
+  
+    grid-template-columns: 500px 370px;
+    color: #fff;
+    
+}
+.produtoListado{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.produtoListado div p{
+    text-align: center;
+    color: var(--background);
+}
+.produtoListado div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

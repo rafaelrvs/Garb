@@ -34,6 +34,9 @@ export const GlobalStorage = ({ children }) => {
   });
 
 
+
+  const [modal,setModal] = useState(false)
+
   useEffect(() => {
     window.localStorage.setItem("carrinho", JSON.stringify(carrinho));
   }, [carrinho]);
@@ -51,6 +54,7 @@ export const GlobalStorage = ({ children }) => {
   const [visible, setVisible] = useState(true);
 
   const [tamanhoSelecionado, setTamanhoSelecionado] = useState('');
+  const [valueModal,  setValueModal] = useState('');
 
   return (
     <GlobalContext.Provider
@@ -64,7 +68,9 @@ export const GlobalStorage = ({ children }) => {
         popupTimeoutRef,
         visible, setVisible,
         tamanhoSelecionado, setTamanhoSelecionado,
-        pedidos, setPedidos
+        pedidos, setPedidos,
+        modal,setModal,
+        valueModal,  setValueModal
       }}
     >
       {children}
