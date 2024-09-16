@@ -6,6 +6,7 @@ import Cargos from './Cargos/Cargos'
 import { GlobalContext } from '../../../Context/GlobalContext'
 import Carrinho from './Carrinho/Carrinho'
 import FiltroSVG from '../../../images/Filtro.svg'
+import { AcompanhaPedido } from '../AcompanhaPedido/AcompanhaPedido'
 
 const Pedidos = () => {
   const {carrinho} = useContext(GlobalContext);
@@ -36,6 +37,7 @@ const Pedidos = () => {
           <Route path='/' element={<Empresa/>}/>
           <Route path={`/:id`} element={<Cargos/>} /> 
           <Route path={'/carrinho/'} element={<Carrinho/>}/>
+          <Route path={'/AcompanharPedidos'} element={<AcompanhaPedido/>}/>
         </Routes>
       </div>
       

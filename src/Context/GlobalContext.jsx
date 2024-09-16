@@ -28,6 +28,11 @@ export const GlobalStorage = ({ children }) => {
     return savedCarrinho ? JSON.parse(savedCarrinho) : [];
   });
 
+  const [pedidos, setPedidos] = useState(() => {
+    const savedPedidos = window.localStorage.getItem("pedidos");
+    return savedPedidos ? JSON.parse(savedPedidos) : [];
+  });
+
 
   useEffect(() => {
     window.localStorage.setItem("carrinho", JSON.stringify(carrinho));
@@ -59,6 +64,7 @@ export const GlobalStorage = ({ children }) => {
         popupTimeoutRef,
         visible, setVisible,
         tamanhoSelecionado, setTamanhoSelecionado,
+        pedidos, setPedidos
       }}
     >
       {children}

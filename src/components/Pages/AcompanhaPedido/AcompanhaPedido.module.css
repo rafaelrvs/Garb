@@ -1,0 +1,61 @@
+.ContainrePedidos{
+    display: grid;
+  
+    gap: 10px;
+    height: 15vh;
+    width: 90%;
+    margin: 0 auto;
+}
+.itensPedidos{
+    height: 150px;
+    width: 90%;
+    background-color: #eee;
+}
+
+.containerPedido{
+    display: flex;
+    align-items: center;
+    background-color:#fff;
+    border-radius: 5px;
+    height: 100px;
+    box-shadow: 0px 0px 5px #eeeeee6e;
+}
+
+
+.containerPedido .itensPedido{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+
+    margin: 0 auto;
+    height: 50px;
+    font-size: 1rem;
+    
+}
+
+
+
+
+.itensPedido h3, span{
+    display: flex;
+    color: var(--background);
+}
+.btnVerItens{
+    background-color:var(--background);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 400;
+}
+
+.itensPedido div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      
+}
+.itensPedido ,div,span{
+    color: var(--background);
+    
+}

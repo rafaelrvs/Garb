@@ -19,7 +19,7 @@ const FullScreenDiv = () => {
         setTimeout(() => {
           setVisible(true); // Torna o componente visível após a animação de entrada começar
         }, 100); // Pequeno atraso para a animação aparecer
-      }, 60000); // 1 segundo de inatividade
+      }, 160000); // 1 segundo de inatividade
     };
 
     // Função para resetar o timer e animar a saída quando ocorre um clique ou scroll

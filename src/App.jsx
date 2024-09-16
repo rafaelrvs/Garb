@@ -8,6 +8,7 @@ import Chamados from './components/Pages/Chamados/Chamados';
 import Relatorios from './components/Pages/Relatorios/Relatorios';
 import { GlobalStorage } from './Context/GlobalContext';
 
+
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/trocas' element={<Trocas/>}/>
           <Route path='/chamados' element={<Chamados/>}/>
           <Route path='/relatorios' element={<Relatorios/>}/>
+    
         </Routes>
       </BrowserRouter>
     </GlobalStorage>
