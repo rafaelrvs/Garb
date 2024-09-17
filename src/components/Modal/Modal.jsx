@@ -15,6 +15,8 @@ export const Modal = () => {
         }
     }, [pedidoSelecionado]); // Atualiza quando o pedidoSelecionado mudar
 console.log(produtoModal);
+console.log(produtoModal);
+
 
     return (
         <div className={styles.containerModal}>
@@ -28,6 +30,9 @@ console.log(produtoModal);
             </div>
             <hr className={styles.hr} />
             <div className={styles.containerContent}>
+                <div>
+
+                <h3>Item</h3>
                 {produtoModal.map((item, index) => (
                     <div key={index} className={styles.produtoListado}>
                        <div>
@@ -50,8 +55,24 @@ console.log(produtoModal);
                         Preço R$
                              <p>{item.preco}</p>
                         </div> 
+                        <img 
+                            src={`/src/images/produtos/${item.img}`}
+                            alt="aaaa" 
+                            className={styles.image}
+                        />
                     </div>
                 ))}
+
+                </div>
+
+
+                <div>
+                    <h1>Detalhe</h1>
+                    <div className={styles.containerDetalhe} >
+
+                    </div>
+
+                </div>
 
             </div>
 
