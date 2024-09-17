@@ -5,7 +5,7 @@
     align-items: center;
     height: 70vh;
     width: 90vw;
-    top:40%;
+    top:45%;
     left: -50%;
     transform: translate(-50%,-50%);
     border-radius: 5px;
@@ -149,6 +149,7 @@ width: 90%;
     width: 25px;
     border-radius: 50%;
     background-color: var(--background);
+
 }
 
 .statusPedido .LinhaTempo{
@@ -157,4 +158,24 @@ width: 90%;
     border: none;
     padding: 3px;
     background-color: var(--background);
+}
+
+.containerDetalhe span{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--background);
+    font-size: 
+    0.9rem;
+  
+    padding: 15px;
+}
+.containerContent .frete, .containerContent .CodRAstreio{
+    margin-top: 10px;
+color: var(--background);
+font-size: 1rem;
+ display: flex;
+ align-items: start;
+ flex-direction: row;
+ padding:  5px 25px;
 }

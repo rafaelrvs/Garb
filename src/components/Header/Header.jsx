@@ -19,6 +19,7 @@ import PopUp from '../PopUp/PopUp'
 import { GlobalContext } from '../../Context/GlobalContext'
 import FullScreenDiv from '../FullScreenDiv/FullScreenDiv'
 import { Modal } from '../Modal/Modal'
+import Voltar from '../Voltar/Voltar'
 
 
 
@@ -70,8 +71,10 @@ const Header = () => {
         </NavLink>
       </nav>
       <PopUp status={popUp.status} color={popUp.color}>{popUp.children}</PopUp>
+  
       {modal &&<Modal  />}
       <FullScreenDiv/>
+    
     </header>
   )
 }

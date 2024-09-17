@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './Modal.module.css';
 import { GlobalContext } from '../../Context/GlobalContext';
 
+
 export const Modal = () => {
     const { setModal, pedidos, valueModal } = useContext(GlobalContext);
     const [produtoModal, setProdutoModal] = useState([]);
@@ -20,8 +21,9 @@ export const Modal = () => {
 
     return (
         <div className={styles.containerModal}>
+                 
             <p><span onClick={() => setModal(false)}>X</span></p>
-            <div className={styles.containerPedidoHeader}>
+            <div className={`${styles.containerPedidoHeader} animeLeft`}>
                 <p>  <strong> Pedido ID:   </strong> {pedidoSelecionado.id}</p>
                 <p>  <strong> Status:   </strong> {pedidoSelecionado.status}</p>
                 <p>  <strong> Quantidade Total:  </strong> {pedidoSelecionado.qtdeTotal}</p>
@@ -37,6 +39,7 @@ export const Modal = () => {
                 <div>
                         <br />
                     <h2>Item</h2>
+                            <br />
                     {produtoModal.map((item, index) => (
                         <div key={index} className={styles.produtoListado}>
                             <div>
@@ -73,9 +76,9 @@ export const Modal = () => {
                 <div>
                     <br />
                     <h2>Detalhe</h2>
-                    <div className={styles.containerDetalhe} >
+                    <br />
+                    <div className={`${styles.containerDetalhe} animeLeft`} >
                         <h3>Acompanhamento</h3>
-                        <hr className={styles.hrDetalhes} />
 
                         <div className={styles.statusPedido}>
                             <p className={styles.status2}>
@@ -95,8 +98,29 @@ export const Modal = () => {
 
 
                         </div>
-                       <p> Aprovação Produção Envio Entrega</p>
+                         <span>
+                            <strong>
 
+                            Aprovação  
+                            </strong>
+                            <strong>
+
+                             Produção
+                            </strong>
+                            <strong>
+
+                             Envio
+                            </strong>
+                            <strong>
+
+                              Entrega
+                            </strong>
+                        </span>
+
+                        <hr className={styles.hrDetalhes} />
+                        <p className={styles.frete}><strong>Frete:</strong> R$ 25,39</p>
+                        <p className={styles.CodRAstreio}> <strong>Cod Rastreio: </strong>121EF2A54S5D</p>
+                   
                     </div>
 
                 </div>

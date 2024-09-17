@@ -22,7 +22,7 @@ export const AcompanhaPedido = () => {
 
 
     return (
-        <div className={styles.ContainrePedidos}>
+        <div className={`${styles.ContainrePedidos} animeLeft`}>
 
 
             {pedidos.length > 0 && pedidos.map((pedido) => (
@@ -63,7 +63,7 @@ export const AcompanhaPedido = () => {
                     </span>
 
 
-                    <button className={styles.btnVerItens} value={pedido.id} onClick={handleActiveModal} >Ver itens</button>
+                    <button className={styles.btnVerItens}  value={pedido.id} onClick={handleActiveModal} >Ver itens</button>
                 </div>
 
 

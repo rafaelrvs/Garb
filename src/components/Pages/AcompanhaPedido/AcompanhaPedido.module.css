@@ -1,9 +1,11 @@
 .ContainrePedidos{
     display: grid;  
+
     gap: 10px;
     height: 50vh;
     width: 100%;
     margin: 0 auto;
+    
 }
 
 .containerItensDoPedido{
@@ -16,21 +18,21 @@
     background-color: #ffff;
     color: var(--background);
     font-size: 1.5rem;
-
+    
 }
 .containerItensDoPedido  strong{
     color: var(--background);
- 
-  
+    
+    
 }
 .containerItensDoPedido  span{
-display: flex;
-flex-direction: column;
-
-font-size: 1.2rem;
-
- 
-  
+    display: flex;
+    flex-direction: column;
+    
+    font-size: 1.2rem;
+    
+    
+    
 }
 
 
@@ -39,6 +41,20 @@ font-size: 1.2rem;
     color: #ffff;
     border-radius: 5px;
     border: none;
-    cursor: pointer;
+    cursor: pointer
+    ;
     background-color: var(--background);
 }
+
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+    
