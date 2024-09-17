@@ -5,7 +5,7 @@
     align-items: center;
     height: 70vh;
     width: 90vw;
-    top:45%;
+    top:40%;
     left: -50%;
     transform: translate(-50%,-50%);
     border-radius: 5px;
@@ -21,10 +21,20 @@
     100% {
         left: 50%;
     }
+
+
+    
 }
-.containerModal p {
+.containerModal p{
     display: flex;
-    justify-content: end;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.3rem;
+}
+.containerModal strong {
+
+    color: var(--background);
     
 }
 
@@ -59,10 +69,7 @@
     border-radius: 5px;
     color: var(--background);
 }
-.containerPedidoHeader h1 ,.containerPedidoHeader p{
-    text-align: end;
-    color: var(--background);
-}
+
 .containerPedidoHeader p{
     font-weight: 800;
     color: var(--background);
@@ -71,6 +78,12 @@
     display: flex;
     width: 90%;
     margin-top: 10px;
+}
+
+
+.fragmentacao{
+   
+    background-color: red;
 }
 .containerContent{
 display: flex;
@@ -105,9 +118,43 @@ width: 90%;
     border-radius: 5px;
     width: 350px;
     background-color: #fff;
+    color: var(--background);
+}
+.containerDetalhe h3{
+    padding: 15px;
+    color: var(--background);
 }
 
+.hrDetalhes{
+    width: 90%;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+  
+}
 .image{
     height:100% ;
     
+}
+
+.statusPedido{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 25px;
+    z-index: 222;
+}
+.statusPedido p{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: var(--background);
+}
+
+.statusPedido .LinhaTempo{
+    position: fixed;
+    width: 250px;
+    border: none;
+    padding: 3px;
+    background-color: var(--background);
 }
