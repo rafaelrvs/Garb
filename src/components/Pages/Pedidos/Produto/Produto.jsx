@@ -7,7 +7,7 @@ import { GlobalContext } from '../../../../Context/GlobalContext';
 const Produto = ({ cargoID }) => {
   const [produtos, setProdutos] = useState([]);
   const [currtenProduto, setCurrentProduto] = useState(0);
-  const [direction, setDirection] = useState('slide-left'); // Estado para controlar a direção da animação
+  const [direction, setDirection] = useState(''); // Estado para controlar a direção da animação
   const {carrinho,setCarrinho,quantidade, setPopUp,popupTimeoutRef,setQuantidade, tamanhoSelecionado} = useContext(GlobalContext);
   
   const sizeBay=useRef();
@@ -16,10 +16,14 @@ const Produto = ({ cargoID }) => {
   useEffect(() => {
     if (sizeBay.current && produtos.length > 0) {
       // Certificando de que a função SizebayInitLookbook está disponível
+      setTimeout(()=>{
+        if(direction === 'right' || 'left'){
+          setDirection('')          
+        }
+      },350)
+
       async function initSizebay(){
         if (typeof window.SizebayInitLookbook === 'function') {
-          console.log('teste');
-          
           SizebayInitLookbook();
         } else {
           console.error('Função SizebayInitLookbook não encontrada');
@@ -51,14 +55,21 @@ const Produto = ({ cargoID }) => {
   }
 
   const handlePrevious = () => {
-    setDirection('left'); // Define a direção da animação como da esquerda
-    setCurrentProduto((current) => Math.max(0, current - 1));
-    
+    if (currtenProduto > 0) { // Verifica se há um produto anterior
+      setDirection('left'); // Define a direção da animação como da esquerda
+      setCurrentProduto((current) => current - 1);
+    } else {
+      console.warn("Não há mais produtos anteriores!");
+    }
   };
-
+  
   const handleNext = () => {
-    setDirection('right'); // Define a direção da animação como da direita
-    setCurrentProduto((current) => Math.min(produtos.length - 1, current + 1));
+    if (currtenProduto < produtos.length - 1) { // Verifica se há um próximo produto
+      setDirection('right'); // Define a direção da animação como da direita
+      setCurrentProduto((current) => current + 1);
+    } else {
+      console.warn("Não há mais produtos à frente!");
+    }
   };
 
   const handleADDProduct = (selectedSize) => {
@@ -126,7 +137,11 @@ const Produto = ({ cargoID }) => {
   
   return (
     <div className={styles.containerProduto}>
-      <div id={produtos[currtenProduto].codigo} ref={currentProdForSizebay} className={`${styles.Produto} ${direction === 'right'? styles['slide-right'] : styles['slide-left']}`}>
+      <div 
+        id={produtos[currtenProduto].codigo} 
+        ref={currentProdForSizebay} 
+        className={`${styles.Produto} ${direction === 'right'? styles['slide-right']: ''}  ${direction === 'left' ?styles['slide-left']:''}`}
+      >
         <img
           src={`/src/images/produtos/${produtos[currtenProduto].img}`} 
           alt={produtos[currtenProduto].codigo} 
