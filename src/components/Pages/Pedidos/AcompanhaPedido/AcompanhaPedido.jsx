@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import styles from "./AcompanhaPedido.module.css"
 
 import { GlobalContext } from '../../../../Context/GlobalContext';
+import Voltar from '../../../Voltar/Voltar';
 
 export const AcompanhaPedido = () => {
 
@@ -15,6 +16,7 @@ export const AcompanhaPedido = () => {
 
     return (
         <div className={`${styles.ContainrePedidos} animeLeft`}>
+            <Voltar/>
             {pedidos.length > 0 && pedidos.map((pedido) => (
                 <div key={pedido.id} className={styles.containerItensDoPedido}>
                     <span>

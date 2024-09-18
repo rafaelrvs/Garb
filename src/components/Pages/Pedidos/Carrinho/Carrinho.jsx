@@ -3,6 +3,7 @@ import styles from './Carrinho.module.css';
 import { GlobalContext } from '../../../../Context/GlobalContext';
 import { Link, useNavigate } from 'react-router-dom';
 import QuantidadeFPedido from '../../../QuantidadeFPedido/QuantidadeFPedido';
+import Voltar from '../../../Voltar/Voltar';
 
 const Carrinho = () => {
   const { carrinho, quantidades } = useContext(GlobalContext);
@@ -59,6 +60,8 @@ const Carrinho = () => {
   }, [carrinho, quantidades]);
 
   return (
+    <>
+        <Voltar/>
     <section className={styles.Container}>
       <div className={styles.colunaUm}>
         {carrinho.length ? (
@@ -90,6 +93,7 @@ const Carrinho = () => {
         </Link>
       </div>
     </section>
+    </>
   );
 };
 
