@@ -10,7 +10,7 @@
   position: relative;
   overflow-x: hidden;
   top: -5px;
-  background-color: rgb(245, 245, 245);
+  background-color: #DBDBDB;
   border-radius: 0 0 5px 5px;
   opacity: 0;
   animation: growDown 1s forwards; /* Animação de crescimento */

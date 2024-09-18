@@ -30,12 +30,13 @@
     flex-wrap: wrap;
     gap: 20px;
     min-height: 4rem;
-    background-color: white;  
     align-items: center; 
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.1s;
+    background-color: white;
+
 }
 
 .linha:hover{

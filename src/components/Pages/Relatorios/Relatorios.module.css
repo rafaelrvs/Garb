@@ -5,9 +5,9 @@
     max-width: 1080px;
     margin: 0 auto 30px auto;
     padding: 20px;
-    border-radius: 15px;
-    background-color: var(--background);
     overflow-x: hidden;
     overflow-y: auto;
-    filter: drop-shadow(0 0 0.15rem rgb(71, 71, 71));
+    border-radius: 15px;
+    background: rgba(38, 23, 56, 0.493);
+    filter: drop-shadow(0 0 0.15rem rgb(0, 0, 0));
 }

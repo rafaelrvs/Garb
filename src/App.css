@@ -1,7 +1,7 @@
 *{
   margin: 0;
   padding: 0;
-  color: white;
+  color: #fff;
   text-decoration: none;
   box-sizing: border-box;
 }
@@ -11,6 +11,21 @@
   --background2: #200a30;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
+}
+body{
+  /* background-image: url('/public/background\ apresentação.jpg'); */
+  background-size: cover;
+  background: rgb(38,23,56);
+  background: linear-gradient(90deg, rgba(38,23,56,1) 0%, rgba(102,51,153,1) 50%, rgba(179,61,38,1) 100%);
+
+}
+
+.tituloVerdana{
+  background: rgb(102,51,153);
+  background: linear-gradient(90deg, rgba(102,51,153,1) 0%, rgba(106,52,147,1) 33%, rgba(179,61,38,1) 97%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
 }
 
 *::-webkit-scrollbar {

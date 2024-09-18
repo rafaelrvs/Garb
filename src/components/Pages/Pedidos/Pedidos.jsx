@@ -21,7 +21,7 @@ const Pedidos = () => {
     <>
     <section className={styles.container}>
 
-        <h1>Pedidos</h1>
+        <h1 className=''>Pedidos</h1>
         <div className={styles.header}>
           <div className={styles.containerFiltro}>
             <img src={FiltroSVG} alt="" />

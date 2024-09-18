@@ -2,7 +2,9 @@
     display: flex;
     padding: 0 20px;
     flex-wrap: wrap;
-    background-color: var(--background);
+    /* background-color: var(--background); */
+    background: rgba(0, 0, 0, 0.199);
+    filter: drop-shadow(0 0 0.15rem rgb(0, 0, 0));
 }
 
 .logos{
