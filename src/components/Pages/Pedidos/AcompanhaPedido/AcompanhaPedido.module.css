@@ -1,8 +1,6 @@
 .ContainrePedidos{
     display: grid;  
-
     gap: 10px;
-    height: 50vh;
     width: 100%;
     margin: 0 auto;
     
@@ -18,7 +16,6 @@
     background-color: #ffff;
     color: var(--background);
     font-size: 1.5rem;
-    
 }
 .containerItensDoPedido  strong{
     color: var(--background);
