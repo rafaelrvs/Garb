@@ -64,7 +64,7 @@ const Carrinho = () => {
         {carrinho.length ? (
           carrinho.map(produto => (
             <div key={`${produto.cod}-${produto.tamanho}`} className={styles.produto}>
-              <img src={`/src/images/produtos/${produto.img}`} alt="" />
+              <img src={`/images/produtos/${produto.img}`} alt="" />
               <h1 className={styles.nome}>{produto.descricao}</h1>
               <h1 className={styles.tamanho}>Tamanho: {produto.tamanho}</h1>
               <span className={styles.preco}>Preço: R${produto.preco}</span>

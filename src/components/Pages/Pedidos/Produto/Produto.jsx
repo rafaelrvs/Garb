@@ -143,7 +143,7 @@ const Produto = ({ cargoID }) => {
         className={`${styles.Produto} ${direction === 'right'? styles['slide-right']: ''}  ${direction === 'left' ?styles['slide-left']:''}`}
       >
         <img
-          src={`/src/images/produtos/${produtos[currtenProduto].img}`} 
+          src={`/images/produtos/${produtos[currtenProduto].img}`} 
           alt={produtos[currtenProduto].codigo} 
           className={styles.imgProduto}
         />

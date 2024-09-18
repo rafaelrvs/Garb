@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '../../Context/GlobalContext';
 import './FullScreenDiv.css'; // Importa o CSS
-import SVGLogoGarb from '../../images/Header/Logo_Garb.svg';
+import SVGLogoGarb from '../../../public/images/Header/Logo_Garb.svg';
 import videoSource from '../../videos/video_garb.mp4';
 
 const FullScreenDiv = () => {

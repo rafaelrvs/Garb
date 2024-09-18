@@ -63,7 +63,7 @@ export const Modal = () => {
                                         <p>{item.preco}</p>
                                     </div>
                                     <img
-                                        src={`/src/images/produtos/${item.img}`}
+                                        src={`/images/produtos/${item.img}`}
                                         alt="aaaa"
                                         className={styles.image}
                                     />

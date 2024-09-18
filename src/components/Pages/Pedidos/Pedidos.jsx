@@ -5,7 +5,7 @@ import Empresa from './Empresa/Empresa'
 import Cargos from './Cargos/Cargos'
 import { GlobalContext } from '../../../Context/GlobalContext'
 import Carrinho from './Carrinho/Carrinho'
-import FiltroSVG from '../../../images/Filtro.svg'
+import FiltroSVG from '../../../../public/images/Filtro.svg'
 import { AcompanhaPedido } from './AcompanhaPedido/AcompanhaPedido'
 
 

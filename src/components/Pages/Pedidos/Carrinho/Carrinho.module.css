@@ -51,7 +51,7 @@
   .produto {
     display: grid;
     gap: 10px;
-    max-height: 220px;
+    height: 220px;
     grid-template-columns: 150px auto auto auto;
     grid-template-rows: 60px auto auto auto;
     grid-template-areas: 
@@ -72,9 +72,9 @@
     background-color: rgb(202, 202, 202);
     border-radius: 4px;
     grid-area: img;
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
-    height: 100%;
+    height: 200px;
   }
   
   .nome {
