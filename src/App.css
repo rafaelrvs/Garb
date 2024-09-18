@@ -12,13 +12,27 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
-body{
-  /* background-image: url('/public/background\ apresentação.jpg'); */
-  background-size: cover;
-  background: rgb(38,23,56);
-  background: linear-gradient(90deg, rgba(38,23,56,1) 0%, rgba(102,51,153,1) 50%, rgba(179,61,38,1) 100%);
 
+body {
+  /* background-image: url('/public/background\ apresentação.jpg'); */
+  background: linear-gradient(90deg, rgba(38,23,56,1) 0%, rgba(102,51,153,1) 50%, rgba(179,61,38,1) 100%);
+  background-size: 200% 200%; /* Define o tamanho do fundo maior que o necessário */
+  animation: moveGradient 7s ease infinite; /* Aplica a animação */
 }
+
+/* Definindo a animação */
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 .tituloVerdana{
   background: rgb(102,51,153);
