@@ -9,6 +9,7 @@ const Produto = ({ cargoID }) => {
   const [currtenProduto, setCurrentProduto] = useState(0);
   const [direction, setDirection] = useState(''); // Estado para controlar a direção da animação
   const {carrinho,setCarrinho,quantidade, setPopUp,popupTimeoutRef,setQuantidade, tamanhoSelecionado} = useContext(GlobalContext);
+  const[gradeAnimacao,setGradeAnimacao] = useState(false)
   
   const sizeBay=useRef();
   const currentProdForSizebay=useRef();
@@ -71,30 +72,37 @@ const Produto = ({ cargoID }) => {
       console.warn("Não há mais produtos à frente!");
     }
   };
+  
+  const handleADDProduct = (selectedSize) => { 
+    
+    if(tamanhoSelecionado !== ""){
+    setGradeAnimacao(!gradeAnimacao)
 
-  const handleADDProduct = (selectedSize) => {
+    
     if (!produtos[currtenProduto]) {
       console.error("Produto não encontrado!");
       return;
     }
-  
+    
+    
+    
     // Verifica se o carrinho é válido
     const carrinhoAtual = carrinho || [];
-  
+    
     // Verifica se o produto com o mesmo código e tamanho já existe no carrinho
     const produtoExistente = carrinhoAtual.find(
       (item) =>
         item.cod === produtos[currtenProduto].codigo &&
-        item.tamanho === selectedSize // Verifica também o tamanho
-    );
-  
-    if (produtoExistente) {
-      // Se o produto já estiver no carrinho com o mesmo tamanho, atualiza a quantidade
+      item.tamanho === selectedSize // Verifica também o tamanho
+      );
+      
+      if (produtoExistente) {
+        // Se o produto já estiver no carrinho com o mesmo tamanho, atualiza a quantidade
       const novoCarrinho = carrinhoAtual.map((item) =>
         item.cod === produtos[currtenProduto].codigo && item.tamanho === selectedSize
           ? { ...item, quantidade: item.quantidade + quantidade } // Atualiza a quantidade
           : item
-      );
+        );
       setCarrinho(novoCarrinho);
     } else {
       // Se for um novo produto ou um tamanho diferente, adiciona ao carrinho
@@ -112,17 +120,17 @@ const Produto = ({ cargoID }) => {
       ];
       setCarrinho(novoCarrinho);
     }
-  
+    
     setPopUp({
       status: true,
       color: "#46bba2",
       children: "Produto Adicionado ao Carrinho",
     });
-  
+    
     if (popupTimeoutRef.current) {
       clearTimeout(popupTimeoutRef.current);
     }
-  
+    
     popupTimeoutRef.current = setTimeout(() => {
       setPopUp({
         status: false,
@@ -133,6 +141,12 @@ const Produto = ({ cargoID }) => {
     }, 3000);
   
     setQuantidade(1);
+  }else{
+    setGradeAnimacao(true)
+  }
+
+
+  
   };
   
   return (
@@ -141,7 +155,7 @@ const Produto = ({ cargoID }) => {
         id={produtos[currtenProduto].codigo} 
         ref={currentProdForSizebay} 
         className={`${styles.Produto} ${direction === 'right'? styles['slide-right']: ''}  ${direction === 'left' ?styles['slide-left']:''}`}
-      >
+        >
         <img
           src={`/images/produtos/${produtos[currtenProduto].img}`} 
           alt={produtos[currtenProduto].codigo} 
@@ -156,7 +170,13 @@ const Produto = ({ cargoID }) => {
               <span className={styles.preco}>R$ {produtos[currtenProduto].preco}</span>
             </div>
             <div className={styles.column2}>
-                <Grade grade={produtos[currtenProduto].grade}/>
+                <Grade grade={produtos[currtenProduto].grade} gradeAnimacao={gradeAnimacao} />
+         
+                {gradeAnimacao && <p className={styles.alertGrade}> Selecione um tamanho !</p>}
+
+           
+                
+           
               {/*-------------------------------SIZEBAY-------------------------------*/}
               <div className={styles.provador} ref={sizeBay} data-produto={produtos[currtenProduto].codigo}>              
               
