@@ -4,15 +4,16 @@ import { GlobalContext } from '../../Context/GlobalContext';
 
 
 const Grade = ({ grade }) => {
-  const { tamanhoSelecionado, setTamanhoSelecionado } = useContext(GlobalContext);
+  const { tamanhoSelecionado, setTamanhoSelecionado,gradeAnimacao } = useContext(GlobalContext);
 
   // Função para lidar com a mudança de tamanho selecionado
   const handleSizeChange = (event) => {
     setTamanhoSelecionado(event.target.value); // Atualiza o tamanho selecionado no contexto global
+    
   };
 
   return (
-    <section className={styles.gradeContainer}>
+    <section className={!gradeAnimacao? styles.gradeContainer: styles.gradeContainerAnimado} >
       <select 
         className={styles.grade}
         value={tamanhoSelecionado} // Define o valor selecionado
@@ -25,6 +26,7 @@ const Grade = ({ grade }) => {
           </option>
         ))}
       </select>
+    
     </section>
   );
 };

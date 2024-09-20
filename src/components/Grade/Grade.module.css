@@ -27,3 +27,12 @@
     cursor: pointer;
 }
 
+
+.gradeContainerAnimado {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: start;
+    
+}
+
