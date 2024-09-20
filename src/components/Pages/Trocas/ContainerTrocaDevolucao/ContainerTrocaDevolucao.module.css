@@ -1,0 +1,21 @@
+.containerLista{ 
+    padding: 20px;
+    min-height: 0px;
+    width: 600px;
+    overflow-x: hidden;
+    align-self: center;
+    background-color: #DBDBDB;
+    border-radius: 5px;
+    opacity: 0;
+    animation: growDown 1s forwards; /* Animação de crescimento */
+  }
+
+@keyframes growDown {
+    0% {
+      height: 0px;
+    }
+    100% {
+      min-height: 350px;
+      opacity: 1;
+    }
+  }
