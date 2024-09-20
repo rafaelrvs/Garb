@@ -76,7 +76,7 @@ const Produto = ({ cargoID }) => {
   const handleADDProduct = (selectedSize) => { 
     
     if(tamanhoSelecionado !== ""){
-    setGradeAnimacao(!gradeAnimacao)
+    setGradeAnimacao(false)
 
     
     if (!produtos[currtenProduto]) {
