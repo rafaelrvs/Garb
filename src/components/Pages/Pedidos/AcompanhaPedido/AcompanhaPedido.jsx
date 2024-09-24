@@ -12,7 +12,8 @@ export const AcompanhaPedido = () => {
         setValueModal(Number(e.target.value));
         setModal(true);
     }
-
+    console.log(pedidos);
+    
 
     return (
         <div className={`${styles.ContainrePedidos} animeLeft`}>

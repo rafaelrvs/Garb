@@ -6,8 +6,7 @@ const Voltar = () => {
     const voltar = useNavigate()
   return (
     <div className={styles.voltarContainer} onClick={()=> voltar(-1)}>
-        <p className={styles.voltarBtn}>{'<'}</p>
-        
+        <p className={styles.voltarBtn}>{'<'}</p>     
     </div>
   )
 }

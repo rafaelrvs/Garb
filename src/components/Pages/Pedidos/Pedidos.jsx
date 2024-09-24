@@ -19,7 +19,8 @@ const Pedidos = () => {
   
   return (
     <>
-    <section className={styles.container}>
+    <div className={styles.container}>
+      <section className={styles.containerWrapper}>
 
         <h1 className=''>Pedidos</h1>
         <div className={styles.header}>
@@ -33,16 +34,18 @@ const Pedidos = () => {
           </div>
           <div className={styles.LinhaStyle}></div>
         </div>
-      <div className={styles.conteudoRoute}>
-        <Routes>
-          <Route path='/' element={<Empresa/>}/>
-          <Route path={`/:id`} element={<Cargos/>} /> 
-          <Route path={'/carrinho/'} element={<Carrinho/>}/>
-          <Route path={'/AcompanharPedidos'} element={<AcompanhaPedido/>}/>
-        </Routes>
-      </div>
+        <div className={styles.conteudoRoute}>
+          <Routes>
+            <Route path='/' element={<Empresa/>}/>
+            <Route path={`/:id`} element={<Cargos/>} /> 
+            <Route path={'/carrinho/'} element={<Carrinho/>}/>
+            <Route path={'/AcompanharPedidos'} element={<AcompanhaPedido/>}/>
+          </Routes>
+        </div>
       
-    </section>
+      </section>
+    </div>
+
     </>
   )
 }

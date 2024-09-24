@@ -1,0 +1,68 @@
+.containerModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    margin: 0px;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color: #0000003a;
+    z-index: 200;
+    position: fixed;
+}
+
+.modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    width: 900px;
+    border-radius: 10px;
+    z-index: 11;
+    background-color: var(--background);
+    transition: 0.5s;
+    animation: forwards show-opacity 0.3s;
+}
+
+.voltarContainer{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.voltarBtn{
+    display: flex;
+    border: 2px solid;
+    width: 3rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.voltarBtn:active{
+    scale: 1.2;
+}
+
+
+.fade{
+    transition: .4s;
+    animation: fade .4s ease-in-out;
+  
+  }
+  
+  @keyframes fade {
+    from{
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to{
+      opacity: 1;
+      transform: scale(1);
+    }
+  }

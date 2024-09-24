@@ -15,9 +15,6 @@ export const Modal = () => {
             setProdutoModal(pedidoSelecionado.produtos);
         }
     }, [pedidoSelecionado]); // Atualiza quando o pedidoSelecionado mudar
-    console.log(produtoModal);
-    console.log(produtoModal);
-
 
     return (
         <div className={styles.containerModal}>
