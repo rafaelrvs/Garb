@@ -42,11 +42,5 @@ const fretes = [
         "preco": 69.34,
         "src": "/images/transportadora.svg"
     },
-
-
-
-
 ]
-
-
 export default fretes
