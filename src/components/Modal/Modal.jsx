@@ -15,9 +15,7 @@ export const Modal = () => {
             setProdutoModal(pedidoSelecionado.produtos);
         }
     }, [pedidoSelecionado]); // Atualiza quando o pedidoSelecionado mudar
-    console.log(produtoModal);
-    console.log(produtoModal);
-
+    console.log(pedidoSelecionado);
 
     return (
         <div className={styles.containerModal}>
@@ -115,7 +113,8 @@ export const Modal = () => {
                                 </span>
 
                                 <hr className={styles.hrDetalhes} />
-                                <p className={styles.frete}><strong>Frete:</strong> R$ 25,39</p>
+                                <p className={styles.frete}><strong>Transportadora:</strong>{pedidoSelecionado.frete.nomeFrete}</p>
+                                <p className={styles.frete}><strong>valor Frete:</strong>{pedidoSelecionado.frete.preco}</p>
                                 <p className={styles.CodRAstreio}> <strong>Cod Rastreio: </strong>121EF2A54S5D</p>
                         
                             </div>
