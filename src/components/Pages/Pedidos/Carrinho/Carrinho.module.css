@@ -2,7 +2,10 @@
     display: grid;
     gap: 20px;
     grid-template-columns: 2fr 1fr;
-    grid-template-areas: "colunaUm colunaDois";
+    grid-template-areas: 
+    "produtos finalizarPed "
+    "produtos  frete"
+    ;
     padding: 20px;
     border-radius: 5px;
     max-width: 1200px;
@@ -11,7 +14,7 @@
   
   .colunaUm{
     display: grid;
-    grid-area: colunaUm;
+    grid-area: produtos;
     overflow: auto;
     gap: 10px;
     max-height: 600px;
@@ -20,7 +23,7 @@
 
   .colunaDois {
     display: grid;
-    grid-area: colunaDois;
+    grid-area: finalizarPed;
     grid-template-rows: repeat(4, 55px);
     gap: 5px;
     align-items: start;
@@ -30,7 +33,32 @@
     box-shadow: 0px 0px 0px 1px #2c2b2b;
     border-radius: 5px;
   }
+
+
+  .colunaDoisFret{
+    display: grid;
+    grid-area: 'frete';
+    overflow-y:scroll;
+    height: 250px;
+    background-color: #200A30;
+    border-radius: 5px;
+  }
+  .colunaDoisEmpity{
+    display: grid;
+    animation: error 0.7s ;
+    grid-area: 'frete';
+    overflow-y:scroll;
+    height: 250px;
+    background-color: #200A30;
+
+    border-radius: 5px;
+    
   
+  }
+  
+
+
+
   .colunaDois button {
     width: 100%;
   }
@@ -109,10 +137,10 @@
   }
   
   .button {
-    background-color: rgb(0,102,153);
+  
     color: white;
     border: none;
-    background-color: #01426A;
+    background-color: #913858;
     padding: 10px 30px;
     border-radius: 4px;
     cursor: pointer;
@@ -138,8 +166,9 @@
     .Container {
       grid-template-columns: 1fr;
       grid-template-areas: 
-      "colunaDois"
-      "colunaUm";
+      "finalizarPed"
+      "frete"
+      "produtos";
     }
   
     .colunaUm {
@@ -166,4 +195,61 @@
       height: auto;
     }
   }
+
+
+
+.tituloFrete{
+  background-color: #740c32;
+  padding: 10px 0 ;
+  text-align: center;
+  margin-bottom: 20px;
+}
   
+.containerFretes{
+  display: grid;
+  justify-content: center;
+}
+
+.contentFrete{
+  display: flex;
+  grid-template-areas: 
+  "imgtruck descrifrete ";
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  gap: 35px;
+  background-color:#913858 ;
+  border-radius: 5px;
+  transition: 0.5s;
+  cursor: pointer;  
+  
+}
+
+.contentFreteActive{
+  display: flex;
+  cursor: pointer;  
+  animation: animaLeftEscolha  ease forwards .5s;
+  position: relative;
+  grid-template-areas: 
+  "imgtruck descrifrete ";
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  gap: 30px;
+  background-color:#740c32;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+
+
+@keyframes animaLeftEscolha {
+  0% {right: 0px;}
+  100%{right: 35px;}
+  
+}
+@keyframes error {
+  0% {border: 1px solid red;}
+  25% { border: 3px solid red;}
+  50% {border: 1px solid red;}
+  75% { border: 3px solid red;}
+  100% {border: 1px solid red;}
+}
