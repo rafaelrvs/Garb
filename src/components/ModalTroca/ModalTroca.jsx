@@ -8,8 +8,7 @@ const ModalTroca = ({pedido}) => {
 const { setModalTroca } = useContext(GlobalContext);
 const voltar = useRef()
 function closeModal(event){
-    console.log(event.currentTarget);
-    console.log(voltar.current)
+
     if(event.currentTarget === voltar.current){
         setModalTroca({
             status:false,
