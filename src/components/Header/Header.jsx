@@ -20,14 +20,14 @@ import { GlobalContext } from '../../Context/GlobalContext'
 import FullScreenDiv from '../FullScreenDiv/FullScreenDiv'
 import { Modal } from '../Modal/Modal'
 import Voltar from '../Voltar/Voltar'
+import ModalTroca from '../ModalTroca/ModalTroca'
 
 
 
 const Header = () => {
     const [btnAtivo, setBtnAtivo] = useState('')
-    const {popUp,visible, setVisible} = useContext(GlobalContext);
+    const {popUp, modalTroca, modal} = useContext(GlobalContext);
     const location = useLocation();
-    const {modal, setModal} = useContext(GlobalContext)
 
     useEffect(()=>{
         
@@ -73,6 +73,8 @@ const Header = () => {
       <PopUp status={popUp.status} color={popUp.color}>{popUp.children}</PopUp>
   
       {modal &&<Modal  />}
+      {modalTroca.status&& <ModalTroca pedido={modalTroca.pedido}/>}
+
       <FullScreenDiv/>
     
     </header>

@@ -37,6 +37,11 @@ export const GlobalStorage = ({ children }) => {
 
   const [modal,setModal] = useState(false)
 
+  const [modalTroca,setModalTroca]=useState({
+    status:'',
+    pedido:'',
+  })
+
   useEffect(() => {
     window.localStorage.setItem("carrinho", JSON.stringify(carrinho));
   }, [carrinho]);
@@ -70,7 +75,8 @@ export const GlobalStorage = ({ children }) => {
         tamanhoSelecionado, setTamanhoSelecionado,
         pedidos, setPedidos,
         modal,setModal,
-        valueModal,  setValueModal
+        valueModal,  setValueModal,
+        modalTroca,setModalTroca
       }}
     >
       {children}
