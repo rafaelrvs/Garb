@@ -9,192 +9,100 @@
     padding: 0;
     top: 0;
     left: 0;
-    background-color: #0000003a;
+    background-color: #0000002c;
     z-index: 200;
     position: fixed;
 }
-
-.modal {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.modal{
+ 
+    width: 1080px;
     height: 70vh;
-    width: 900px;
-    border-radius: 5px;
-    z-index: 11;
-    background-color: var(--background);
-    transition: 0.5s;
-    animation: forwards show-opacity 0.3s;
+   background-color:#392054;
+   ;
+   border-radius: 15px;
 }
-
-@keyframes show-opacity {
-    0% {
-      opacity: 0;
-      transform: scale(0.8);
-    }
-    100% {
-      opacity: 100%;
-      transform: initial;
-    }
-
-  }
-
-.containerModal p{
+.modal > .contentInModal{
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 10px;
-    font-size: 1.3rem;
-}
-.containerModal strong {
+    height: 500px;
+    width: 95%;
+    margin: 0 auto;
 
-    color: var(--background);
-    
+    border-radius: 5px;
+    padding: 10px;
 }
-
-.containerModal p span{
-    position: fixed;
-    top: -10px;
-    right:  -10px;
-    background-color: red;
+.headerModalPedidos{
+  
     display: flex;
-    justify-content: center;
-    text-align: center;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    height: 35px;
-    width: 35px;
-    color: #fff;
-    z-index: 999;
-
-    cursor: pointer;
-    
-}
-
-.containerPedidoHeader{
-    display: flex;
-    height: 90px;
-    width: 90%;
-    margin-top: 25px;
+    justify-content: space-between;
     align-items: center;
+    width: 97%;
+    margin: 0 auto;
+    background-color:var(--background2);
+    border-radius: 5px;
+    height: 150px;
+    
+
+    
+}
+
+.itemHeaderModal{
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    flex-direction: column;
+   
+    width: 210px;
+    height: 50px;
+    
+   
+}
+
+.contentMainModal{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    width: 97%;
+}
+
+
+.titleProd{
+    display: flex;
+
     justify-content: space-around;
-    background-color: #fff;
-    border-radius: 5px;
-    color: var(--background);
 }
-
-.containerPedidoHeader p{
-    font-weight: 800;
-    color: var(--background);
-}
-.hr{
+.produltoDaLista{
     display: flex;
-    width: 90%;
-    margin-top: 10px;
-}
-
-
-.fragmentacao{
-    background-color: red;
-}
-
-.containerSection{
-    display: flex;
-    flex-wrap: wrap;
+    width: 97%;
+    margin: 0 auto;
+    height: 90px;
     
-    gap: 100px;
-}
-.containerContent{
-    display: flex;
-    justify-content: space-between;
-}
-.produtoListado{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.9rem;
-    text-align: center;
-    background-color: #fff;
-    padding: 15px;
-    margin-top: 10px;
     border-radius: 5px;
-    width: 500px;
-    height: 100px;
+    justify-content: space-between
+    ;
+
+    align-items: center;
+    background-color: var(--background);
+    
+
+    
 }
-.produtoListado div p{
-    text-align: center;
-    color: var(--background);
-}
-.produtoListado div{
+.itemListaProd{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.containerDetalhe{
-    height: 350px;
-    border-radius: 5px;
-    max-width: 350px;
-    background-color: #fff;
-    color: var(--background);
-}
-.containerDetalhe h3{
+    color: #fff;
     padding: 15px;
-    color: var(--background);
+ 
+
+
 }
 
-.hrDetalhes{
-    width: 90%;
-    margin: 0 auto;
-    background-color: #f7f7f7;
-  
+.containerImgModal{
+    height: 100%;
+    
 }
 .image{
-    height:100% ;
-    
-}
-
-.statusPedido{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 25px;
-    z-index: 222;
-}
-.statusPedido p{
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background-color: var(--background);
-
-}
-
-.statusPedido .LinhaTempo{
-    position: fixed;
-    width: 250px;
-    border: none;
-    padding: 3px;
-    background-color: var(--background);
-}
-
-.containerDetalhe span{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--background);
-    font-size: 
-    0.9rem;
-  
-    padding: 15px;
-}
-.containerContent .frete, .containerContent .CodRAstreio{
-    margin-top: 10px;
-color: var(--background);
-font-size: 1rem;
- display: flex;
- align-items: start;
- flex-direction: row;
- padding:  5px 25px;
+    max-height:100%;
 }

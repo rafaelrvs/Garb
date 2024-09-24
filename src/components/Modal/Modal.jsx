@@ -16,114 +16,53 @@ export const Modal = () => {
         }
     }, [pedidoSelecionado]); // Atualiza quando o pedidoSelecionado mudar
 
+
+
+
+
+
     return (
         <div className={styles.containerModal}>
-
             <div className={styles.modal}>
-                    
-                <p><span onClick={() => setModal(false)}>X</span></p>
-
-                <div className={`${styles.containerPedidoHeader} animeLeft`}>
-                    <p><strong> Pedido ID:          </strong> {pedidoSelecionado.id}</p>
-                    <p><strong> Status:             </strong> {pedidoSelecionado.status}</p>
-                    <p><strong> Quantidade Total:   </strong> {pedidoSelecionado.qtdeTotal}</p>
-                    <p><strong> Valor Total:        </strong> {pedidoSelecionado.valorTotal}</p>
-                </div>
-
-                <hr className={styles.hr} />
-                <section className={styles.containerSection}>
-                    <div className={styles.containerContent}>
-                        <div>
-                            <br />
-                            <h2>Item</h2>
-                            <br />
-                            {produtoModal.map((item, index) => (
-                                <div key={index} className={styles.produtoListado}>
-                                    <div>
-                                        Codigo:
-                                        <p>{item.cod}</p>
-                                    </div>
-                                    <div>
-                                        Tamanho:
-                                        <p>{item.tamanho}</p>
-                                    </div>
-                                    <div>
-                                        Cor:
-                                        <p>{item.cor}</p>
-                                    </div>
-                                    <div>
-                                        Quantidade:
-                                        <p>{item.quantidade}</p>
-                                    </div>
-                                    <div>
-                                        Preço R$
-                                        <p>{item.preco}</p>
-                                    </div>
-                                    <img
-                                        src={`/images/produtos/${item.img}`}
-                                        alt="aaaa"
-                                        className={styles.image}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                        <div>
-                            <br />
-                            <h2>Detalhe</h2>
-                            <br />
-                            <div className={`${styles.containerDetalhe} animeLeft`} >
-                                <h3>Acompanhamento</h3>
-
-                                <div className={styles.statusPedido}>
-                                    <p className={styles.status2}>
-                                    
-                                    </p>
-                                    <p className={styles.status3}>
-
-                                    </p>
-                                    <p className={styles.status4}>
-
-                                    </p>
-                                    <p className={styles.status5}>
-
-                                    </p>
-
-                                    <hr className={styles.LinhaTempo} />
-
-
-                                </div>
-                                <span>
-                                    <strong>
-
-                                    Aprovação  
-                                    </strong>
-                                    <strong>
-
-                                    Produção
-                                    </strong>
-                                    <strong>
-
-                                    Envio
-                                    </strong>
-                                    <strong>
-
-                                    Entrega
-                                    </strong>
-                                </span>
-
-                                <hr className={styles.hrDetalhes} />
-                                <p className={styles.frete}><strong>Transportadora:</strong>{pedidoSelecionado.frete.nomeFrete}</p>
-                                <p className={styles.frete}><strong>valor Frete:</strong>{pedidoSelecionado.frete.preco}</p>
-                                <p className={styles.CodRAstreio}> <strong>Cod Rastreio: </strong>121EF2A54S5D</p>
-                        
-                            </div>
-                        
-                        </div>
+                <div className={styles.contentInModal}>
+                    <div className={styles.headerModalPedidos}>
+                        <p className={styles.itemHeaderModal} > <strong>Pedido ID:</strong>{pedidoSelecionado.id}</p>
+                        <p className={styles.itemHeaderModal} > <strong>Status:</strong> {pedidoSelecionado.status} </p>
+                        <p className={styles.itemHeaderModal} > <strong>Quantidade Total:</strong>  {pedidoSelecionado.qtdeTotal}</p>
+                        <p className={styles.itemHeaderModal} > <strong>Valor Total:</strong> {pedidoSelecionado.valorTotal} </p>
 
                     </div>
-                </section>
+                            <strong>Codigo:</strong>
+                            <strong> Tamanho:</strong>
+                            <strong>Cor:</strong>
+                            <strong>Quantidade:</strong>
+                            <strong>R$:</strong>
+                           
+                        </div>
+                    <div className={styles.contentMainModal} >
+                        <div className={styles.titleProd}>
+                        {produtoModal.map((item, index) => (
+                            
+                            <div key={index} className={styles.produltoDaLista}>
+                                <div className={styles.containerImgModal}>
+                                    <img className={styles.image} src={`/images/produtos/${item.img}`} alt="aaa" />
+                                </div>
+                              
+                                <p className={styles.itemListaProd}><strong  > Codigo:</strong>{item.cod} </p>
+                                <p className={styles.itemListaProd}><strong  > Tamanho:</strong>{item.tamanho} </p>
+                                <p className={styles.itemListaProd}><strong  > Cor:</strong>{item.cor} </p>
+                                <p className={styles.itemListaProd}><strong  >Quantidade:</strong>{item.quantidade} </p>
+                                <p className={styles.itemListaProd}><strong  > R$</strong>{item.preco} </p>
+
+                            </div>
+
+                        ))}
+                    </div>
+                </div>
 
             </div>
+
+
         </div>
     );
 }
