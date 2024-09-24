@@ -1,200 +1,196 @@
 .Container {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: 
-    "produtos finalizarPed "
-    "produtos  frete"
-    ;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 1200px;
-    margin:  auto;
-  }
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: 
+  "produtos finalizarPed "
+  "produtos  metPagamento"
+  "produtos  frete"
+  ;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 1200px;
+  margin:  auto;
+}
   
-  .colunaUm{
-    display: grid;
-    grid-area: produtos;
-    overflow: auto;
-    gap: 10px;
-    max-height: 600px;
-    padding: 10px;
+.colunaUm{
+  display: grid;
+  grid-area: produtos;
+  overflow: auto;
+  gap: 10px;
+  max-height: 600px;
+  padding: 10px;
+}
+
+.colunaDois {
+  display: grid;
+  grid-area: finalizarPed;
+  grid-template-rows: repeat(4, 55px);
+  gap: 5px;
+  align-items: start;
+  padding: 20px;
+  height: fit-content;
+  background-color: var(--background2);
+  box-shadow: 0px 0px 0px 1px #2c2b2b;
+  border-radius: 5px;
+}
+
+
+
+.containerMetPagamento{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  background-color: var(--background2);
+  box-shadow: 0px 0px 0px 1px #2c2b2b;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.colunaDoisFret{
+  display: grid;
+  grid-area: 'frete';
+  overflow-y:scroll;
+  height: 250px;
+  background-color: #200A30;
+  border-radius: 5px;
+}
+
+.colunaDoisEmpity{
+  display: grid;
+  animation: error 0.7s ;
+  grid-area: 'frete';
+  overflow-y:scroll;
+  height: 250px;
+  background-color: #200A30;
+  border-radius: 5px;
+}
+
+.colunaDois button {
+  width: 100%;
+}
+
+.btnDisabled {
+  background: rgb(105, 105, 105);
+}
+
+.btnDisabled:hover {
+  background: rgb(105, 105, 105);
+  cursor: not-allowed;
+}
+
+.btnFinalizar {
+  background-color: rgb(94, 29, 148);
+}
+
+.produto {
+  display: grid;
+  gap: 10px;
+  height: 220px;
+  grid-template-columns: 150px auto auto auto;
+  grid-template-rows: 60px auto auto auto;
+  grid-template-areas: 
+    "img nome nome nome"
+    "img tamanho tamanho tamanho"
+    "img preco preco preco"
+    "img qtde qtdeBtn qtdeBtn";
+  border-radius: 5px;
+  align-items: start;
+  padding: 10px;
+  gap: 10px;
+  background-color: var(--background2);
+  box-shadow: 0px 0px 0px 1px #2c2b2b;
+  border-radius: 5px;
+}
+
+.produto img {
+  background-color: rgb(202, 202, 202);
+  border-radius: 4px;
+  grid-area: img;
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.nome {
+  grid-area: nome;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+}
+
+.tamanho{
+  grid-area: tamanho;
+  font-size: 1rem;
+  color: white;
+
+}
+
+.preco {
+  font-size: 1rem;
+  grid-area: preco;
+  color: white;
+}
+
+.quantidade {
+  font-size: 1.2rem;
+  grid-area: qtde;
+  color: white;
+}
+
+.btnCarrinho {
+  display: grid;
+  gap: 10px;
+}
+
+.button {
+  color: white;
+  border: none;
+  background-color: #913858;
+  padding: 10px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  justify-self: end;
+}
+
+.button:hover {
+  background-color: #740c32;
+}
+
+
+@media (max-width: 940px) {
+  .Container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "finalizarPed"
+    "frete"
+    "produtos";
+  }
+
+  .colunaUm {
+    padding: 20px;
   }
 
   .colunaDois {
-    display: grid;
-    grid-area: finalizarPed;
-    grid-template-rows: repeat(4, 55px);
-    gap: 5px;
-    align-items: start;
     padding: 20px;
-    height: fit-content;
-    background-color: var(--background2);
-    box-shadow: 0px 0px 0px 1px #2c2b2b;
-    border-radius: 5px;
   }
 
-
-  .colunaDoisFret{
-    display: grid;
-    grid-area: 'frete';
-    overflow-y:scroll;
-    height: 250px;
-    background-color: #200A30;
-    border-radius: 5px;
-  }
-  .colunaDoisEmpity{
-    display: grid;
-    animation: error 0.7s ;
-    grid-area: 'frete';
-    overflow-y:scroll;
-    height: 250px;
-    background-color: #200A30;
-
-    border-radius: 5px;
-    
-  
-  }
-  
-
-
-
-  .colunaDois button {
-    width: 100%;
-  }
-  
-  .btnDisabled {
-    background: rgb(105, 105, 105);
-  }
-  
-  .btnDisabled:hover {
-    background: rgb(105, 105, 105);
-    cursor: not-allowed;
-  }
-  
-  .btnFinalizar {
-    background-color: rgb(94, 29, 148);
-  }
-  
   .produto {
-    display: grid;
-    gap: 10px;
-    height: 220px;
-    grid-template-columns: 150px auto auto auto;
-    grid-template-rows: 60px auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas: 
-      "img nome nome nome"
-      "img tamanho tamanho tamanho"
-      "img preco preco preco"
-      "img qtde qtdeBtn qtdeBtn";
-    border-radius: 5px;
-    align-items: start;
-    padding: 10px;
-    gap: 10px;
-    background-color: var(--background2);
-    box-shadow: 0px 0px 0px 1px #2c2b2b;
-    border-radius: 5px;
+      "img"
+      "nome"
+      "preco"
+      "qtdeBtn"
+      "qtde";
   }
-  
+
   .produto img {
-    background-color: rgb(202, 202, 202);
-    border-radius: 4px;
-    grid-area: img;
-    object-fit: cover;
     width: 100%;
-    height: 200px;
+    height: auto;
   }
-  
-  .nome {
-    grid-area: nome;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: white;
-  }
-
-  .tamanho{
-    grid-area: tamanho;
-    font-size: 1rem;
-    color: white;
-
-  }
-  
-  .preco {
-    font-size: 1rem;
-    grid-area: preco;
-    color: white;
-  }
-  
-  .quantidade {
-    font-size: 1.2rem;
-    grid-area: qtde;
-    color: white;
-  }
-  
-  .btnCarrinho {
-    display: grid;
-    gap: 10px;
-  }
-  
-  .button {
-  
-    color: white;
-    border: none;
-    background-color: #913858;
-    padding: 10px 30px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: 0.3s;
-    justify-self: end;
-  }
-  
-  .addProduto {
-    width: 100%;
-    background-color: rgb(5, 103, 160);
-  }
-  
-  .finalizarPed {
-    width: 100%;
-    background-color: rgb(3, 120, 136);
-  }
-  
-  .button:hover {
-    background-color: rgb(6,116,155);
-  }
-  
-  @media (max-width: 940px) {
-    .Container {
-      grid-template-columns: 1fr;
-      grid-template-areas: 
-      "finalizarPed"
-      "frete"
-      "produtos";
-    }
-  
-    .colunaUm {
-      padding: 20px;
-    }
-  
-    .colunaDois {
-      padding: 20px;
-    }
-  
-    .produto {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto auto;
-      grid-template-areas: 
-        "img"
-        "nome"
-        "preco"
-        "qtdeBtn"
-        "qtde";
-    }
-  
-    .produto img {
-      width: 100%;
-      height: auto;
-    }
-  }
+}
 
 
 

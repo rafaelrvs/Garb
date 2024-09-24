@@ -169,18 +169,13 @@ const Produto = ({ cargoID }) => {
               <span className={styles.cor}>Cor: <span>{produtos[currtenProduto].cor}</span></span>
               <span className={styles.preco}>R$ {produtos[currtenProduto].preco}</span>
             </div>
-            <div className={styles.column2}>
-                <Grade grade={produtos[currtenProduto].grade} gradeAnimacao={gradeAnimacao} />
-         
-                {gradeAnimacao && <p className={styles.alertGrade}> Selecione um tamanho !</p>}
-
-           
-                
-           
+            <div className={styles.column2}>           
               {/*-------------------------------SIZEBAY-------------------------------*/}
               <div className={styles.provador} ref={sizeBay} data-produto={produtos[currtenProduto].codigo}>              
               
               </div>
+              <Grade grade={produtos[currtenProduto].grade} gradeAnimacao={gradeAnimacao} />
+              {gradeAnimacao && <p className={styles.alertGrade}> Selecione um tamanho !</p>}
             </div>
 
           </div>

@@ -18,11 +18,13 @@ const Carrinho = () => {
     preco: 0,
     url: ""
   });
+  const [metPagamento,setMetPagamento]=useState({
+    status:false,
+    data:{}
+  })
   const [somaFrete, setSomaFrete] = useState(false)
   const [error, setError] = useState(false);
   const navigate = useNavigate()
-
-
 
   // Função para gerar um ID aleatório de 4 dígitos
   const generateOrderId = () => {
@@ -31,7 +33,6 @@ const Carrinho = () => {
 
   function handleSubmit() {
     if(campoFrete.status){
-
       const carrinhoAtualizado = carrinho.map(produto => ({
         ...produto,
         quantidade: quantidades[`${produto.cod}-${produto.tamanho}`] || produto.quantidade,
@@ -74,7 +75,12 @@ const Carrinho = () => {
     }
   }
 
-
+function handlePagamento(){
+  setMetPagamento({
+    status: !metPagamento.status,
+    data:{},
+  })
+}
     useEffect(() => {
       const calcularTotais = () => {
         let qtde = 0;
@@ -98,11 +104,6 @@ const Carrinho = () => {
       calcularTotais();
     }, [carrinho, quantidades, campoFrete,somaFrete]);
 
-  useEffect(() => {
-    console.log(campoFrete);
-
-  }, [campoFrete])
-
   function activeFrete(frete) {
     setcampoFrete({
       status: true,
@@ -117,10 +118,10 @@ const Carrinho = () => {
     <>
       <Voltar />
       <section className={styles.Container}>
-        <div className={styles.colunaUm}>
-          {carrinho.length ? (
+        <div className={`${styles.colunaUm} animeLeft`}>
+          {carrinho.length&& !metPagamento.status ? (
             carrinho.map(produto => (
-              <div key={`${produto.cod}-${produto.tamanho}`} className={styles.produto}>
+              <div key={`${produto.cod}-${produto.tamanho}`} className={`${styles.produto}`}>
                 <img src={`/images/produtos/${produto.img}`} alt="" />
                 <h1 className={styles.nome}>{produto.descricao}</h1>
                 <h1 className={styles.tamanho}>Tamanho: {produto.tamanho}</h1>
@@ -134,6 +135,13 @@ const Carrinho = () => {
           ) : (
             <p>Sem produtos em seu carrinho</p>
           )}
+          {carrinho.length&& metPagamento.status ?(
+            <>
+            
+            </>
+          )
+          :<p>Sem produtos em seu carrinho</p>
+          }
         </div>
 
         <div className={styles.colunaDois}>
@@ -147,11 +155,15 @@ const Carrinho = () => {
           <Link to="/pedidos">
             <button className={styles.button}>Adicionar mais Produtos</button>
           </Link>
-
         </div>
 
-        {/*Fret*/}
+        {/*metodo de pagamento*/}
+        <div className={styles.containerMetPagamento} onClick={handlePagamento}>
+          <button className={styles.button}>Método de pagamento</button>
+          <img src={metPagamento.status? '':''} alt="status de seleção de pagamento" />
+        </div>
 
+        {/*Frete*/}
         <div className={error? styles.colunaDoisEmpity:styles.colunaDoisFret}   >
           <h1 className={styles.tituloFrete}>Escolha forma de entrega</h1>
           <div className={styles.containerFretes}>
