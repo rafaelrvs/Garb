@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import styles from './Modal.module.css';
 import { GlobalContext } from '../../Context/GlobalContext';
-import CryptoJS from 'crypto-js';
+
 export const Modal = () => {
     const { setModal, pedidos, valueModal } = useContext(GlobalContext);
     const [produtoModal, setProdutoModal] = useState([]);
@@ -17,10 +17,7 @@ export const Modal = () => {
 
 
     
-    const mensagem = `seu id ${pedidoSelecionado.id} cor ${pedidoSelecionado.cor}`;
-    const chave = CryptoJS.enc.Hex.parse('0123456789abcdef0123456789abcdef');
-    const vi = CryptoJS.enc.Hex.parse('abcdef9876543210abcdef9876543210');
-    const mensagemCifrada = CryptoJS.AES.encrypt(mensagem, chave, { iv: vi }).toString();
+
     useEffect(() => {
         if (pedidoSelecionado) {
             setProdutoModal(pedidoSelecionado.produtos);
@@ -31,6 +28,7 @@ export const Modal = () => {
 
 
 
+console.log();
 
 
     return (
@@ -45,9 +43,9 @@ export const Modal = () => {
                         </div>
 
                         <p className={styles.itemHeaderModal} > <strong>Pedido ID:</strong>{pedidoSelecionado.id}</p>
-                        <p className={styles.itemHeaderModal} > <strong>Status:</strong> {pedidoSelecionado.status} </p>
+                        <p className={styles.itemHeaderModalstatus} > <strong>Status:</strong> {pedidoSelecionado.status} </p>
                         <p className={styles.itemHeaderModal} > <strong>Quantidade Total:</strong>  {pedidoSelecionado.qtdeTotal}</p>
-                        <p className={styles.itemHeaderModal} > <strong>Valor Total:</strong> {pedidoSelecionado.valorTotal} </p>
+                        <p className={styles.itemHeaderModal} > <strong>Valor Total:</strong> {"R$ "+pedidoSelecionado.valorTotal} </p>
 
 
 
@@ -99,15 +97,16 @@ export const Modal = () => {
                             </div>
                                <div className={styles.statusPed}>
 
-                                        <p className={styles.legendaStatus} >Aprovado</p>
-                                        <p className={styles.legendaStatus} >Produção</p>
+                                        <p className={styles.legendaStatus} >Pedido recebido</p>
+                                        <p className={styles.legendaStatus} >Em analise</p>
+                                        <p className={styles.legendaStatus} >Em Produção</p>
                                         <p className={styles.legendaStatus} >Em transito</p>
-                                        <p className={styles.legendaStatus} >Entregue</p>
                                     </div>
 
                             <div className={styles.footerAcompanhamento} >
+                                <p>Forma de pagamento:{ " "+pedidoSelecionado.metdPagamento.nome}</p>
                                 <p>Frete:{" " + pedidoSelecionado.frete.preco}</p>
-                                <p className={styles.containerRastreio} >Codigo de rastreio: <p className={styles.codigoRastreio}>{mensagemCifrada}</p></p>
+                              
                             </div>
                         </div>
                     </div>
