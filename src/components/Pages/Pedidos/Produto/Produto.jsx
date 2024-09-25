@@ -79,6 +79,79 @@ const Produto = ({ cargoID }) => {
     }
   };
 
+  const handleADDProduct = (selectedSize) => { 
+    
+    if(tamanhoSelecionado !== ""){
+    setGradeAnimacao(false)
+
+    
+    if (!produtos[currtenProduto]) {
+      console.error("Produto não encontrado!");
+      return;
+    }
+    
+    
+    
+    // Verifica se o carrinho é válido
+    const carrinhoAtual = carrinho || [];
+    
+    // Verifica se o produto com o mesmo código e tamanho já existe no carrinho
+    const produtoExistente = carrinhoAtual.find(
+      (item) =>
+        item.cod === produtos[currtenProduto].codigo &&
+      item.tamanho === selectedSize // Verifica também o tamanho
+      );
+      
+      if (produtoExistente) {
+        // Se o produto já estiver no carrinho com o mesmo tamanho, atualiza a quantidade
+      const novoCarrinho = carrinhoAtual.map((item) =>
+        item.cod === produtos[currtenProduto].codigo && item.tamanho === selectedSize
+          ? { ...item, quantidade: item.quantidade + quantidade } // Atualiza a quantidade
+          : item
+        );
+      setCarrinho(novoCarrinho);
+    } else {
+      // Se for um novo produto ou um tamanho diferente, adiciona ao carrinho
+      const novoCarrinho = [
+        ...carrinhoAtual,
+        {
+          cod: produtos[currtenProduto].codigo,
+          descricao: produtos[currtenProduto].descricao,
+          preco: produtos[currtenProduto].preco,
+          cor: produtos[currtenProduto].cor,
+          img:produtos[currtenProduto].img,
+          tamanho: selectedSize, // Adiciona o tamanho selecionado
+          quantidade: quantidade, // Adiciona a quantidade selecionada
+        },
+      ];
+      setCarrinho(novoCarrinho);
+    }
+    
+    setPopUp({
+      status: true,
+      color: "#46bba2",
+      children: "Produto Adicionado ao Carrinho",
+    });
+    
+    if (popupTimeoutRef.current) {
+      clearTimeout(popupTimeoutRef.current);
+    }
+    
+    popupTimeoutRef.current = setTimeout(() => {
+      setPopUp({
+        status: false,
+        color: "",
+        children: "",
+      });
+      popupTimeoutRef.current = null;
+    }, 3000);
+  
+    setQuantidade(1);
+  }else{
+    setGradeAnimacao(true)
+  }
+  };
+
   return (
     <div className={styles.containerProduto}>
       <div 
@@ -107,7 +180,9 @@ const Produto = ({ cargoID }) => {
             </div>
           </div>
           <Quantidade />
+        <button className={styles.addcarrinho} onClick={() => handleADDProduct(tamanhoSelecionado)}>Adicionar Carrinho +</button>
         </div>
+
       </div>
       <div className={styles.buttonsProduto}>
         <button onClick={handlePrevious}>{"<"}</button>
