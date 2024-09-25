@@ -1,4 +1,4 @@
-.containerModal{
+.containerModal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,118 +9,320 @@
     padding: 0;
     top: 0;
     left: 0;
-    background-color: #0000002c;
+    background-color: #00000091;
     z-index: 200;
     position: fixed;
 }
-.modal{
- 
-    width: 1080px;
-    height: 70vh;
-   background-color:#392054;
-   ;
-   border-radius: 15px;
-}
-.modal > .contentInModal{
+
+.contentInModal {
     display: flex;
+    background-color: #392054;
     flex-direction: column;
+    padding: 50px 25px;
     gap: 10px;
-    height: 500px;
     width: 95%;
+
     margin: 0 auto;
 
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 15px;
 }
-.headerModalPedidos{
-  
+
+.headerModalPedidos {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 97%;
-    margin: 0 auto;
-    background-color:var(--background2);
+    background-color: var(--background2);
     border-radius: 5px;
     height: 150px;
-    
 
-    
+
+
 }
 
-.itemHeaderModal{
+.itemHeaderModal {
     display: flex;
     align-items: center;
     font-size: 1.2rem;
     flex-direction: column;
-   
     width: 210px;
     height: 50px;
-    
-   
+
+
 }
 
-.contentMainModal{
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 4fr 2fr;
-    width: 97%;
-}
+.contentMainModal {
 
-
-
-.produltoDaLista{
-    display: flex;
-    width: 97%;
-    margin: 0 auto;
-    height: 90px;
-    
-    border-radius: 5px;
-    justify-content: space-between
-    ;
-
+    overflow: auto;
+    height: 500px;
     align-items: center;
-    background-color: var(--background);
-    
 
-    
-}
-.itemListaProd{
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    max-width: 100%;
+
+
+
+}
+
+.titleListaProduct {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
+    gap: 10px;
+
+
+}
+
+.titlimg {
+    width: 60px;
+    margin-right: 25px;
+
+}
+
+.titleListaProduct .title {
+
+    font-size: 1rem;
+    text-align: center;
+    width: 100px;
+
+
+
+
+}
+
+.containerListaProduto {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+
+
+
+}
+
+.produltoDaLista {
+
+    display: flex;
+    width: 100%;
+
+    height: 90px;
+    border-radius: 5px;
+    justify-content: space-around;
+
+    align-items: center;
+    background-color: var(--background2);
+
+
+
+
+}
+
+.itemListaProd {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    text-align: center;
+
     color: #fff;
-    padding: 15px;
- 
+    padding: 5px;
+    min-height: 90px;
+
 
 
 }
 
-.containerImgModal{
+.containerImgModal {
     height: 100%;
-    
-}
-.image{
-    max-height:100%;
+    padding: 5px;
+    min-width: 60px;
+    min-height: 90px;
+
 }
 
-.voltarContainer{
+.image {
+    max-height: 100%;
+}
+
+.voltarContainer {
     display: flex;
     align-items: center;
-    padding: 10px 0;
+    align-self: flex-start;
+    position: relative;
     cursor: pointer;
 }
 
-.voltarBtn{
+.voltarBtn {
+    color: #8C4AD2;
+    background-color: #fff;
+    font-weight: 600;
+    font-size: 1.9rem;
+
+    position: absolute;
+    left: -10px;
+    top: -20px;
     display: flex;
-    border: 2px solid;
+    border: 3px solid;
     width: 3rem;
     height: 2.5rem;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: 5px
 }
 
-.voltarBtn:active{
+.voltarBtn:active {
     scale: 1.2;
 }
 
+.containerAcompanhaProduto {
+    height: 100%;
+    padding: 15px;
+    width: 360px;
+    border-radius: 5px;
+    background-color: var(--background2);
+
+}
+
+.titleAcompanhamento {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.campoEstadoDetalhado {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.campoEstadoDetalhado span:nth-child(1) {
+    background-color: #8C4AD2;
+}
+
+.campoEstadoDetalhado span:nth-child(2) {
+    background-color: #8C4AD2;
+}
+.campoEstadoDetalhado span:nth-child(3) {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    width: 30px; /* Largura ajustável */
+    height: 30px; /* Altura ajustável */
+}
+.campoEstadoDetalhado span:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 30px; /* Largura ajustável */
+    height: 30px; /* Altura ajustável */
+    border-radius: 50%;
+    border: 2px solid #8C4AD2;
+    box-sizing: border-box;
+    clip-path: inset(10% 0 0 0);
+    animation: moveCircle 2.9s ease-in-out infinite ;
+    
+}
+
+@keyframes moveCircle {
+    0% {
+    
+        clip-path: inset(10% 0 0 0);
+    }
+    
+    50% {
+        clip-path: inset( 100% 100% 100%  100%);
+        
+    }
+    
+    100% {
+        clip-path: inset(0 0 0  0);
+     
+    }
+}
+.itemEstado {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: var(--background2);
+    border: 3px solid #392054;
+    z-index: 22;
+}
+
+.barraStatus {
+    top: 50%;
+    left: 50%;
+    height: 5px;
+    background: linear-gradient(90deg, #8C4AD2 50%, #3a2550 30%);
+    border: none;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    position: absolute;
+    background-size: 130% 50%;
+    animation: moveGradient 2.9s ease-in-out infinite;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.footerAcompanhamento {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    padding: 15px;
+    gap: 15px;
+    
+    
+
+}
+
+.containerRastreio {
+    display: flex;
+    flex-direction: column;
+    color: #ffff;
+    gap: 15px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.codigoRastreio {
+    background-color: #3a2550;
+    font-size: 0.9rem;
+   
+    display: inline-block;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px;
+    width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+}
+.statusPed{
+    display: flex;
+    justify-content: space-around;
+}
+.legendaStatus{
+    font-size: 0.7rem;
+    width: 70px;
+    text-align: center;
+    margin-top: 15px;
+}
