@@ -18,7 +18,7 @@
     display: flex;
     background-color: #392054;
     flex-direction: column;
-    padding: 50px 25px;
+    padding: 35px 20px;
     gap: 10px;
     width: 95%;
 
@@ -33,8 +33,9 @@
     align-items: center;
     background-color: var(--background2);
     border-radius: 5px;
-    height: 150px;
+    height: 130px;
 
+    
 
 
 }
@@ -46,6 +47,17 @@
     flex-direction: column;
     width: 210px;
     height: 50px;
+
+
+}
+.itemHeaderModalstatus {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    flex-direction: column;
+    width: 210px;
+    height: 50px;
+    color:#eb7b67 ;
 
 
 }
@@ -71,6 +83,7 @@
     align-items: center;
     width: 100%;
     gap: 10px;
+    padding: 10px 0;
 
 
 }
@@ -198,55 +211,51 @@
     overflow: hidden;
     display: flex;
     justify-content: space-around;
-
 }
-
 
 .campoEstadoDetalhado span:nth-child(1) {
     background-color: #8C4AD2;
 }
 
 .campoEstadoDetalhado span:nth-child(2) {
-    background-color: #8C4AD2;
-}
-.campoEstadoDetalhado span:nth-child(3) {
     position: relative;
     display: inline-block;
     border-radius: 50%;
     width: 30px; /* Largura ajustável */
     height: 30px; /* Altura ajustável */
 }
-.campoEstadoDetalhado span:nth-child(3)::before {
+
+.campoEstadoDetalhado span:nth-child(2)::before {
     content: '';
     position: absolute;
     top: -2px;
     left: -2px;
-    width: 30px; /* Largura ajustável */
-    height: 30px; /* Altura ajustável */
+    width: 29px; /* Largura ajustável */
+    height: 29px; /* Altura ajustável */
     border-radius: 50%;
     border: 2px solid #8C4AD2;
     box-sizing: border-box;
     clip-path: inset(10% 0 0 0);
-    animation: moveCircle 2.9s ease-in-out infinite ;
-    
+    animation: moveCircle 2.9s ease-in-out infinite;
 }
 
+.campoEstadoDetalhado span:nth-child(3) {
+    background-color:var(--background2);
+}
+
+/* A animação */
 @keyframes moveCircle {
     0% {
-    
-        clip-path: inset(10% 0 0 0);
+        clip-path: inset(0 0 0 0);
     }
-    
     50% {
-        clip-path: inset( 100% 100% 100%  100%);
-        
+        clip-path: inset(0 100% 0 0);
     }
-    
     100% {
-        clip-path: inset(0 0 0  0);
-     
+        clip-path: inset(0 0 0 0);
     }
 }
+
 .itemEstado {
     border-radius: 50%;
     height: 30px;
@@ -260,7 +269,7 @@
     top: 50%;
     left: 50%;
     height: 5px;
-    background: linear-gradient(90deg, #8C4AD2 50%, #3a2550 30%);
+    background: linear-gradient(90deg, #8C4AD2 10%, #3a2550 30%);
     border: none;
     transform: translate(-50%, -50%);
     width: 70%;
@@ -275,7 +284,7 @@
     }
 
     50% {
-        background-position: 50% 0%;
+        background-position: 60% 0%;
     }
 
     100% {
@@ -295,28 +304,7 @@
 
 }
 
-.containerRastreio {
-    display: flex;
-    flex-direction: column;
-    color: #ffff;
-    gap: 15px;
-    width: 100%;
-    border-radius: 5px;
-}
 
-.codigoRastreio {
-    background-color: #3a2550;
-    font-size: 0.9rem;
-   
-    display: inline-block;
-    border-radius: 5px;
-    color: #fff;
-    padding: 5px;
-    width: 100%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    text-align: left;
-}
 .statusPed{
     display: flex;
     justify-content: space-around;

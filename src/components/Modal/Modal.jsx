@@ -31,6 +31,7 @@ export const Modal = () => {
 
 
 
+console.log();
 
 
     return (
@@ -45,9 +46,9 @@ export const Modal = () => {
                         </div>
 
                         <p className={styles.itemHeaderModal} > <strong>Pedido ID:</strong>{pedidoSelecionado.id}</p>
-                        <p className={styles.itemHeaderModal} > <strong>Status:</strong> {pedidoSelecionado.status} </p>
+                        <p className={styles.itemHeaderModalstatus} > <strong>Status:</strong> {pedidoSelecionado.status} </p>
                         <p className={styles.itemHeaderModal} > <strong>Quantidade Total:</strong>  {pedidoSelecionado.qtdeTotal}</p>
-                        <p className={styles.itemHeaderModal} > <strong>Valor Total:</strong> {pedidoSelecionado.valorTotal} </p>
+                        <p className={styles.itemHeaderModal} > <strong>Valor Total:</strong> {"R$ "+pedidoSelecionado.valorTotal} </p>
 
 
 
@@ -99,15 +100,16 @@ export const Modal = () => {
                             </div>
                                <div className={styles.statusPed}>
 
-                                        <p className={styles.legendaStatus} >Aprovado</p>
-                                        <p className={styles.legendaStatus} >Produção</p>
+                                        <p className={styles.legendaStatus} >Pedido recebido</p>
+                                        <p className={styles.legendaStatus} >Em analise</p>
+                                        <p className={styles.legendaStatus} >Em Produção</p>
                                         <p className={styles.legendaStatus} >Em transito</p>
-                                        <p className={styles.legendaStatus} >Entregue</p>
                                     </div>
 
                             <div className={styles.footerAcompanhamento} >
+                                <p>Forma de pagamento:{ " "+pedidoSelecionado.metdPagamento.nome}</p>
                                 <p>Frete:{" " + pedidoSelecionado.frete.preco}</p>
-                                <p className={styles.containerRastreio} >Codigo de rastreio: <p className={styles.codigoRastreio}>{mensagemCifrada}</p></p>
+                              
                             </div>
                         </div>
                     </div>
