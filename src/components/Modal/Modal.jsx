@@ -41,7 +41,7 @@ export const Modal = () => {
                     <div className={styles.headerModalPedidos}>
 
                         <div className={styles.voltarContainer} onClick={closeModal} ref={voltar}>
-                            <p className={styles.voltarBtn}>{'<'}</p>
+                            <div className={styles.voltarBtn}>{'<'}</div>
                         </div>
 
                         <p className={styles.itemHeaderModal} > <strong>Pedido ID:</strong>{pedidoSelecionado.id}</p>
