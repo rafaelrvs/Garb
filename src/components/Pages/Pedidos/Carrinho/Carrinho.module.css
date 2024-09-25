@@ -40,10 +40,35 @@
 .containerMetPagamento{
   display: grid;
   grid-template-columns: 4fr 1fr;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
   background-color: var(--background2);
   box-shadow: 0px 0px 0px 1px #2c2b2b;
   border-radius: 5px;
   padding: 20px;
+}
+
+.statusFormaPag{
+  height: 30px;
+  transition: 0.3s;
+}
+
+
+
+.statusFormaPagAnimation{
+  height: 35px;
+  transition: 0.1s;
+  animation: treme 0.1s;
+  animation-iteration-count: 5;
+}
+
+@keyframes treme {
+  0% {margin-left: 0;}
+  25% {margin-left: 5px;}
+  50% {margin-left: 0;}
+  75% {margin-left: -5px;}
+  100% {margin-left: 0;}
 }
 
 .colunaDoisFret{
@@ -235,6 +260,38 @@
   transition: 0.5s;
 }
 
+.listaMetodoPagamento{
+  min-width: 600px;
+  max-height: 600px;
+  overflow: auto;
+  display: grid;
+  grid-area: produtos;
+
+}
+
+.linhaMetodoPagamento{
+  display: flex;
+  background-color: var(--background2);
+  border-radius: 5px;
+  padding: 15px 10px;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.linhaMetodoPagamento:hover{
+  box-shadow: 0px 0px 5px 1px #b1acac;
+  
+}
+
+.linhaMetodoPagamento > input{
+  cursor: pointer;
+}
+
+.textMetodoPagamento{
+  color: #fff;
+  cursor: pointer;
+
+}
 
 
 @keyframes animaLeftEscolha {
