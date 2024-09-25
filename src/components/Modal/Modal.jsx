@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import styles from './Modal.module.css';
 import { GlobalContext } from '../../Context/GlobalContext';
-import CryptoJS from 'crypto-js';
+
 export const Modal = () => {
     const { setModal, pedidos, valueModal } = useContext(GlobalContext);
     const [produtoModal, setProdutoModal] = useState([]);
@@ -17,10 +17,7 @@ export const Modal = () => {
 
 
     
-    const mensagem = `seu id ${pedidoSelecionado.id} cor ${pedidoSelecionado.cor}`;
-    const chave = CryptoJS.enc.Hex.parse('0123456789abcdef0123456789abcdef');
-    const vi = CryptoJS.enc.Hex.parse('abcdef9876543210abcdef9876543210');
-    const mensagemCifrada = CryptoJS.AES.encrypt(mensagem, chave, { iv: vi }).toString();
+
     useEffect(() => {
         if (pedidoSelecionado) {
             setProdutoModal(pedidoSelecionado.produtos);
