@@ -99,7 +99,14 @@ body {
 }
 
 .animeLeft > *:nth-child(10) {
-  animation-delay: 1s;
+  animation-delay: 0.10s;
+}
+.animeLeft > *:nth-child(11) {
+  animation-delay: 0.11s;
+
+}
+.animeLeft > *:nth-child(12) {
+  animation-delay: 0.12s;
 }
 
 @keyframes animeLeft {
