@@ -78,37 +78,17 @@ export const empresas = [
         "cnpj": "00.000.000/0000-00",
         "cargos": [
             {
-                "id": 1,
-                "nome": "CBRE003",
+                "id": 6,
+                "nome": "ADM",
                 "produtos": [
                     {
-                        "codigo": "16.434.001",
-                        "descricao": "CAMISA SOCIAL M/C FEM CEDROMIX 5 OZ ll 60% ALGODAO 40% POLIESTER BRANCO 0002",
+                        "codigo": "10.434.001",
+                        "descricao": "CAMISETA POLO M/C MASC PIQUET PV 65% POLIESTER 35% VISCOSE CINZA MESCLA 00181.030",
                         "preco": "10.00",
-                        "cor": "BRANCO",
+                        "cor": "CINZA MESCLA",
                         "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "16.434.001.webp"
-                    }
-                ]
-            },
-            {
-                "id": 2,
-                "nome": "CBRE004",
-                "produtos": [
-                    {
-                        "codigo": "16.434.002",
-                        "descricao": "CAMISA SOCIAL M/L FEM CEDROMIX 5 OZ ll 60% ALGODAO 40%POLIESTER BRANCO 0002",
-                        "preco": "10.00",
-                        "cor": "BRANCO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "16.434.002.webp"
-                    }
-                ]
-            },
-            {
-                "id": 3,
-                "nome": "CBRE011",
-                "produtos": [
+                        "img": "10.434.001.webp"
+                    },
                     {
                         "codigo": "10.434.003",
                         "descricao": "BABYLOOK POLO M/C PIQUET PV 65% POLIESTER 35% VISCOSE CINZA MESCLA 00181.030",
@@ -116,13 +96,15 @@ export const empresas = [
                         "cor": "CINZA MESCLA",
                         "grade":["P","M","G","GG","XG","EXG","EXGG"],
                         "img": "10.434.003.webp"
-                    }
-                ]
-            },
-            {
-                "id": 4,
-                "nome": "CBRE019",
-                "produtos": [
+                    },
+                    {
+                        "codigo": "15.434.001",
+                        "descricao": "CAMISA SOCIAL M/L MASC CEDROMIX 5 OZ ll 60% ALGODAO 40% POLIESTER BRANCO 0002",
+                        "preco": "10.00",
+                        "cor": "N/A",
+                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "img": "15.434.001.webp"
+                    },
                     {
                         "codigo": "15.434.002",
                         "descricao": "CAMISA SOCIAL M/C MASC CEDROMIX 5 OZ ll 60% ALGODAO 40% POLIESTER BRANCO 0002",
@@ -134,50 +116,8 @@ export const empresas = [
                 ]
             },
             {
-                "id": 5,
-                "nome": "CBRE020",
-                "produtos": [
-                    {
-                        "codigo": "15.434.001",
-                        "descricao": "CAMISA SOCIAL M/L MASC CEDROMIX 5 OZ ll 60% ALGODAO 40% POLIESTER BRANCO 0002",
-                        "preco": "10.00",
-                        "cor": "N/A",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "15.434.001.webp"
-                    }
-                ]
-            },
-            {
-                "id": 6,
-                "nome": "CBRE024",
-                "produtos": [
-                    {
-                        "codigo": "10.434.001",
-                        "descricao": "CAMISETA POLO M/C MASC PIQUET PV 65% POLIESTER 35% VISCOSE CINZA MESCLA 00181.030",
-                        "preco": "10.00",
-                        "cor": "CINZA MESCLA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "10.434.001.webp"
-                    }
-                ]
-            },
-            {
-                "id": 7,
-                "nome": "CBRE025",
-                "produtos": [
-                    {
-                        "codigo": "24.434.001",
-                        "descricao": "JAQUETA GOLA ESPORTE MASC NYLON 240 RESINADO 100% POLIAMIDA VERDE PETROLEO",
-                        "preco": "10.00",
-                        "cor": "VERDE PETROLEO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "24.434.001.webp"
-                    }
-                ]
-            },
-            {
                 "id": 8,
-                "nome": "CBRE031",
+                "nome": "OPERACIONAL",
                 "produtos": [
                     {
                         "codigo": "20.434.003",
@@ -194,20 +134,22 @@ export const empresas = [
                         "cor": "CINZA",
                         "grade":["P","M","G","GG","XG","EXG","EXGG"],
                         "img": "20.434.004.webp"
-                    }
-                ]
-            },
-            {
-                "id": 9,
-                "nome": "CBRE033",
-                "produtos": [
+                    },
                     {
-                        "codigo": "14.34.006",
+                        "codigo": "24.434.001",
+                        "descricao": "JAQUETA GOLA ESPORTE MASC NYLON 240 RESINADO 100% POLIAMIDA VERDE PETROLEO",
+                        "preco": "10.00",
+                        "cor": "VERDE PETROLEO",
+                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "img": "24.434.001.webp"
+                    },
+                    {
+                        "codigo": "01.434.006",
                         "descricao": "CALCA 1/2 COS CEDROPAC II 100% ALGODAO AREIA 8059",
                         "preco": "10.00",
-                        "cor": "N/A",
+                        "cor": "AREIA",
                         "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "14.34.006.webp"
+                        "img": "01.434.006.webp"
                     },
                     {
                         "codigo": "01.434.007",
@@ -221,7 +163,7 @@ export const empresas = [
             },
             {
                 "id": 10,
-                "nome": "CBRE036",
+                "nome": "NR10",
                 "produtos": [
                     {
                         "codigo": "41.434.001",
@@ -230,23 +172,9 @@ export const empresas = [
                         "cor": "N/A",
                         "grade":["P","M","G","GG","XG","EXG","EXGG"],
                         "img": "41.434.001.webp"
-                    }
+                    },
                 ]
             },
-            {
-                "id": 11,
-                "nome": "CBRE037",
-                "produtos": [
-                    {
-                        "codigo": "42.434.001",
-                        "descricao": "CALCA 1/2 ELAST FR FXREF  CEDROTECH FR 100% ALGODAO CINZA 8047",
-                        "preco": "10.00",
-                        "cor": "N/A",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "42.434.001.webp"
-                    }
-                ]
-            }
         ]
     },
     {
@@ -256,37 +184,13 @@ export const empresas = [
         "cargos": [
             {
                 "id": 1,
-                "nome": "CLARO - CONTRATO",
+                "nome": "ADM",
                 "produtos": [
                     {
-                        "codigo": "01.385.003",
-                        "descricao": "CALCA 1/2 ELAST C/FX MASCULINA POLYCOTTON MAIS 67% POLIESTER 33% ALGODAO CINZA 8113",
+                        "codigo": "16.385.004",
+                        "descricao": "CAMISETE  SOCIAL M/C GRAFIL 67% POLIESTER 33% ALGODAO HAL CINZA CIMENTO",
                         "preco": "10.00",
-                        "cor": "N/A",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "01.385.003.webp"
-                    },
-                    {
-                        "codigo": "10.385.003",
-                        "descricao": "CAMISETA GOLA POLO MASC MC C/FX PIQUET PA 50% ALGODAO 50% POLIESTER VERMELHO 73216.050",
-                        "preco": "10.00",
-                        "cor": "N/A",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "10.385.003.webp"
-                    },
-                    {
-                        "codigo": "15.385.005",
-                        "descricao": "CAMISA SOCIAL M/C GRAFIL  67% POLIESTER 33% ALGODAO CINZA 800",
-                        "preco": "10.00",
-                        "cor": "N/A",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "15.385.005.webp"
-                    },
-                    {
-                        "codigo": "15.385.006",
-                        "descricao": "CAMISA SOCIAL M/L GRAFIL 67% POLIESTER 33% ALGODAO HAL CINZA CIMENTO",
-                        "preco": "10.00",
-                        "cor": "N/A",
+                        "cor": "CINZA CIMENTO",
                         "grade":["P","M","G","GG","XG","EXG","EXGG"],
                         "img": "15.385.006.webp"
                     },
@@ -294,7 +198,7 @@ export const empresas = [
                         "codigo": "15.385.007",
                         "descricao": "CAMISA SOCIAL M/C GRAFIL 67% POLIESTER 33% ALGODAO HAL CINZA CIMENTO",
                         "preco": "10.00",
-                        "cor": "N/A",
+                        "cor": "CINZA CIMENTO",
                         "grade":["P","M","G","GG","XG","EXG","EXGG"],
                         "img": "15.385.007.webp"
                     }
@@ -302,16 +206,8 @@ export const empresas = [
             },
             {
                 "id": 2,
-                "nome": "SEM CARGO DEFINIDO",
+                "nome": "CAMPO",
                 "produtos": [
-                    {
-                        "codigo": "01.385.005",
-                        "descricao": "CALCA 1/2 ELAST C/FX FEMIINA POLYCOTTON MAIS 67% POLIESTER 33% ALGODAO CINZA 8113",
-                        "preco": "10.00",
-                        "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
-                        "img": "01.385.005.webp"
-                    },
                     {
                         "codigo": "10.385.001",
                         "descricao": "CAMISETA GOLA POLO MASC MC PIQUET PA 50% ALGODAO 50% POLIESTER VERMELHO 73216.050",
@@ -319,14 +215,6 @@ export const empresas = [
                         "cor": "CINZA",
                         "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
                         "img": "10.385.001.webp"
-                    },
-                    {
-                        "codigo": "10.385.002",
-                        "descricao": "CAMISETA GOLA POLO MASC MC PIQUET PA 50% ALGODAO 50% POLIESTER CINZA CHUMBO 73048.050",
-                        "preco": "10.00",
-                        "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
-                        "img": "10.385.002.webp"
                     },
                     {
                         "codigo": "10.385.004",
@@ -343,54 +231,6 @@ export const empresas = [
                         "cor": "CINZA",
                         "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
                         "img": "10.385.008.webp"
-                    },
-                    {
-                        "codigo": "10.385.009",
-                        "descricao": "BABY LOOK GOLA POLO C/FX MC PIQUET PA 50% ALGODAO 50% POLIESTER CINZA CHUMBO 73048.050",
-                        "preco": "10.00",
-                        "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
-                        "img": "10.385.009.webp"
-                    },
-                    {
-                        "codigo": "15.385.004",
-                        "descricao": "CAMISA SOCIAL M/L GRAFIL  67% POLIESTER 33% ALGODAO CINZA 800",
-                        "preco": "10.00",
-                        "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
-                        "img": "15.385.004.webp"
-                    },
-                    {
-                        "codigo": "16.385.004",
-                        "descricao": "CAMISETE  SOCIAL M/C GRAFIL 67% POLIESTER 33% ALGODAO HAL CINZA CIMENTO",
-                        "preco": "10.00",
-                        "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
-                        "img": "16.385.004.webp"
-                    },
-                    {
-                        "codigo": "16.385.005",
-                        "descricao": "CAMISETE SOCIAL M/L GRAFIL  67% POLIESTER 33% ALGODAO CINZA 800",
-                        "preco": "10.00",
-                        "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
-                        "img": "16.385.005.webp"
-                    },
-                    {
-                        "codigo": "16.385.006",
-                        "descricao": "CAMISETE SOCIAL M/C GRAFIL  67% POLIESTER 33% ALGODAO CINZA 800",
-                        "preco": "10.00",
-                        "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
-                        "img": "16.385.006.webp"
-                    },
-                    {
-                        "codigo": "16.385.007",
-                        "descricao": "CAMISETE  SOCIAL M/L GRAFIL 67% POLIESTER 33% ALGODAO HAL CINZA CIMENTO",
-                        "preco": "10.00",
-                        "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
-                        "img": "16.385.007.webp"
                     },
                     {
                         "codigo": "24.385.002",
@@ -691,7 +531,7 @@ export const empresas = [
         "cargos": [
             {
                 "id": 1,
-                "nome": "SEM CARGO DEFINIDO",
+                "nome": "VOO",
                 "produtos":[
                     {
                         "codigo": "43.344.001",

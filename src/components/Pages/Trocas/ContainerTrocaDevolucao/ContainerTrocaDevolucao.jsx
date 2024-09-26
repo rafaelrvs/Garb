@@ -6,9 +6,12 @@ const ContainerTrocaDevolucao = ({name}) => {
   const { pedidos,setModalTroca } = useContext(GlobalContext);
 
   function handleOpenModal(currentPedido){
+    const pedido = pedidos.filter((pedido)=>{
+      return pedido.id === currentPedido
+    })
     setModalTroca({
       status:true,
-      pedido:currentPedido,
+      pedido:pedido,
     })
   }
   return (
@@ -22,7 +25,7 @@ const ContainerTrocaDevolucao = ({name}) => {
       </div>
 
       {pedidos.length > 0 && name ==='troca'&& pedidos.map((pedido)=>(
-        <div className={styles.linhasTable}>
+        <div className={styles.linhasTable} key={pedido.id}>
           <span className={`${styles.itemTable} `}>{pedido.id}</span>
           <span className={`${styles.itemTable} `}>{pedido.data}</span>
           <span className={`${styles.itemTable} `}>{pedido.status}</span>
