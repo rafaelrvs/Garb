@@ -1,25 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react'
 import styles from './Header.module.css'
-import SVGLogoGarb from '../../../public/images/Header/Logo_Garb.svg'
-import SVGLogoCli from '../../../public/images/Header/Logo_Cli.svg'
+import SVGLogoGarb from '/images/Header/Logo_Garb.svg'
+import SVGLogoCli from '/images/Header/Logo_Cli.svg'
 
-import InicarPedido from '../../../public/images/Header/nav/InicarPedido.svg'
-import InicarPedidoActive from '../../../public/images/Header/nav/active/InicarPedidoActive.svg'
+import InicarPedido from '/images/Header/nav/InicarPedido.svg'
+import InicarPedidoActive from '/images/Header/nav/active/InicarPedidoActive.svg'
 
-import TrocaEDevolucao from '../../../public/images/Header/nav/TrocaEDevolucao.svg'
-import TrocaEDevolucaoActive from '../../../public/images/Header/nav/active/TrocaEDevolucaoActive.svg'
+import TrocaEDevolucao from '/images/Header/nav/TrocaEDevolucao.svg'
+import TrocaEDevolucaoActive from '/images/Header/nav/active/TrocaEDevolucaoActive.svg'
 
-import Chamado from '../../../public/images/Header/nav/Chamado.svg'
-import ChamadoActive from '../../../public/images/Header/nav/active/ChamadoActive.svg'
+import Chamado from '/images/Header/nav/Chamado.svg'
+import ChamadoActive from '/images/Header/nav/active/ChamadoActive.svg'
 
-import Relatorio from '../../../public/images/Header/nav/Relatorio.svg'
-import RelatorioActive from '../../../public/images/Header/nav/active/RelatorioActive.svg'
+import Relatorio from '/images/Header/nav/Relatorio.svg'
+import RelatorioActive from '/images/Header/nav/active/RelatorioActive.svg'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import PopUp from '../PopUp/PopUp'
 import { GlobalContext } from '../../Context/GlobalContext'
 import FullScreenDiv from '../FullScreenDiv/FullScreenDiv'
 import { Modal } from '../Modal/Modal'
-import Voltar from '../Voltar/Voltar'
 import ModalTroca from '../ModalTroca/ModalTroca'
 
 
@@ -30,18 +29,33 @@ const Header = () => {
     const location = useLocation();
 
     useEffect(()=>{
-        
         const btn = window.localStorage.getItem('btnAtivo')
         setBtnAtivo(btn)
     },[])
 
     useEffect(() => {
-        // Verifica se a rota atual é a raiz
-        if (location.pathname === '/') {
-            setBtnAtivo('')
-            window.localStorage.removeItem('btnAtivo')
+        const path = location.pathname;
+        switch(path){
+            case '/':
+                setBtnAtivo('')
+                window.localStorage.removeItem('btnAtivo')
+                break;
+            case '/trocas':
+                setBtnAtivo('2')
+                break;
+            case '/pedidos':
+                setBtnAtivo('1')
+                break;
+            case '/chamados':
+                setBtnAtivo('3')
+                break;
+            case '/relatorios':
+                setBtnAtivo('4')
+                break;
         }
       }, [location]);
+
+      
 
     function ativaBtn(btn){
         window.localStorage.setItem('btnAtivo',btn)
