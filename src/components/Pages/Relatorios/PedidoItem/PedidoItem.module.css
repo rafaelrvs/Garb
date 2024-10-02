@@ -131,50 +131,39 @@
 .fieldResult{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    gap: 15px;
     align-items: center;
 
 }
-.table{
-    width: 90%;
-
-    padding: 5px;
-    font-size: 1rem;
-border: none;
-}
-.table td{
-}
-.table tr{
-
-
-    font-size: 0.9rem;
-  border: none ;
-}
-.table .descTable{ 
-    font-size: 0.9rem;
-
-    height: 100px;
-    text-align: center;
-    
-
-}
-.codProduto{
-display: flex;
-flex-direction: column;
-align-items: center;
-
-justify-content: space-between;
-height: 100px;
-
-  
- 
-}
-.linha{
-
-   margin-bottom: 10px;
-}
-.linhaHR{
-    margin-top: 10px;
-}
-.newTH{
+.itemPed{
+    padding: 15px;
+    border-radius: 5px;
     background-color: #8A49CF;
+    width: 97%;
+    display: flex;
+}
+.itemPed p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width:70px;
+    font-size: 0.9rem;
+    text-align: center;
+
+}
+.headerRelatorio{
+    display: flex;
+    
+    width: 100%;
+}
+.headerRelatorio p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width:70px;
+    font-size: 0.9rem;
+    text-align: center;
 }

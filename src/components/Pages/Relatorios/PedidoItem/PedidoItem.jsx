@@ -123,60 +123,41 @@ console.log(filteredPedidos);
         <div className={styles.containerResultado}>
           <h3 className={styles.titleResult}>Resultado</h3>
           <div className={styles.fieldResult}>
-            <table border="1" className={styles.table}>
-              <thead>
-                <tr className={styles.newTH}>
-                  <th>ID</th>
-                  <th>Codigo</th>
-                  <th>Descrição</th>
-                  <th>Data</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredPedidos.length > 0 ? (
-                  filteredPedidos.map((pedido, index) => (
-                    <>
-                    <tr key={index}>
-                      <td>{pedido.id}</td>
-                      <td>
-                        {pedido.produtos.length > 0
-                          ? pedido.produtos.map((produto, pIndex) => (
-      
-                            <tr className={styles.codProduto} key={pIndex}>{produto.cod}</tr>
-                        
+            <div className={styles.headerRelatorio}>
+            <p>Nº Pedido</p>
+            <p>QTD Total</p>
+            <p>Status</p>
+            <p>Data</p>
+            <p>Valor</p>
+            </div>
+          {filteredPedidos.length > 0 ? (
+              filteredPedidos.map((pedido) => (
+                <div className={styles.itemPed} key={pedido.id}>
+               <p>
+               {pedido.id} 
 
-                    
-                          ))
-                          : 'Sem produtos'}
-                      </td>
-                      <td>
-                        {pedido.produtos.length > 0
-                          ? pedido.produtos.map((produto, pIndex) => (
-                            <>
-                            <div className={styles.descTable} key={pIndex}>{produto.descricao}</div>
-                    
-                            </>
-                          ))
-                          : 'Sem produtos'}
-                      </td>
-                      <td>{pedido.data}</td>
-                    </tr>
-                    
-                  <tr className={styles.newTH}>
-                    <th>ID</th>
-                    <th>Codigo</th>
-                    <th>Descrição</th>
-                    <th>Data</th>
-                  </tr>
-                  </>
-                  ))
-                ) : (
-                  <tr>
-                    <td colSpan="4">Nenhum pedido encontrado</td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
+               </p>
+               <p>
+                
+               {pedido.qtdeTotal}
+               </p>
+               <p>
+                {pedido.status}
+               </p>
+               {pedido.produtos.map((produto, pIndex) =>(
+                <p key={pIndex}>
+                  {produto.data}
+                </p>
+               ) )}
+               <p>
+                {pedido.valorTotal}
+               </p>
+                </div>
+              ))
+            ) : (
+              <p>Nenhum pedido encontrado.</p>
+            )}
+              
           </div>
         </div>
       </form>
