@@ -1,0 +1,169 @@
+.containerForm{
+    display: flex;
+    flex-direction: column;
+    height:50vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color:var(--background2);
+    
+}
+.conteudoForm{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: none;
+    
+}
+
+
+.containerFiltroum{
+    display: flex;
+     gap: 10px;
+
+
+    width: 90%;
+    margin: 0 auto;
+    
+
+
+    
+    
+  
+}
+.itemfiltroLista1{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 15px;
+    
+}
+.inputText{
+    border: none;
+    height: 30px;
+    width:90%;
+    border-radius: 5px;
+    outline: none;
+    color: var(--background);
+    
+}
+.cargo{
+    width:90%;
+
+    color: var(--background);
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    
+}
+.status{
+    width:100%;
+    color: var(--background);
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+  
+}
+.itemOption{
+    color: var(--background);
+    
+}
+
+.FiltroInicialdois{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    outline: none;
+    border-radius: 5px;
+    display: flex;
+    gap: 15px;
+    border: 1px solid #8A49CF;
+    width: 90%;
+    padding: 10px;
+    align-items: start;
+    margin-left: 25PX;
+
+    
+    
+}
+.dataEmissao{
+    display: flex;
+    align-items: start;
+
+}
+
+.itensFiltro2{
+    display: flex;
+   
+}
+.containerData1,.cotainerdata2{
+    display: grid;
+    gap: 10px;
+}
+.data{
+    outline: none;
+    border-radius: 5px;
+
+    height: 30px;
+    padding: 5px;
+    margin-right: 25px;
+    color: var(--background);
+    
+}
+.btn{
+    border-radius: 5px;
+    outline: none;
+    height: 30px;
+
+    align-self: flex-end;
+    margin-left: 5px;
+    background-color: #8A49CF;
+    color: #ffff;
+    border: none;
+}
+
+.titleResult{
+    display: flex;
+    
+    padding: 25px;
+}
+
+.fieldResult{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+
+}
+.itemPed{
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #8A49CF;
+    width: 97%;
+    display: flex;
+}
+.itemPed p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width:70px;
+    font-size: 0.9rem;
+    text-align: center;
+
+}
+.headerRelatorio{
+    display: flex;
+    
+    width: 100%;
+}
+.headerRelatorio p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    width:70px;
+    font-size: 0.9rem;
+    text-align: center;
+}
