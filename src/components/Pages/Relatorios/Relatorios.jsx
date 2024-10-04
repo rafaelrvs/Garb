@@ -3,6 +3,9 @@ import styles from './Relatorios.module.css'
 import { GlobalContext } from '../../../Context/GlobalContext';
 import { BrowserRouter, NavLink, Route, Router, Routes } from 'react-router-dom';
 import { PedidoItem } from './PedidoItem/PedidoItem';
+import PedidoMacro from './PedidoMacro/PedidoMacro';
+import TrackingPedido from './Tracking/TrackingPedido';
+
 
 
 const Relatorios = () => {
@@ -14,7 +17,7 @@ const Relatorios = () => {
         <div className={styles.headerRelatorios}>
           <h1>Relatorios</h1>
         </div>
-
+          
           <main className={styles.containerContent}>
 
           <div className={styles.relatorios}>
@@ -26,9 +29,13 @@ const Relatorios = () => {
           </div>
             <div className={styles.containerRelatorio}> 
               <Routes>
+                <Route path='/pedidoMacro' element={<PedidoMacro/>}/>
                 <Route path='/pedidoItem' element={<PedidoItem/>}/>
+                <Route path='/tracking' element={<TrackingPedido/>}/>
+            
               </Routes>
             </div>
+          
 
           </main>
 
