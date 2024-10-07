@@ -39,7 +39,7 @@ export const GlobalStorage = ({ children }) => {
 
   const [modalTroca,setModalTroca]=useState({
     status:'',
-    pedido:'',
+    pedido:{},
   })
 
   useEffect(() => {

@@ -3,7 +3,8 @@ import styles from './ModalTroca.module.css';
 import { GlobalContext } from '../../Context/GlobalContext';
 
 const ModalTroca = ({pedido}) => {
-const [produtos,setProdutos]=useState()
+
+const [produtos,setProdutos]=useState([])
 const { setModalTroca } = useContext(GlobalContext);
 const voltar = useRef()
 
@@ -11,16 +12,24 @@ function closeModal(event){
     if(event.currentTarget === voltar.current){
         setModalTroca({
             status:false,
-            pedido:'',
+            pedido:{},
         })
     }
 }
-useEffect(() => {
-    if (pedido && pedido.produtos && pedido.produtos.length > 0) {
-        setProdutos(pedido.produtos);
-    }
-}, [pedido]);
 
+useState(()=>{
+    if(pedido.length > 0){
+        setProdutos(pedido[0].produtos)
+    }
+    
+},[])
+
+useState(()=>{
+    if(produtos.length ){
+        console.log(produtos);
+    }
+    
+},[produtos])
 
   return (
     <div className={styles.containerModal}>
@@ -40,7 +49,7 @@ useEffect(() => {
                     <span className={styles.columnName}>qtde</span>
                     <span className={styles.columnName}>ação</span>        
                 </div>
-                {produtos && produtos.length > 0 && produtos.map((produto, index) => (
+                {produtos&& produtos.length > 0 && produtos.map((produto, index) => (
                     <div className={styles.linhasTable} key={index}>
                         <img src="" alt="" />
                         <span className={`${styles.itemTable}`}>{produto.cod}</span>
