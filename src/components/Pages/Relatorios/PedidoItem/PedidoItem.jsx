@@ -65,7 +65,7 @@ export const PedidoItem = () => {
   }, [escolheCargo]);
 
   return (
-    <div className={styles.containerForm}>
+
      
       <form onSubmit={handleClick}>
         <div className={styles.containerFiltroum}>
@@ -197,6 +197,5 @@ export const PedidoItem = () => {
         </div>
    
       </form>
-    </div>
   );
 };

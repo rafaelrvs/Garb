@@ -35,7 +35,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--background2);
-    width: 250px;
+    min-width: 200px;
     height: 250px;
     gap: 10px;
 }
@@ -63,9 +63,7 @@
 
 .containerRelatorio {
     background-color: var(--background2);
-    width: 70vw;
-    height: 50vh;
-   
+    max-width: 800px;
     border-radius: 15px;
 }
 .titleRelatorio{

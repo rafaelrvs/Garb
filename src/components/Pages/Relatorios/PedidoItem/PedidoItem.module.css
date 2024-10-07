@@ -5,7 +5,8 @@
     width: 90%;
     margin: 0 auto;
 
-    background-color: var(--background2);
+    /* background-color: var(--background2); */
+    background-color: red;
 
 }
 
@@ -134,13 +135,10 @@
 }
 
 .containerResultado {
+    margin-top: 15px;
     overflow-x: hidden;
     overflow-y: auto;
-    height: 620px;
-    width: 90%;
-    margin: 0 auto;
-
-
+    height: 400px;
 }
 
 .titleResult {

@@ -24,8 +24,6 @@ const Relatorios = () => {
               <NavLink  to={"pedidoMacro"} className={styles.itemRelatorio} id="Pedido macro">Pedido macro</NavLink>
               <NavLink to={"pedidoItem"}  className={styles.itemRelatorio} id="Pedido por item">Pedido por item</NavLink>
               <NavLink  to={"tracking"} className={styles.itemRelatorio} id="Tracking de pedidos" >Tracking de pedidos</NavLink>
-              
-      
           </div>
             <div className={styles.containerRelatorio}> 
               <Routes>
