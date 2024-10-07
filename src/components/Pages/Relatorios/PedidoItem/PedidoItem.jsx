@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './PedidoItem.module.css';
 import { GlobalContext } from '../../../../Context/GlobalContext';
 import { empresas } from '../../../../DB/empresas';
@@ -14,55 +14,74 @@ export const PedidoItem = () => {
   const [filteredProducts, setFilteredProducts] = useState([]); // Produtos filtrados
 
   const todosCargos = empresas.flatMap((empresa) => empresa.cargos);
-  const pediProd = pedidos.flatMap((pedido) => pedido.status);
-  const pediProdUnico = [...new Set(pediProd)];
+  const pediProdUnico = [...new Set(pedidos.flatMap((pedido) => pedido.status))];
 
-  // Função de busca e filtragem
-  function handleClick(event) {
-    event.preventDefault();
+  // Função para converter string de data para o formato DD/MM/YYYY utilizando o locale pt-BR
+  const convertToDayMonthYear = (dateString) => {
+    if (!dateString) return null;
 
-    const pedidosFiltrados = pedidos.filter((pedido) => {
+    const [year, month, day] = dateString.split('-'); // Dividindo a string no formato YYYY-MM-DD
+    return `${day}/${month}/${year}`; // Retornando no formato DD/MM/YYYY
+  };
+
+  // Função para converter a data de DD/MM/YYYY para um objeto Date para comparação
+  const parseDate = (dateString) => {
+    if (!dateString) return null;
+
+    const [day, month, year] = dateString.split('/');
+    return new Date(`${year}-${month}-${day}`); // Criando um objeto Date
+  };
+
+  const filtraPedido = () => {
+    const pedidosData = JSON.parse(window.localStorage.getItem('pedidos')) || [];
+  
+    // Convertendo datas de filtro para objetos Date
+    const dataInicioDate = parseDate(convertToDayMonthYear(dataInicio));
+    const dataFimDate = parseDate(convertToDayMonthYear(dataFim));
+  
+    // Filtrar os pedidos com base nas seleções
+    const pedidosFiltrados = pedidosData.filter((pedido) => {
       const filtroPedido = searchPedido ? pedido.id === Number(searchPedido) : true;
-      const filtroCargo = escolheCargo ? pedido.cargo === escolheCargo : true;
       const filtroStatus = escolheStatus ? pedido.status === escolheStatus : true;
 
-      // Formatação para garantir que as datas estejam no mesmo formato
-      const dataPedido = new Date(pedido.data).toISOString().split('T')[0];
-
-      const dataInicioFormatada = dataInicio ? new Date(dataInicio).toISOString().split('T')[0] : null;
-      const dataFimFormatada = dataFim ? new Date(dataFim).toISOString().split('T')[0] : null;
-
-      // Filtro por data
-      const filtroData =
-        dataInicio && dataFim
-          ? dataPedido >= dataInicioFormatada && dataPedido <= dataFimFormatada
-          : true;
-
-      return filtroPedido && filtroCargo && filtroStatus && filtroData;
+      // Comparando a data de emissão (convertida para DD/MM/YYYY)
+      const dataPedido = parseDate(pedido.data);
+      const filtroData = dataInicioDate && dataFimDate
+        ? dataPedido >= dataInicioDate && dataPedido <= dataFimDate
+        : true;
+  
+      return filtroPedido && filtroStatus && filtroData;
     });
-
-    setFilteredPedidos(pedidosFiltrados);
-  }
-
-  // Efeito para filtrar os produtos com base no cargo selecionado
-  useEffect(() => {
+  
+    // Restante da lógica de filtragem
     if (escolheCargo) {
       const empresaSelecionada = empresas.find((empresa) =>
         empresa.cargos.some((cargo) => cargo.nome === escolheCargo)
       );
-      const cargoSelecionado = empresaSelecionada?.cargos.find(
-        (cargo) => cargo.nome === escolheCargo
-      );
-
+      const cargoSelecionado = empresaSelecionada?.cargos.find((cargo) => cargo.nome === escolheCargo);
+  
       if (cargoSelecionado) {
+        const pedidosComProdutosFiltrados = pedidosFiltrados.filter((pedido) =>
+          pedido.produtos.some((produto) =>
+            cargoSelecionado.produtos.some((filteredProduto) => filteredProduto.codigo === produto.cod)
+          )
+        );
+        setFilteredPedidos(pedidosComProdutosFiltrados);
         setFilteredProducts(cargoSelecionado.produtos);
       } else {
+        setFilteredPedidos([]);
         setFilteredProducts([]);
       }
     } else {
+      setFilteredPedidos(pedidosFiltrados);
       setFilteredProducts([]);
     }
-  }, [escolheCargo]);
+  };
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    filtraPedido();
+  };
 
   return (
 
@@ -112,7 +131,7 @@ export const PedidoItem = () => {
             </select>
           </label>
         </div>
-
+        <hr className={styles.divisoria} />
         <div className={styles.FiltroInicialdois}>
           <p className={styles.dataEmissao}>Data Emissão(de):</p>
           <div className={styles.itensFiltro2}>
@@ -141,6 +160,7 @@ export const PedidoItem = () => {
             <button className={styles.btn}>Buscar</button>
           </div>
         </div>
+        <hr className={styles.divisoria} />
 
         <div className={styles.containerResultado}>
                 
