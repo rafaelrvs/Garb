@@ -30,7 +30,7 @@
     flex-wrap: wrap;
     gap: 20px;
     min-height: 4rem;
-    align-items: center; 
+    align-items: center;
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
@@ -49,8 +49,21 @@
     font-size: 1.5rem;
 }
 
-
-
 .nomeText{
     width: 12rem;
+}
+
+
+.containerLogo{
+    display: flex;
+    background-color: #6b418d54;
+    border-radius: 5px;
+    padding: 5px;
+    justify-content: end;
+    width: 100%;
+}
+
+.logo{
+    width: 200px;
+    height: 40px;
 }
