@@ -204,7 +204,7 @@ export const PedidoItem = () => {
                         <p>{pedidoProduto.qtdeTotal}</p>
                         <p>{pedidoProduto.status}</p>
                         <p>{new Date(pedidoProduto.data).toLocaleDateString('pt-BR')}</p>
-                        <p>{pedidoProduto.valorTotal}</p>
+                        <p>{pedidoProduto.valorTotal.toFixed(2)}</p>
                       </div>
                     ))
                 ) : (

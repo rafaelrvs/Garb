@@ -24,9 +24,9 @@ const Relatorios = () => {
           <main className={styles.containerContent}>
 
           <div className={styles.relatorios}>
-              <NavLink onClick={()=>setPath("Relatorio Macro")}  to={"pedidoItem"} className={styles.itemRelatorio} id="Pedido macro">Pedido macro</NavLink>
+              <NavLink onClick={()=>setPath("Relatorio Macro")}  to={"pedidoItem"} className={styles.itemRelatorio} id="Pedido macro">Pedidos Gerais</NavLink>
               <NavLink onClick={()=>setPath("Relatorio Pedido por item")} to={"pedidoMacro"}  className={styles.itemRelatorio} id="Pedido por item">Pedido por item</NavLink>
-              <NavLink onClick={()=>setPath("Relatorio tracking de Pedidos")} to={"tracking"} className={styles.itemRelatorio} id="Tracking de pedidos" >Tracking de pedidos</NavLink>
+              <NavLink onClick={()=>setPath("Relatorio tracking de Pedidos")} to={"tracking"} className={styles.itemRelatorio} id="Tracking de pedidos" >Relatorio personalizado</NavLink>
           </div>
             <div className={styles.containerRelatorio}> 
               <Routes>

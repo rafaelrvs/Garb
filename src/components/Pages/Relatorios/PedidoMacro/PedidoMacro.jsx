@@ -1,48 +1,55 @@
 import React, { useState } from 'react';
-import styles from "./PedidoMacro.module.css";
+import styles from './PedidoMacro.module.css';
 
 const PedidoMacro = () => {
-  const [codProduto, setCodProduto] = useState("");
-  const [descricao, setDescricao] = useState("");
-  const [idPedido, setIdPedido] = useState(""); // Novo estado para armazenar o ID do pedido
-  const [quantidade, setQuantidade] = useState(""); // Novo estado para armazenar a quantidade
-  const [valor, setValor] = useState(""); // Novo estado para armazenar o valor
-  const [btn, setBtnAtivo] = useState(false); // Novo estado para armazenar o valor
+  const [codProduto, setCodProduto] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [pedidosEncontrados, setPedidosEncontrados] = useState([]); // Estado que armazena IDs, quantidades e valores
+  const [btnAtivo, setBtnAtivo] = useState(false);
 
   const pedidosData = JSON.parse(window.localStorage.getItem('pedidos')) || [];
-console.log(btn);
 
   function pesquisaItem() {
     let found = false;
+    let pedidosComDetalhes = []; // Array para armazenar os IDs, quantidades e valores dos pedidos encontrados
 
-    pedidosData.forEach(pedido => {
-      const produtoEncontrado = pedido.produtos.find(produto => produto.cod === codProduto);
+    pedidosData.forEach((pedido) => {
+      const produtoEncontrado = pedido.produtos.find(
+        (produto) => produto.cod === codProduto
+      );
 
       if (produtoEncontrado) {
-        setDescricao(produtoEncontrado.descricao); // Atualiza a descrição do produto
-        setIdPedido(pedido.id); // Armazena o ID do pedido
-        setQuantidade(produtoEncontrado.quantidade); // Armazena a quantidade do produto
-        setValor(produtoEncontrado.preco); // Armazena o valor do produto
+        setDescricao(produtoEncontrado.descricao);
+        pedidosComDetalhes.push({
+          id: pedido.id,
+          quantidade: produtoEncontrado.quantidade, // Armazena a quantidade do produto no pedido
+          valor: produtoEncontrado.preco, // Armazena o valor do produto no pedido
+        });
         found = true;
       }
     });
 
-    if (!found) {
-      setDescricao("Produto não encontrado");
-      setIdPedido(""); // Limpa o estado do ID se o produto não for encontrado
-      setQuantidade(""); // Limpa o estado da quantidade se o produto não for encontrado
-      setValor(""); // Limpa o estado do valor se o produto não for encontrado
+    if (found) {
+      setPedidosEncontrados(pedidosComDetalhes); // Armazena os pedidos encontrados com suas respectivas quantidades e valores
+    } else {
+      setDescricao('Produto não encontrado');
+      setPedidosEncontrados([]); // Limpa o estado se o produto não for encontrado
     }
   }
 
   function handleClick() {
-    if( codProduto.length >=10){
-      setBtnAtivo(true)
-    }else{
-      setBtnAtivo(false)
-
-    }
     pesquisaItem();
+  }
+
+  function handleCodProdutoChange(e) {
+    const newCodProduto = e.target.value;
+    setCodProduto(newCodProduto);
+    setBtnAtivo(newCodProduto.length >= 10);
+  }
+
+  // Função para imprimir a tabela
+  function handlePrint() {
+    window.print();
   }
 
   return (
@@ -54,25 +61,59 @@ console.log(btn);
           className={styles.inputText}
           placeholder="Código do Produto"
           value={codProduto}
-          onChange={(e) => setCodProduto(e.target.value)}
+          onChange={handleCodProdutoChange}
         />
 
-        <input className={styles.btn} type="button" value="Consultar" onClick={handleClick} />
+        <input
+          className={styles.btn}
+          type="button"
+          value="Consultar"
+          onClick={handleClick}
+          disabled={!btnAtivo}
+        />
       </div>
 
-      {/* Div com alternância de classe baseada no estado do botão */}
-      <div className={btn === true || codProduto.length >=10 ? styles.result : ""}>
-        {
-          <>
-            <p className={styles.itemID}><strong>Descrição:</strong> {descricao}</p>
-            <p className={styles.itemID}><strong>ID do Pedido:</strong> {idPedido}</p>
-            <p className={styles.itemID}><strong>Quantidade:</strong> {quantidade}</p>
-            <p className={styles.itemID}><strong>Valor:</strong>  {valor}</p>
-          </>
-        }
+      <div className={styles.result}>
+        <>
+          <p className={styles.itemID}>
+            <strong>Descrição:</strong> {descricao}
+          </p>
+          <div className={styles.pedidos}>
+            <strong>Pedidos:</strong>
+            {pedidosEncontrados.length > 0 ? (
+              <>
+                <table className={styles.table}>
+                  <thead>
+                    <tr>
+                      <th>ID do Pedido</th>
+                      <th>Quantidade</th>
+                      <th>Valor uni</th>
+                      <th>Valor total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {pedidosEncontrados.map((pedido, index) => (
+                      <tr key={index}>
+                        <td>{pedido.id}</td>
+                        <td>{pedido.quantidade}</td>
+                        <td>R$: {pedido.valor}</td>
+                        <td>R$:{(pedido.valor * pedido.quantidade).toFixed(2)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <button className={styles.btnPrint} onClick={handlePrint}>
+                  Imprimir Tabela
+                </button>
+              </>
+            ) : (
+              <p>Nenhum pedido encontrado</p>
+            )}
+          </div>
+        </>
       </div>
     </div>
   );
-}
+};
 
 export default PedidoMacro;
