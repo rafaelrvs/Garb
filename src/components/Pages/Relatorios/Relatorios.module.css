@@ -63,6 +63,7 @@
 
 .containerRelatorio {
     background-color: var(--background2);
+
     max-width: 800px;
     border-radius: 15px;
 }

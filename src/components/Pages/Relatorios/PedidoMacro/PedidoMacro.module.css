@@ -1,7 +1,117 @@
-.inputText{
+.containerMacro {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 700px;
+    margin: 0 auto; /* Centraliza o container */
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px;
+}
+
+.inputText {
     padding: 5px;
-    height: 50px;
-    width: 275px;
+    height: 30px;
+    width: 175px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Adicionado uma borda sutil */
+    color: var(--background2);
+    background-color: #f9f9f9; /* Melhor visibilidade */
+}
+
+.btn {
+    height: 30px;
+    width: 175px;
     border-radius: 5px;
     border: none;
+    background-color: var(--primary-color); /* Defina sua variável de cor principal */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #8A49CF;
+}
+
+.btn:hover {
+    background-color: var(--primary-color-dark); /* Cor mais escura ao passar o mouse */
+}
+
+.result {
+   padding: 25px;
+    margin-top: 25px;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Exibe o conteúdo em coluna */
+    gap: 15px;
+    background-color: #8A49CF;
+    animation: animaLeftEscolha ease forwards 0.4s;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.itemID {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemID > strong {
+    height: auto;
+    width: auto;
+    background-color: #f1f1f1; /* Alterei a cor para uma mais neutra */
+    padding: 5px;
+    border-radius: 3px;
+    color: #333;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.itemID:nth-child(1){
+    animation: animaDowmEscolha ease forwards 0.9s;
+}
+.itemID:nth-child(2){
+    animation: animaDowmEscolha ease forwards 0.8s;
+}
+.itemID:nth-child(3){
+    animation: animaDowmEscolha ease forwards 0.7s;
+}
+.itemID:nth-child(4){
+    animation: animaDowmEscolha ease forwards 0.6s;
+}
+.itemID:nth-child(5){
+    animation: animaDowmEscolha ease forwards 0.5s;
+}
+.itemID:nth-child(6){
+    animation: animaDowmEscolha ease forwards 0.4s;
+}
+.itemID:nth-child(7){
+    animation: animaDowmEscolha ease forwards 0.3s;
+}
+
+@keyframes animaLeftEscolha {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes animaDowmEscolha {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
