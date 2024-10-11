@@ -19,24 +19,30 @@
   grid-area: produtos;
   overflow: auto;
   gap: 10px;
-  max-height: 600px;
+  max-height: 700px;
   padding: 10px;
 }
 
 .colunaDois {
   display: grid;
   grid-area: finalizarPed;
-  grid-template-rows: repeat(4, 55px);
+  grid-template-rows: repeat(4, 30px);
   gap: 5px;
   align-items: start;
   padding: 20px;
-  height: fit-content;
   background-color: var(--background2);
   box-shadow: 0px 0px 0px 1px #2c2b2b;
   border-radius: 5px;
 }
 
 
+.tituloEntrega{
+  background-color: #740c32;
+  padding: 10px 0 ;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+  font-size: 1rem;
+}
 
 .containerMetPagamento{
   display: grid;
@@ -46,7 +52,7 @@
   justify-content: space-between;
   background-color: var(--background2);
   box-shadow: 0px 0px 0px 1px #2c2b2b;
-  border-radius: 5px;
+  border-radius: 0 0 5px 5px;
   padding: 20px;
 }
 
@@ -225,6 +231,8 @@
   padding: 10px 0 ;
   text-align: center;
   margin-bottom: 20px;
+  font-size: 1rem;
+
 }
   
 .containerFretes{

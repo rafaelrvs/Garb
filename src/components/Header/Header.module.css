@@ -50,3 +50,13 @@
     background-color: var(--background);
     transition: 0.3s;
 }
+
+
+
+@media (max-width: 460px) {
+    .logoImg{
+        height: 100%;
+        width: 7rem;
+    }
+
+}

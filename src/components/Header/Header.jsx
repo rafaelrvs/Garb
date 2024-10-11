@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import styles from './Header.module.css'
 import SVGLogoGarb from '/images/Header/Logo_Garb.svg'
-import SVGLogoCli from '/images/Header/Logo_Cli.svg'
+import LOGOAMALFIS from '/images/Header/LOGO-AMALFIS-Branco.svg'
 
 import InicarPedido from '/images/Header/nav/InicarPedido.svg'
 import InicarPedidoActive from '/images/Header/nav/active/InicarPedidoActive.svg'
@@ -27,6 +27,7 @@ import ModalRelatorio from '../ModalTroca/ModalRelatorio/ModalRelatorio'
 const Header = () => {
     const [btnAtivo, setBtnAtivo] = useState('')
     const {popUp, modalTroca, modal,modalRelatorio} = useContext(GlobalContext);
+    const [logoCli, setLogoCli] = useState(null)
     const location = useLocation();
 
     useEffect(() => {
@@ -42,6 +43,12 @@ const Header = () => {
             case '/pedidos':
                 setBtnAtivo('1')
                 break;
+            case '/pedidos/carrinho':
+                setBtnAtivo('1')
+                break;
+            case '/pedidos/AcompanharPedidos':
+                setBtnAtivo('1')
+                break;
             case '/chamados':
                 setBtnAtivo('3')
                 break;
@@ -49,15 +56,40 @@ const Header = () => {
                 setBtnAtivo('4')
                 break;
         }
+
+        switch(path){
+            case '/pedidos/1':
+                setLogoCli('1')
+                break;
+            case '/pedidos/2':
+                setLogoCli('2')
+                break;
+            case '/pedidos/3':
+                setLogoCli('3')
+                break;
+            case '/pedidos/4':
+                setLogoCli('4')
+                break;
+            case '/pedidos/5':
+                setLogoCli('5')
+                break;
+            case '/pedidos/6':
+                setLogoCli('6')
+                break;
+            default:
+                setLogoCli(null)
+                break;
+
+        }
       }, [location]);
 
-      
   return (
     <header>
         <div className={styles.containerLogos}>
             <div className={styles.logos}>
-                <img src={SVGLogoCli} alt="logo Cli" className={styles.logoImg} />
-                <Link to={'/'}><img src={SVGLogoGarb} alt="logo Garb" className={styles.logoImg} /></Link>
+            {logoCli === null&&<img src={LOGOAMALFIS} alt="logo Cli" className={`${styles.logoImg} animeDown`} />}
+            {logoCli === '1'&&<img src={SVGLogoGarb} alt="logo Cli" className={`${styles.logoImg} animeDown`} />}
+                <Link to={'/'}><img src={SVGLogoGarb} alt="logo Garb" className={`${styles.logoImg} animeDown`} /></Link>
             </div>
         </div>
       <nav className={styles.nav}>

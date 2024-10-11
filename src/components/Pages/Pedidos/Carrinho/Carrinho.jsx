@@ -10,7 +10,7 @@ import checkSVG from '/images/check.svg'
 import crossSVG from '/images/cross.svg'
 
 const Carrinho = () => {
-  const { carrinho, quantidades } = useContext(GlobalContext);
+  const { carrinho, quantidades,  } = useContext(GlobalContext);
   const [qtdeTotal, setQtdeTotal] = useState(0);
   const [valorTotal, setValorTotal] = useState(0);
   const [formaPagSelecionado, setFormaPagSelecionado] = useState({
@@ -74,14 +74,20 @@ const Carrinho = () => {
       
       localStorage.setItem('pedidos', JSON.stringify(pedidosAtualizados));
       localStorage.removeItem('carrinho')
+      // Antes de recarregar a página, salve o estado do popup
+      localStorage.setItem('mostrarPopUp', JSON.stringify({
+        status: true,
+        color: "#46bba2",
+        message: `Pedido ${novoPedido.id} criado`,
+      }));
       navigate('/pedidos/AcompanharPedidos')
-      window.location.reload()
+      window.location.reload();
     }
+    
     else{
       setError(true)
       setTimeout(()=>{
         setError(false)
-
       },1200)
     }
   }
@@ -182,30 +188,35 @@ const Carrinho = () => {
           </>
           )}
         </div>
+        <div>
+          <h1 className={styles.tituloEntrega}>Informações do pedido</h1>
+          <div className={styles.colunaDois}>
+            <p>Qtde. Total: {qtdeTotal}</p>
+            <p>Frete:{campoFrete.preco}</p>
+            <p>forma de pag: {formaPagSelecionado.data.nome || 0}</p>
+            <p>Valor Total: R$ {(valorTotal * (1 + (formaPagSelecionado.data.acrescimo || 0))).toFixed(2)}</p>
 
-        <div className={styles.colunaDois}>
-          <p>Qtde. Total: {qtdeTotal}</p>
-          <p>Frete:{campoFrete.preco}</p>
-          <p>forma de pag: {formaPagSelecionado.data.nome || 0}</p>
-          <p>Valor Total: R$ {(valorTotal * (1 + (formaPagSelecionado.data.acrescimo || 0))).toFixed(2)}</p>
-
-          <button className={`${styles.btnFinalizar} ${styles.button}`} onClick={handleSubmit} disabled={!carrinho.length}>
-            Finalizar Pedido
-          </button>
-          <Link to="/pedidos">
-            <button className={styles.button}>Adicionar mais Produtos</button>
-          </Link>
+            <button className={`${styles.btnFinalizar} ${styles.button}`} onClick={handleSubmit} disabled={!carrinho.length}>
+              Finalizar Pedido
+            </button>
+            <Link to="/pedidos">
+              <button className={styles.button}>Adicionar mais Produtos</button>
+            </Link>
+          </div>
         </div>
 
         {/*metodo de pagamento*/}
-        <div className={styles.containerMetPagamento} >
-          <button className={styles.button} onClick={handlePagamento}>Método de pagamento</button>
-          <img 
-            src={formaPagSelecionado.selecionado? checkSVG : crossSVG} 
-            alt="status de seleção de pagamento" 
-            className={error&& !formaPagSelecionado.selecionado ? styles.statusFormaPagAnimation : styles.statusFormaPag}          
-          />
-          
+        <div>
+          <h1 className={styles.tituloEntrega}>Escolha o método de pagamento</h1>
+          <div className={styles.containerMetPagamento} >
+            <button className={styles.button} onClick={handlePagamento}>Método de pagamento</button>
+            <img 
+              src={formaPagSelecionado.selecionado? checkSVG : crossSVG} 
+              alt="status de seleção de pagamento" 
+              className={error&& !formaPagSelecionado.selecionado ? styles.statusFormaPagAnimation : styles.statusFormaPag}          
+              />
+            
+          </div>
         </div>
 
         {/*Frete*/}
