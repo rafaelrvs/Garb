@@ -1,0 +1,159 @@
+.containerModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    margin: 0px;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color: #0000003a;
+    z-index: 200;
+    position: fixed;
+}
+
+.modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 25px;
+    height: 600px;
+    width: 900px;
+    border-radius: 10px;
+    z-index: 11;
+    background-color: var(--background);
+    transition: 0.5s;
+    animation: forwards show-opacity 0.3s;
+}
+
+.fade{
+    transition: .4s;
+    animation: fade .4s ease-in-out;
+  
+}
+  
+@keyframes fade {
+    from{
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to{
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+
+.voltarContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+
+.voltarBtn{
+    display: flex;
+    border: 2px solid;
+    width: 3rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.voltarBtn:active{
+    scale: 1.2;
+}
+
+.cabecalhoTable{
+    display: flex;
+    top: 0;
+    width: 800px;
+    height: 50px;
+    padding: 8px 10px;
+    justify-content: space-around;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.columnName{
+    font-weight: bold;
+    width: 150px;  text-align: center;
+}
+
+.linhasTable{
+    display: flex;
+    padding: 8px 0;
+    justify-content: space-around;
+    background-color: #fff;
+    margin: 10px 5px ;
+    padding: 5px;
+    border-radius: 5px;
+}
+  
+.itemTable{
+    height: 35px;
+    width: 150px;
+    font-size: 0.9rem;
+    text-align: center;  
+}
+
+.containerLista{ 
+    position: relative;
+    width: 800px;
+    height: 420px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    align-self: center;
+    background-color: #e9e7e7;
+    border-radius: 5px;    
+}
+.cabecalhoTable{
+    display: flex;
+    top: 0;
+    width: 800px;
+    height: 50px;
+    padding: 8px 10px;
+    justify-content: space-around;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.columnName{
+    font-weight: bold;
+    width: 150px;  text-align: center;
+}
+
+.linhasTable{
+    display: flex;
+    padding: 8px 0;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    margin: 10px 5px ;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.itemTable{
+    height: 35px;
+    width: 150px;
+    font-size: 0.9rem;
+    text-align: center;  
+}
+
+.containerImg{
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    max-height: 100px;
+}
+
+.img{
+    max-height: 100px;
+}

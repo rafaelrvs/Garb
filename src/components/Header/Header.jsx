@@ -20,12 +20,13 @@ import { GlobalContext } from '../../Context/GlobalContext'
 import FullScreenDiv from '../FullScreenDiv/FullScreenDiv'
 import { Modal } from '../Modal/Modal'
 import ModalTroca from '../ModalTroca/ModalTroca'
+import ModalRelatorio from '../ModalTroca/ModalRelatorio/ModalRelatorio'
 
 
 
 const Header = () => {
     const [btnAtivo, setBtnAtivo] = useState('')
-    const {popUp, modalTroca, modal} = useContext(GlobalContext);
+    const {popUp, modalTroca, modal,modalRelatorio} = useContext(GlobalContext);
     const location = useLocation();
 
     useEffect(() => {
@@ -77,6 +78,7 @@ const Header = () => {
   
       {modal &&<Modal  />}
       {modalTroca.status&& <ModalTroca pedido={modalTroca.pedido}/>}
+      {modalRelatorio.status&& <ModalRelatorio solicitacao={modalRelatorio.solicitacao}/>}
 
       <FullScreenDiv/>
     
