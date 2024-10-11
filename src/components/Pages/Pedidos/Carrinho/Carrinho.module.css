@@ -14,7 +14,8 @@
 }
   
 .colunaUm{
-  display: grid;
+  display: flex;
+  flex-direction: column;
   grid-area: produtos;
   overflow: auto;
   gap: 10px;
