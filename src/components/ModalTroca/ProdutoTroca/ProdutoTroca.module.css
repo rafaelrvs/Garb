@@ -1,0 +1,104 @@
+.containerProdutoTroca{
+    position: absolute;
+    padding: 10px;
+    width: 800px;
+    height: 420px;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.voltarContainer{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.voltarBtn{
+    display: flex;
+    cursor: pointer;
+    border: 2px solid  black;
+    color: black;
+    width: 3rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+
+}
+
+.voltarBtn:active{
+    scale: 1.2;
+}
+
+.VoltarTitle{
+    color: black;
+    cursor: pointer;
+
+}
+
+.GridProduto{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+.imgProduto{
+    height: 300px;
+    justify-self: center;
+}
+
+.sobreProd{
+    display: grid;
+}
+
+.nomeProd{
+    color: black;
+    font-size: 1rem;
+}
+
+.textGrade{
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    
+}
+
+.input{
+    width: 200px;
+    color:var(--background);
+    font-size: 1.2rem;
+    padding: 5px 5px;
+    border-radius: 5px;  
+    border: 2px solid var(--background);
+    min-height: 32px;
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+
+.textarea{
+    color:var(--background);
+    font-size: 1.2rem;
+    padding: 5px 5px;
+    border-radius: 5px;  
+    border: 2px solid var(--background);
+    min-height: 32px;
+    align-self: flex-start;
+    margin-bottom: 10px; 
+    resize: none;
+}
+
+.btnTroca{
+    background-color: #913858;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.error{
+    color: red;
+    text-align: center;
+    margin-bottom: 5px;
+}

@@ -35,12 +35,7 @@ export const GlobalStorage = ({ children }) => {
 
 
 
-  const [modal,setModal] = useState(false)
 
-  const [modalTroca,setModalTroca]=useState({
-    status:'',
-    pedido:{},
-  })
 
   useEffect(() => {
     window.localStorage.setItem("carrinho", JSON.stringify(carrinho));
@@ -61,6 +56,28 @@ export const GlobalStorage = ({ children }) => {
   const [tamanhoSelecionado, setTamanhoSelecionado] = useState('');
   const [valueModal,  setValueModal] = useState('');
 
+
+  //troca
+
+  const [modal,setModal] = useState(false)
+
+  const [modalTroca,setModalTroca]=useState({
+    status:'',
+    pedido:{},
+  })
+
+  const [modalRelatorio,setModalRelatorio]=useState({
+    status:'',
+    solicitacao:{},
+  })
+  
+  
+  const [produtoSelecionado, setProdutoSelecionado] = useState({
+    status:false,
+    data: null
+})
+
+const [produtosSelecionados,setProdutosSelecionados] = useState([])
   return (
     <GlobalContext.Provider
       value={{
@@ -76,7 +93,10 @@ export const GlobalStorage = ({ children }) => {
         pedidos, setPedidos,
         modal,setModal,
         valueModal,  setValueModal,
-        modalTroca,setModalTroca
+        modalTroca,setModalTroca,
+        produtoSelecionado, setProdutoSelecionado,
+        produtosSelecionados,setProdutosSelecionados,
+        modalRelatorio,setModalRelatorio
       }}
     >
       {children}
