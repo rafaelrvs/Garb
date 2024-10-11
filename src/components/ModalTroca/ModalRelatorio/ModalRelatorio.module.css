@@ -88,6 +88,7 @@
 .linhasTable{
     display: flex;
     padding: 8px 0;
+    overflow-y: auto;
     justify-content: space-around;
     background-color: #fff;
     margin: 10px 5px ;
@@ -131,7 +132,7 @@
 .linhasTable{
     display: flex;
     padding: 8px 0;
-    height: 100px;
+    min-height: 100px;
     justify-content: space-around;
     align-items: center;
     background-color: #fff;
@@ -151,7 +152,6 @@
     display: flex;
     justify-content: center;
     width: 150px;
-    max-height: 100px;
 }
 
 .img{

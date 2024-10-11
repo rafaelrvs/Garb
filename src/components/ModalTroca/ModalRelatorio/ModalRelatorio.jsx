@@ -25,8 +25,6 @@ useEffect(()=>{
     
 },[modalRelatorio])
 
-console.log(produtos);
-
 if(produtos)
   return (
     <div className={styles.containerModal}>
@@ -42,6 +40,7 @@ if(produtos)
                     <span className={styles.columnName}>codigo</span>
                     <span className={styles.columnName}>tamanho</span>
                     <span className={styles.columnName}>qtde</span>    
+                    <span className={styles.columnName}>Motivo</span>    
                 </div>
                 {produtos&& produtos.length > 0 && produtos.map((produto, index) => (
                     <div className={styles.linhasTable} key={index}>
@@ -55,6 +54,7 @@ if(produtos)
                         <span className={`${styles.itemTable}`}>{produto.codigo}</span>
                         <span className={`${styles.itemTable}`}>{produto.tamanhoAntigo || produto.tamanhoDevolvido}</span>
                         <span className={`${styles.itemTable}`}>{produto.quantidade}</span>                        
+                        <span className={`${styles.itemTable}`}>{produto.motivo}</span>                        
                     </div>
                 ))}
             </div>
