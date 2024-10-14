@@ -3,6 +3,14 @@ import styles from './Header.module.css'
 import SVGLogoGarb from '/images/Header/Logo_Garb.svg'
 import LOGOAMALFIS from '/images/Header/LOGO-AMALFIS-Branco.svg'
 
+//
+import LOGOCASASBAHIAWHITE from '/images/Header/logoCli/casasbahiaWhite.svg'
+import LOGOCBREWHITE from '/images/Header/logoCli/cbreWhite.svg'
+import LOGOCLARO from '/images/Header/logoCli/LOGOCLARO.svg'
+import logoVivoBranco from '/images/Header/logoCli/logoVivoBranco.svg'
+import logoAnacBranco from '/images/Header/logoCli/logoAnacBranco.svg'
+
+
 import InicarPedido from '/images/Header/nav/InicarPedido.svg'
 import InicarPedidoActive from '/images/Header/nav/active/InicarPedidoActive.svg'
 
@@ -88,7 +96,13 @@ const Header = () => {
         <div className={styles.containerLogos}>
             <div className={styles.logos}>
             {logoCli === null&&<img src={LOGOAMALFIS} alt="logo Cli" className={`${styles.logoImg} animeDown`} />}
-            {logoCli === '1'&&<img src={SVGLogoGarb} alt="logo Cli" className={`${styles.logoImg} animeDown`} />}
+            {logoCli === '1' &&<img src={LOGOCASASBAHIAWHITE} alt="logo Cli" className={`${styles.logoImg} animeDown`} />}
+            {logoCli === '2' &&<img src={LOGOCBREWHITE} alt="logo Cli" className={`${styles.logoImg} animeDown`} />}
+            {logoCli === '3' &&<img src={LOGOCLARO} alt="logo Cli" className={`${styles.logoImg} animeDown`} />}
+            {logoCli === '4' &&<img src={logoVivoBranco} alt="logo Cli" className={`${styles.logoImg} animeDown`} />}
+            {logoCli === '5' &&<img src={logoVivoBranco} alt="logo Cli" className={`${styles.logoImg} animeDown`} />}
+            {logoCli === '6' &&<img src={logoAnacBranco} alt="logo Cli" className={`${styles.logoImg} animeDown`} />}
+            
                 <Link to={'/'}><img src={SVGLogoGarb} alt="logo Garb" className={`${styles.logoImg} animeDown`} /></Link>
             </div>
         </div>
