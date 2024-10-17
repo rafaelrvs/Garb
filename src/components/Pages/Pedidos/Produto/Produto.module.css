@@ -121,10 +121,8 @@
     background-color: #d4e0ee;
 }
 
-
-
 .provador{
-  display: flex;
+  display: grid;
   
   flex-wrap: wrap;
   justify-content: center;
