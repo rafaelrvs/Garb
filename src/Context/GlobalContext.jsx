@@ -70,6 +70,11 @@ export const GlobalStorage = ({ children }) => {
     status:'',
     solicitacao:{},
   })
+
+  const [modalChamado,setModalChamado]=useState({
+    status:'',
+    solicitacao:{},
+  })
   
   
   const [produtoSelecionado, setProdutoSelecionado] = useState({
@@ -96,7 +101,8 @@ const [produtosSelecionados,setProdutosSelecionados] = useState([])
         modalTroca,setModalTroca,
         produtoSelecionado, setProdutoSelecionado,
         produtosSelecionados,setProdutosSelecionados,
-        modalRelatorio,setModalRelatorio
+        modalRelatorio,setModalRelatorio,
+        modalChamado,setModalChamado
       }}
     >
       {children}

@@ -1,0 +1,117 @@
+.containerModal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    margin: 0px;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color: #0000003a;
+    z-index: 200;
+    position: fixed;
+}
+
+.modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 25px;
+    height: 600px;
+    width: 400px;
+    border-radius: 10px;
+    z-index: 11;
+    background-color: var(--background);
+    transition: 0.5s;
+    animation: forwards show-opacity 0.3s;
+}
+
+
+.fade{
+    transition: .4s;
+    animation: fade .4s ease-in-out;
+  
+  }
+  
+  @keyframes fade {
+    from{
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to{
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+
+.voltarContainer{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.voltarBtn{
+  display: flex;
+  border: 2px solid;
+  width: 3rem;
+  height: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+}
+
+.voltarBtn:active{
+  scale: 1.2;
+}
+
+.containerForm{
+  display: grid;
+  width: 100%;
+  align-self: center;
+
+}
+
+.titleInput{
+  color: white;
+}
+
+.inputForm{
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+  color: black;
+}
+
+.option{
+  color: black;
+}
+
+.textarea{
+  color:var(--background);
+  height:200px ;
+  font-size: 1.2rem;
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: 2px solid var(--background);
+  resize: none;
+}
+
+.button{
+  margin-top: 10px;
+  background-color: #8a49cf;
+  color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.error{
+  color: red;
+}

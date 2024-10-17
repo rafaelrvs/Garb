@@ -124,13 +124,20 @@
 
 
 .provador{
-  display: grid;
+  display: flex;
+  
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .provador span b{
   color: black;
+}
+
+.provador button{
+  border-radius: 5px;
+  padding: 2px;
+  border: 1px solid black;
 }
 
 .addcarrinho{
