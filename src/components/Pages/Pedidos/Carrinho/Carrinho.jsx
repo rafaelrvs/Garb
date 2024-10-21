@@ -196,12 +196,12 @@ const Carrinho = () => {
             <p>forma de pag: {formaPagSelecionado.data.nome || 0}</p>
             <p>Valor Total: R$ {(valorTotal * (1 + (formaPagSelecionado.data.acrescimo || 0))).toFixed(2)}</p>
 
-            <button className={`${styles.btnFinalizar} ${styles.button}`} onClick={handleSubmit} disabled={!carrinho.length}>
-              Finalizar Pedido
-            </button>
             <Link to="/pedidos">
               <button className={styles.button}>Adicionar mais Produtos</button>
             </Link>
+            <button className={`${styles.btnFinalizar} ${styles.button}`} onClick={handleSubmit} disabled={!carrinho.length}>
+              Finalizar Pedido
+            </button>
           </div>
         </div>
 

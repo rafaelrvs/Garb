@@ -47,6 +47,7 @@ export const AcompanhaPedido = () => {
 
     return (
         <div className={`${styles.ContainrePedidos} animeLeft`}>
+            <h1>Meus Pedidos</h1>
             <Voltar/>
             {pedidos.length > 0 && pedidos.map((pedido) => (
                 <div key={pedido.id} className={styles.containerItensDoPedido}>
