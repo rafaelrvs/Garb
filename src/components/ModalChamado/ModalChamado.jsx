@@ -4,7 +4,7 @@ import { GlobalContext } from '../../Context/GlobalContext';
 
 const ModalChamado = () => {
 
-    const {modalChamado,setModalChamado } = useContext(GlobalContext);
+    const {modalChamado,setModalChamado,setPopUp, popupTimeoutRef } = useContext(GlobalContext);
     const [destinadoSelecionado, setDestinadoSelecionado] = useState('');
     const [assuntoSelecionado, setAssuntoSelecionado] = useState('');
     const [descricao, setDescricao] = useState('')
@@ -47,7 +47,30 @@ const ModalChamado = () => {
     
             const chamadosAtualizados = [...chamadosExistentes, chamado];
             localStorage.setItem('chamados', JSON.stringify(chamadosAtualizados));
-        
+            setModalChamado({
+                status:false,
+                data:{}
+            })
+
+            setPopUp({
+                status: true,
+                color: "#46bba2",
+                children: `Chamado n°${chamado.id} aberto! `,
+              });
+              
+              if (popupTimeoutRef.current) {
+                clearTimeout(popupTimeoutRef.current);
+              }
+              
+              popupTimeoutRef.current = setTimeout(() => {
+                setPopUp({
+                  status: false,
+                  color: "",
+                  children: "",
+                });
+                popupTimeoutRef.current = null;
+              }, 2500);
+
         }else{
             setError(true)
         }

@@ -29,20 +29,22 @@
 }
 
 .imgBtn{
-    width: 4rem;
+    width: 3rem;
 }
 
 .btn{
     display: flex;
-    height: 4rem;
-    width: 5rem;
+    flex-direction: column;
+    height: 4.5rem;
+    width: 5.5rem;
     align-items: center;
     justify-content: center;
 }
 
 .btnAtivo{
     display: flex;
-    height: 4rem;
+    flex-direction: column;
+    height: 4.5rem;
     width: 5.5rem;
     align-items: center;
     justify-content: center;

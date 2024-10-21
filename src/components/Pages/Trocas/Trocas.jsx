@@ -4,6 +4,9 @@ import { NavLink } from 'react-router-dom'
 import ContainerTrocaDevolucao from './ContainerTrocaDevolucao/ContainerTrocaDevolucao'
 import { GlobalContext } from '../../../Context/GlobalContext'
 
+import TrocaEDevolucaoActive from '/images/Header/nav/active/TrocaEDevolucaoActive.svg'
+
+
 const Trocas = () => {
   const { produtosSelecionados, setModalRelatorio } = useContext(GlobalContext);
   const [trocasDevolucoes, setTrocasDevolucoes] = useState([])
@@ -56,7 +59,10 @@ const Trocas = () => {
   return (
     <div className={styles.container}>
       <section className={styles.containerWrapper}>
-        <h1 className={styles.tituloPage}>Trocas e Devoluções</h1>
+        <div className='tituloContainer'>
+          <img src={TrocaEDevolucaoActive} alt="logo" className='imgTitulo' />
+          <h1 className={'tituloPage'}>Trocas e Devoluções</h1>
+        </div>
         <div className={styles.LinhaStyle}></div>
         <h3 className={styles.subTitle}>Selecione a ação desejada para prosseguir</h3>
         <div className={styles.wrapperButtons}>
@@ -65,7 +71,7 @@ const Trocas = () => {
             onClick={() => handleSelect('troca')}
           >Troca</NavLink>
           <NavLink
-            className={() => { return active.name === 'devolucao' ? styles.navButtonActive : styles.navButton }}
+            className={() => { return active.name === 'devolucao' ? styles.navButtonActiveDev : styles.navButton }}
             onClick={() => handleSelect('devolucao')}
           >Devolução</NavLink>
         </div>

@@ -22,6 +22,7 @@ import ChamadoActive from '/images/Header/nav/active/ChamadoActive.svg'
 
 import Relatorio from '/images/Header/nav/Relatorio.svg'
 import RelatorioActive from '/images/Header/nav/active/RelatorioActive.svg'
+
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import PopUp from '../PopUp/PopUp'
 import { GlobalContext } from '../../Context/GlobalContext'
@@ -109,15 +110,19 @@ const Header = () => {
       <nav className={styles.nav}>
         <NavLink to={'/pedidos'} className={({ isActive }) => isActive ? styles.btnAtivo : styles.btn} >
             <img src={btnAtivo==='1'? InicarPedidoActive : InicarPedido} className={styles.imgBtn}/>
+            <p>Pedidos</p>
         </NavLink>
         <NavLink to={'/trocas'} className={({ isActive }) => isActive ? styles.btnAtivo : styles.btn} >
             <img src={btnAtivo==='2'? TrocaEDevolucaoActive : TrocaEDevolucao} className={styles.imgBtn}/>
+            <p>Trocas</p>
         </NavLink>
         <NavLink to={'/chamados'} className={({ isActive }) => isActive ? styles.btnAtivo : styles.btn} >
             <img src={btnAtivo ==='3'?ChamadoActive: Chamado} className={styles.imgBtn}/>
+            <p>Suporte</p>
         </NavLink>
         <NavLink to={'/relatorios'} className={({ isActive }) => isActive ? styles.btnAtivo : styles.btn}>
             <img src={btnAtivo==='4'?RelatorioActive : Relatorio} className={styles.imgBtn}/>
+            <p>Relatórios</p>
         </NavLink>
       </nav>
       <PopUp status={popUp.status} color={popUp.color}>{popUp.children}</PopUp>

@@ -17,7 +17,6 @@ const Empresa = () => {
 
   return (
     <div>
-        <Voltar/>
         <h3 className={styles.descricaoPage}>Para qual empresa deseja solicitar mais uniformes?</h3>
         <div className={`${styles.lista} animeLeft`}>
         {empresas.map((empresa)=>(

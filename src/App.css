@@ -9,8 +9,7 @@
 :root{
   --background: #261738;
   --background2: #200a30;
-
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Manrope", sans-serif;
 
 }
 
@@ -20,6 +19,23 @@ body {
   background-size: 200% 200%; /* Define o tamanho do fundo maior que o necessário */
   animation: moveGradient 7s ease infinite; /* Aplica a animação */
 }
+
+.tituloContainer{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.imgTitulo{
+  height: 3rem;
+}
+
+.tituloPage{
+  font-weight: 400;
+  font-size: 1.9rem;
+  
+}
+
 
 /* Definindo a animação */
 @keyframes moveGradient {

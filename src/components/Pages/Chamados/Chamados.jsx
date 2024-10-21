@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import styles from './Chamados.module.css'
 import ModalChamado from '../../ModalChamado/ModalChamado.jsx'
 import { GlobalContext } from '../../../Context/GlobalContext.jsx';
+import ChamadoActive from '/images/Header/nav/active/ChamadoActive.svg'
+
 const Chamados = () => {
   const {modalChamado,setModalChamado } = useContext(GlobalContext);
 
@@ -44,7 +46,10 @@ const Chamados = () => {
   return (
     <div className={styles.container}>
       <section className={styles.containerWrapper}>
-        <h1 className={styles.tituloPage}>Suporte</h1>
+        <div className='tituloContainer'>
+          <img src={ChamadoActive} alt="logo" className='imgTitulo' />
+          <h1 className={'tituloPage'}>Trocas e Devoluções</h1>
+        </div>
         <div className={styles.LinhaStyle}></div>
         <h3 className={styles.subTitle}>Precisa de ajuda? abra um chamado e o acompanhe aqui</h3>
         <div className={styles.wrapperButtons}>
@@ -90,7 +95,7 @@ const Chamados = () => {
                 <button
                   className={`${styles.itemTable} ${styles.btnLinha}`}
                   onClick={() => setModalRelatorio({ status: true, solicitacao: troca })}
-                >Detalhes</button>
+                >Acompanhar</button>
               </div>
             )) : <div>
               <h2 className={styles.semSolicitacoes}>Sem Solicitações de trocas e devoluções</h2>

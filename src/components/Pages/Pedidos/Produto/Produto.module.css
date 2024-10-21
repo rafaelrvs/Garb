@@ -39,8 +39,9 @@
 }
 
 .descricao{
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   text-align: start;
+  width: 566px;
 }
 
 .sobreProduto{
@@ -49,7 +50,6 @@
   grid-template-rows: minmax(400px) 80px 100px 100px;
   gap: 20px;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .column1{

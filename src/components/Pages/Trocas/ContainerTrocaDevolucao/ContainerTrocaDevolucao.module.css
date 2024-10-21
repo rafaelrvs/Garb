@@ -55,12 +55,13 @@
 
 .btnLinha{
   cursor: pointer;
-  background-color: #913858;
+  background-color: #8a49cf;
   border: 0px;
   border-radius: 5px;
   color: white;
 }
 
 .btnLinha:active{
-  background-color: #86137d;
+  background-color: #541f8d;
+
 }
