@@ -13,7 +13,7 @@ export const empresas = [
                         "descricao": "CAMISETA GOLA REDONDA M/C MALHA PV 65% POLIESTER 35% VISCOSE M GRAFITE",
                         "preco": "10.00",
                         "cor": "GRAFITE",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "05.332.001.webp"
                     },
                     {
@@ -21,7 +21,7 @@ export const empresas = [
                         "descricao": "BABY LOOK GOLA REDONDA M/C MALHA PV 65% POLIESTER 35% VISCOSE M GRAFITE",
                         "preco": "10.00",
                         "cor": "GRAFITE",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "05.332.002.webp"
                     }
                 ]
@@ -35,7 +35,7 @@ export const empresas = [
                         "descricao": "CAMISETA POLO M/C PIQUET PV 65% POLIESTER 35% VISCOSE ROYAL VIA E1758",
                         "preco": "10.00",
                         "cor": "ROYAL",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "10.332.001.webp"
                     },
                     {
@@ -43,7 +43,7 @@ export const empresas = [
                         "descricao": "BABY LOOK POLO M/C PIQUET PV 65% POLIESTER 35% VISCOSE ROYAL VIA E1758",
                         "preco": "10.00",
                         "cor": "ROYAL",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "10.332.002.webp"
                     }
                 ]
@@ -57,7 +57,7 @@ export const empresas = [
                         "descricao": "JAQUETA MASCULINA TACTEL AUSTRALIA 100% POLIESTER AZUL BIC 1220",
                         "preco": "10.00",
                         "cor": "AZUL BIC",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "24.332.001.webp"
                     },
                     {
@@ -65,7 +65,7 @@ export const empresas = [
                         "descricao": "JAQUETA FEMININA TACTEL AUSTRALIA 100% POLIESTER AZUL BIC 1220",
                         "preco": "10.00",
                         "cor": "AZUL BIC",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "24.332.002.webp"
                     }
                 ]
@@ -86,7 +86,7 @@ export const empresas = [
                         "descricao": "CAMISETA POLO M/C MASC PIQUET PV 65% POLIESTER 35% VISCOSE CINZA MESCLA 00181.030",
                         "preco": "10.00",
                         "cor": "CINZA MESCLA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "10.434.001.webp"
                     },
                     {
@@ -94,7 +94,7 @@ export const empresas = [
                         "descricao": "BABYLOOK POLO M/C PIQUET PV 65% POLIESTER 35% VISCOSE CINZA MESCLA 00181.030",
                         "preco": "10.00",
                         "cor": "CINZA MESCLA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "10.434.003.webp"
                     },
                     {
@@ -102,7 +102,7 @@ export const empresas = [
                         "descricao": "CAMISA SOCIAL M/L MASC CEDROMIX 5 OZ ll 60% ALGODAO 40% POLIESTER BRANCO 0002",
                         "preco": "10.00",
                         "cor": "N/A",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "15.434.001.webp"
                     },
                     {
@@ -110,7 +110,7 @@ export const empresas = [
                         "descricao": "CAMISA SOCIAL M/C MASC CEDROMIX 5 OZ ll 60% ALGODAO 40% POLIESTER BRANCO 0002",
                         "preco": "10.00",
                         "cor": "BRANCO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "15.434.002.webp"
                     }
                 ]
@@ -124,7 +124,7 @@ export const empresas = [
                         "descricao": "CAMISA GOLA ITALIANA M/C MASC CEDROPAC LEVE ll 100% ALGODAO AREIA 8059",
                         "preco": "10.00",
                         "cor": "AREIA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "20.434.003.webp"
                     },
                     {
@@ -132,7 +132,7 @@ export const empresas = [
                         "descricao": "CAMISA GOLA ITALIANA M/C MASC CEDROPAC LEVE ll 100% ALGODAO CINZA 8053",
                         "preco": "10.00",
                         "cor": "CINZA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "20.434.004.webp"
                     },
                     {
@@ -140,7 +140,7 @@ export const empresas = [
                         "descricao": "JAQUETA GOLA ESPORTE MASC NYLON 240 RESINADO 100% POLIAMIDA VERDE PETROLEO",
                         "preco": "10.00",
                         "cor": "VERDE PETROLEO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "24.434.001.webp"
                     },
                     {
@@ -148,7 +148,7 @@ export const empresas = [
                         "descricao": "CALCA 1/2 COS CEDROPAC II 100% ALGODAO AREIA 8059",
                         "preco": "10.00",
                         "cor": "AREIA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["34","36","38","40","42","44","46","48","50","52","54","56","58","60","62","64","66","ESP"],
                         "img": "01.434.006.webp"
                     },
                     {
@@ -156,7 +156,7 @@ export const empresas = [
                         "descricao": "CALCA 1/2 COS MASC CEDROPAC II 100% ALGODAO VERDE PETROLEO 8053",
                         "preco": "10.00",
                         "cor": "N/A",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["34","36","38","40","42","44","46","48","50","52","54","56","58","60","62","64","66","ESP"],
                         "img": "01.434.007.webp"
                     }
                 ]
@@ -170,7 +170,7 @@ export const empresas = [
                         "descricao": "CAMISA ABERTA M/L FXREF CEDROTECH FR 100% ALGODAO CINZA 8047",
                         "preco": "10.00",
                         "cor": "N/A",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "41.434.001.webp"
                     },
                 ]
@@ -191,7 +191,7 @@ export const empresas = [
                         "descricao": "CAMISA SOCIAL M/C GRAFIL 67% POLIESTER 33% ALGODAO HAL CINZA CIMENTO",
                         "preco": "10.00",
                         "cor": "CINZA CIMENTO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "15.385.007.webp"
                     }
                 ]
@@ -205,7 +205,7 @@ export const empresas = [
                         "descricao": "CAMISETA GOLA POLO MASC MC PIQUET PA 50% ALGODAO 50% POLIESTER VERMELHO 73216.050",
                         "preco": "10.00",
                         "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "10.385.001.webp"
                     },
                     {
@@ -213,7 +213,7 @@ export const empresas = [
                         "descricao": "JAQUETA POLYCOTTON MAIS 67% POLIESTER 33%AGODAO CINZA 8113",
                         "preco": "10.00",
                         "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],                        
                         "img": "24.385.002.webp"
                     },
                     {
@@ -221,7 +221,7 @@ export const empresas = [
                         "descricao": "JAQUETA FEMININA  POLYCOTTON MAIS 67% POLIESTER 33%AGODAO CINZA 8113",
                         "preco": "10.00",
                         "cor": "CINZA",
-                        "grade": ["P", "M", "G", "GG", "XG", "EXG", "EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],                        
                         "img": "24.385.003.webp"
                     }
                 ]
@@ -243,7 +243,7 @@ export const empresas = [
                         "descricao": "CALCA JEANS MASCULINO UNIOFFICE PLUS 65% ALGODAO 35% POLIESTER AZUL 3020",
                         "preco": "10.00",
                         "cor": "AZUL",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["34","36","38","40","42","44","46","48","50","52","54","56","58","60","62","64","66","ESP"],
                         "img": "01.121.003.webp"
                     },
                     {
@@ -251,7 +251,7 @@ export const empresas = [
                         "descricao": "CALCA JEANS FEMININA UNIOFFICE PLUS 65% ALGODAO 35% POLIESTER AZUL 3020",
                         "preco": "10.00",
                         "cor": "AZUL",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["34","36","38","40","42","44","46","48","50","52","54","56","58","60","62","64","66","ESP"],
                         "img": "01.121.004.webp"
                     },
                     {
@@ -259,17 +259,9 @@ export const empresas = [
                         "descricao": "CAMISA POLO SOCIAL M/C MASCULINO UNISTILL SOFT 51% ALGODAO 49% POLIESTER CINZA 6163",
                         "preco": "10.00",
                         "cor": "CINZA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "02.121.014.webp"
                     },
-                    {
-                        "codigo": "02.121.014",
-                        "descricao": "CAMISA POLO SOCIAL M/C MASCULINO UNISTILL SOFT 51% ALGODAO 49% POLIESTER CINZA 6163",
-                        "preco": "10.00",
-                        "cor": "CINZA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
-                        "img": "02.121.014.webp"
-                    }
                 ]
             },
             {
@@ -281,7 +273,7 @@ export const empresas = [
                         "descricao": "CAMISA POLO SOCIAL M/C FEMININA CEDROVIP SUPER 65% ALGODAO 35% POLIESTER PURPURA 6181",
                         "preco": "10.00",
                         "cor": "PURPURA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "02.121.008.webp"
                     },
                     {
@@ -289,7 +281,7 @@ export const empresas = [
                         "descricao": "CAMISA POLO SOCIAL M/L FEMININA CEDROVIP SUPER 65% ALGODAO 35% POLIESTER PURPURA 5275",
                         "preco": "10.00",
                         "cor": "PURPURA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "02.121.009.webp"
                     },
                     {
@@ -297,7 +289,7 @@ export const empresas = [
                         "descricao": "CAMISA POLO SOCIAL M/C MASCULINO CEDROVIP 65% ALGODAO 35% POLIESTER PURPURA",
                         "preco": "10.00",
                         "cor": "PURPURA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "02.121.012.webp"
                     },
                     {
@@ -305,7 +297,7 @@ export const empresas = [
                         "descricao": "CAMISA POLO SOCIAL M/L MASCULINO CEDROVIP 65% ALGODAO 35% POLIESTER PURPURA",
                         "preco": "10.00",
                         "cor": "PURPURA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "02.121.013.webp"
                     },
                     {
@@ -313,7 +305,7 @@ export const empresas = [
                         "descricao": "COLETE FEMININA UNITEX RIP STOP 67% ALGODAO 33% POLIESTER CINZA - 5093",
                         "preco": "10.00",
                         "cor": "CINZA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "19.121.003.webp"
                     },
                     {
@@ -321,7 +313,7 @@ export const empresas = [
                         "descricao": "JAQUETA MASCULINO UNITEX RIP STOP 67% ALGODAO 33% POLIESTER CINZA - 5093",
                         "preco": "10.00",
                         "cor": "CINZA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EXG","EXGG","ESP"],
                         "img": "24.121.003.webp"
                     },
                     {
@@ -329,7 +321,7 @@ export const empresas = [
                         "descricao": "JAQUETA FEMININA UNITEX RIP STOP 67% ALGODAO 33% POLIESTER CINZA - 5093",
                         "preco": "10.00",
                         "cor": "CINZA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["XPP","PP","P","M","G","GG","XG","EG","EXGG","G0","G1","G2","G3","G4","G5","G6","G7","G8","ESP"],
                         "img": "24.121.004.webp"
                     }
                 ]
@@ -350,7 +342,7 @@ export const empresas = [
                         "descricao": "CALCA SOCIAL MASC. MILANO PLUS 74% POLIESTER 22%VISCOSE 4%ELASTANO 1224 MARINHO MEDIEVAL",
                         "preco": "10.00",
                         "cor": "MARINHO MEDIEVAL",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["34","36","38","40","42","44","46","48","50","52","54","56","58","60","62","64","66","ESP"],
                         "img": "01.381.001.webp"
                     },
                     {
@@ -358,7 +350,7 @@ export const empresas = [
                         "descricao": "CALCA SOCIAL FEMININA MILANO PLUS 74% POLIESTER 22%VISCOSE 4%ELASTANO 1224 MARINHO MEDIEVAL",
                         "preco": "10.00",
                         "cor": "MARINHO MEDIEVAL",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["34","36","38","40","42","44","46","48","50","52","54","56","58","60","62","64","66","ESP"],
                         "img": "01.381.002.webp"
                     },
                     {
@@ -366,7 +358,7 @@ export const empresas = [
                         "descricao": "CAMISA SOCIAL M/C TRICOLINE IBIZA 75% POLIESTER 21%ALGODAO 4%ELASTANO 001-7110 LILAS",
                         "preco": "10.00",
                         "cor": "LILAS",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "15.381.001.webp"
                     },
                     {
@@ -374,7 +366,7 @@ export const empresas = [
                         "descricao": "CAMISA SOCIAL M/L TRICOLINE IBIZA 75% POLIESTER 21%ALGODAO 4%ELASTANO 001-7110 LILAS",
                         "preco": "10.00",
                         "cor": "LILAS",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "15.381.002.webp"
                     },
                     {
@@ -382,7 +374,7 @@ export const empresas = [
                         "descricao": "CAMISA SOCIAL M/C FEM GESTANTE TRICOLINE IBIZA 75% POLIESTER 21%ALGODAO 4%ELASTANO 001-7110 LILAS",
                         "preco": "10.00",
                         "cor": "LILAS",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "16.381.001.webp"
                     },
                     {
@@ -390,7 +382,7 @@ export const empresas = [
                         "descricao": "CAMISA SOCIAL M/C FEM TRICOLINE IBIZA 75% POLIESTER 21%ALGODAO 4%ELASTANO 001-7110 LILAS",
                         "preco": "10.00",
                         "cor": "LILAS",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "16.381.002.webp"
                     },
                     {
@@ -398,7 +390,7 @@ export const empresas = [
                         "descricao": "CAMISA SOCIAL M/L FEM TRICOLINE IBIZA 75% POLIESTER 21%ALGODAO 4%ELASTANO 001-7110 LILAS",
                         "preco": "10.00",
                         "cor": "LILAS",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "16.381.003.webp"
                     },
                     {
@@ -406,7 +398,7 @@ export const empresas = [
                         "descricao": "SAIA SOCIAL MILANO PLUS 74% POLIESTER 22%VISCOSE 4%ELASTANO 1224 MARINHO MEDIEVAL",
                         "preco": "10.00",
                         "cor": " MARINHO MEDIEVAL",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["34","36","38","40","42","44","46","48","50","52","54","56","58","60","62","64","66","ESP"],
                         "img": "17.381.001.webp"
                     },
                     {
@@ -414,7 +406,7 @@ export const empresas = [
                         "descricao": "JAQUETA SOCIAL MASC MILANO WRINKLED 74% POLIESTER 22%VISCOSE 4%ELASTANO 001-21 PRETO",
                         "preco": "10.00",
                         "cor": "PRETO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "24.381.001.webp"
                     },
                     {
@@ -422,7 +414,7 @@ export const empresas = [
                         "descricao": "JAQUETA SOCIAL FEM MILANO WRINKLED 74% POLIESTER 22%VISCOSE 4%ELASTANO 001-21 PRETO",
                         "preco": "10.00",
                         "cor": "PRETO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "24.381.002.webp"
                     }
                 ]
@@ -436,7 +428,7 @@ export const empresas = [
                         "descricao": "BABY LOOK  M/C  MALHA PV 65% POLIESTER 35% VISCOSE CINZA MESCLA",
                         "preco": "10.00",
                         "cor": "CINZA MESCLA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "05.381.001.webp"
                     },
                     {
@@ -444,7 +436,7 @@ export const empresas = [
                         "descricao": "BABY LOOK  GESTANTE M/C  MALHA PV 65% POLIESTER 35% VISCOSE CINZA MESCLA 0107",
                         "preco": "10.00",
                         "cor": "CINZA MESCLA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "05.381.002.webp"
                     },
                     {
@@ -452,7 +444,7 @@ export const empresas = [
                         "descricao": "CAMISETA POLO M/C  PIQUET PV 67% POLIESTER 33% VISCOSE CINZA MESCLA 0107",
                         "preco": "10.00",
                         "cor": "CINZA MESCLA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "10.381.001.webp"
                     },
                     {
@@ -460,7 +452,7 @@ export const empresas = [
                         "descricao": "JAQUETA MASC CUPRO LIKE 90% POLIESTER 10% POLIAMIDA PRETO",
                         "preco": "10.00",
                         "cor": "PRETO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "24.381.003.webp"
                     },
                     {
@@ -468,7 +460,7 @@ export const empresas = [
                         "descricao": "JAQUETA FEM CUPRO LIKE 90% POLIESTER 10% POLIAMIDA PRETO",
                         "preco": "10.00",
                         "cor": "PRETO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "24.381.004.webp"
                     },
                 ]
@@ -482,7 +474,7 @@ export const empresas = [
                         "descricao": "BATA POLO GESTANTE PIQUET PA 50% POLIESTER 50% ALGODAO MESCLA ROXO E PRETO",
                         "preco": "10.00",
                         "cor": "PRETO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "05.381.003.webp"
                     },
                     {
@@ -490,7 +482,7 @@ export const empresas = [
                         "descricao": "CAMISETA POLO M/C  PIQUET PA 50% POLIESTER 50% ALGODAO MESCLA ROXO E PRETO",
                         "preco": "10.00",
                         "cor": "PRETO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "10.381.002.webp"
                     },
                     {
@@ -498,7 +490,7 @@ export const empresas = [
                         "descricao": "BABY LOOK POLO M/C  PIQUET PA 50% POLIESTER 50% ALGODAO MESCLA ROXO E PRETO",
                         "preco": "10.00",
                         "cor": "PRETO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "10.381.003.webp"
                     },
                     {
@@ -506,7 +498,7 @@ export const empresas = [
                         "descricao": "COLETE UNISSEX GOLA ALTA JET TEL PLUS 100% POLIESTER PURPURA 2418",
                         "preco": "10.00",
                         "cor": "PURPURA",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "19.381.001.webp"
                     },
                     {
@@ -514,7 +506,7 @@ export const empresas = [
                         "descricao": "MOLETOM MASC GOLA REDONDA 50% ALGODAO 50% POLIESTER MESCLA PRETO",
                         "preco": "10.00",
                         "cor": "PRETO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "29.381.001.webp"
                     },
                     {
@@ -522,7 +514,7 @@ export const empresas = [
                         "descricao": "MOLETOM FEM GOLA REDONDA 50% ALGODAO 50% POLIESTER MESCLA PRETO",
                         "preco": "10.00",
                         "cor": "PRETO",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "29.381.002.webp"
                     }
                 ]
@@ -543,7 +535,7 @@ export const empresas = [
                         "descricao": "MACACAO NOMEX ST AVIADOR 93% META ARAMIDA 5% PARA ARAMIDA 2% CARBONO",
                         "preco": "10.00",
                         "cor": "-",
-                        "grade":["P","M","G","GG","XG","EXG","EXGG"],
+                        "grade":["PP","P","M","G","GG","XG","EG","EG1","EG2","EG3","EG5","EG6","EX","EG7","EXG","EXGG","EG9","EG10","ESP"],
                         "img": "43.344.001.webp"
                     }
                 ]
